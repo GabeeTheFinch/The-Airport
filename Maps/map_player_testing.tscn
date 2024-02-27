@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cew42ue1r4fb2"]
+[gd_scene load_steps=10 format=3 uid="uid://cew42ue1r4fb2"]
 
 [ext_resource type="Script" path="res://Maps/map_player_testing.gd" id="1_2w811"]
 [ext_resource type="PackedScene" uid="uid://h7c2nipeg7wv" path="res://Player/player.tscn" id="1_fb1a0"]
@@ -19,9 +19,14 @@ ssao_enabled = true
 glow_enabled = true
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_kniv5"]
-size = Vector3(5, 1, 5)
+size = Vector3(17, 1, 17)
 
 [sub_resource type="BoxMesh" id="BoxMesh_0b2lk"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_id1a3"]
+size = Vector3(1, 0.5, 5.7)
+
+[sub_resource type="BoxMesh" id="BoxMesh_rwmvb"]
 
 [node name="Map_PlayerTesting" type="Node"]
 script = ExtResource("1_2w811")
@@ -34,16 +39,28 @@ transform = Transform3D(-0.866025, -0.245452, 0.435607, 0, 0.871214, 0.490904, -
 light_color = Color(0.992157, 1, 0.498039, 1)
 shadow_enabled = true
 
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
+[node name="Ground" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground"]
 shape = SubResource("BoxShape3D_kniv5")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
-transform = Transform3D(5, 0, 0, 0, 1, 0, 0, 0, 5.04, 0, 0, 0)
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground"]
+transform = Transform3D(17, 0, 0, 0, 1, 0, 0, 0, 17.136, 0, 0, 0)
 mesh = SubResource("BoxMesh_0b2lk")
 skeleton = NodePath("../..")
 
 [node name="Player" parent="." instance=ExtResource("1_fb1a0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.262425, 1, 0.983075)
+visible = false
+
+[node name="Ramp1" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.953932, -0.300023, 0, 0.300023, 0.953932, 0, 0.121557, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ramp1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25, -2.35)
+shape = SubResource("BoxShape3D_id1a3")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ramp1"]
+transform = Transform3D(1, 0, 0, 0, 0.5, 0, 0, 0, 5.69527, 0, -0.25, -2.35)
+mesh = SubResource("BoxMesh_rwmvb")
