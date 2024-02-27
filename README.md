@@ -1,2 +1,2 @@
 # Untitled-Project
- Godot Game in development 
+Horror game made in Godot currently in development  
