@@ -1,2 +1,4 @@
-res://Maps/map_player_testing.tscn
 res://Player/player.tscn
+res://Player/player.gd
+res://Maps/map_player_testing.tscn
+res://Maps/map_player_testing.gd

@@ -1,7 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://h7c2nipeg7wv"]
+[gd_scene load_steps=4 format=3 uid="uid://h7c2nipeg7wv"]
 
 [ext_resource type="Script" path="res://Player/player.gd" id="1_7ut02"]
-[ext_resource type="Texture2D" uid="uid://byj5ah5ocfno1" path="res://Player/Crosshair/crosshair001.png" id="2_k010m"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_wp11s"]
 
@@ -10,6 +9,8 @@
 [node name="Player" type="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 script = ExtResource("1_7ut02")
+SPEED = null
+JUMP_VELOCITY = null
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_wp11s")
@@ -19,11 +20,6 @@ mesh = SubResource("CapsuleMesh_26458")
 skeleton = NodePath("../..")
 
 [node name="Neck" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.493447, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Neck"]
-
-[node name="HUD" type="Camera2D" parent="."]
-
-[node name="Crosshair" type="Sprite2D" parent="HUD"]
-texture = ExtResource("2_k010m")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.596532, 0)
