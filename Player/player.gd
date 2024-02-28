@@ -1,19 +1,20 @@
 extends CharacterBody3D
 
-@export var BASE_SPEED: float = 3.0
+@export var BASE_SPEED: float = 3
 @export var SPRINT_SPEED: float = 6
 @export var CROUCH_SPEED: float = 1
 @export var JUMP_VELOCITY: float = 4.5
 @export var Sensitivity: float = 0.1
+@export var Controller_Sensitivity: float = 5
 @export var Acceleration: float = 10.0
 
 @export var sprint_enabled: bool = true
 @export var crouch_enabled: bool = true
 
 @onready var neck := $Neck
-@onready var Camera := $Neck/Camera3D
-@onready var Body := $MeshInstance3D
-@onready var Collision := $CollisionShape3D
+@onready var camera := $Neck/Camera3D
+@onready var body := $MeshInstance3D
+@onready var collision := $CollisionShape3D
 @onready var world: SceneTree = get_tree()
 
 # Get the gravity from the project settings to be synced with RigidDynamicBody nodes.
@@ -22,36 +23,41 @@ var state: String = "Normal" #Normal, Sprinting, Crouching
 var Normal_Player_Y_Scale: float = 1.0
 var Crouch_Player_Y_Scale: float = 0.6
 var SPEED: float = BASE_SPEED
+var look_dir: Vector2
 
-# Handles the mouse
-func _ready() -> void:
+func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-	Camera.current = true
-func _input(event: InputEvent) -> void:
-	if event is InputEventMouseMotion:
-		handle_mouse_movement(event)
+	
 
-
+func _physics_process(delta):
+	if not is_on_floor():
+		velocity.y -= gravity * delta
+	if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED: _handle_joypad_camera_rotation(delta)
+	move_character(delta)
+	
 func apply_crouch_transform(delta: float) -> void:
-	#Body.scale.y = lerp(Body.scale.y, Crouch_Player_Y_Scale, 10 * delta) // DISABLED FOR NOW
-	var NewTransform = lerp(Collision.scale.y, Crouch_Player_Y_Scale, 10 * delta)
-	Collision.scale.x = NewTransform
-	Collision.scale.y = NewTransform
-	Collision.scale.z = NewTransform
+	collision.scale.y = lerp(collision.scale.y, Crouch_Player_Y_Scale, 10 * delta)
+	collision.scale.z = lerp(collision.scale.y, Crouch_Player_Y_Scale, 10 * delta)
+	collision.scale.x = lerp(collision.scale.y, Crouch_Player_Y_Scale, 10 * delta)
 
 func reset_transforms(delta: float) -> void:
-	var NewTransform = lerp(Collision.scale.y, Normal_Player_Y_Scale, 10 * delta)
-	Collision.scale.x = NewTransform
-	Collision.scale.y = NewTransform
-	Collision.scale.z = NewTransform
+	collision.scale.y = lerp(collision.scale.y, Normal_Player_Y_Scale, 10 * delta)
+	collision.scale.z = lerp(collision.scale.y, Normal_Player_Y_Scale, 10 * delta)
+	collision.scale.x = lerp(collision.scale.y, Normal_Player_Y_Scale, 10 * delta)
 
-# Handles the player changing state to Sprinting, Crouching or going back to Normal
-func _process(delta: float) -> void:
+func move_character(delta: float) -> void:
+	var input_dir: Vector2 = Input.get_vector("Move_Left", "Move_Right", "Move_Forward", "Move_Backward")
+	var _forward: Vector3 = camera.global_transform.basis * Vector3(input_dir.x, 0, input_dir.y)
+	var direction: Vector3 = Vector3(_forward.x, 0, _forward.z).normalized()
+	
+	if Input.is_action_pressed("Move_Jump") and is_on_floor():
+		velocity.y += JUMP_VELOCITY
+	
 	if Input.is_action_pressed("Action_Sprint") and !Input.is_action_pressed("Action_Crouch") and sprint_enabled:
 		if !$Roof_Detector.is_colliding():
 			state = "Sprinting"
 			SPEED = SPRINT_SPEED
-	elif  Input.is_action_pressed("Action_Crouch") and !Input.is_action_pressed("Action_Sprint") and crouch_enabled:
+	elif Input.is_action_pressed("Action_Crouch") and !Input.is_action_pressed("Action_Sprint") and crouch_enabled:
 		state = "Crouching"
 		SPEED = CROUCH_SPEED
 		apply_crouch_transform(delta)
@@ -61,28 +67,26 @@ func _process(delta: float) -> void:
 			SPEED = BASE_SPEED
 			reset_transforms(delta)
 		
-
-
-func _physics_process(delta: float):
-	#Add the gravity.
-	if not is_on_floor():
-		velocity.y -= gravity * delta
-	
-	#Handle Jump.
-	if Input.is_action_pressed("Move_Jump") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
-	
-	var input_dir := Input.get_vector("Move_Left","Move_Right","Move_Forward","Move_Backward")
-	var direction := input_dir.normalized().rotated(-neck.rotation.y)
-	
 	if is_on_floor():
-		velocity.x = lerp(velocity.x, direction.x * SPEED, Acceleration * delta)
-		velocity.z = lerp(velocity.z, direction.y * SPEED, Acceleration * delta)
-	
+		velocity = velocity.move_toward(direction * SPEED * input_dir.length(), Acceleration * delta)
 	move_and_slide()
 
-func handle_mouse_movement(event: InputEventMouseMotion) -> void:
+func _handle_joypad_camera_rotation(delta):
+	var joypad_dir: Vector2 = Input.get_vector("Camera_Left", "Camera_Right", "Camera_Up", "Camera_Down")
+	if joypad_dir.length() > 0:
+		look_dir += joypad_dir * delta
+		camera.rotation.y -= look_dir.x * Controller_Sensitivity
+		camera.rotation.x = clamp(camera.rotation.x - look_dir.y * Controller_Sensitivity, deg_to_rad(-90), deg_to_rad(90))
+		look_dir = Vector2.ZERO
+
+func _input(event):
+	if event is InputEventMouseMotion:
+		handle_mouse_movement(event)
+
+
+func handle_mouse_movement(event):
 	if !world.paused:
-		neck.rotation_degrees.y -= event.relative.x * Sensitivity
-		neck.rotation_degrees.x -= event.relative.y * Sensitivity
-		neck.rotation.x = clamp(neck.rotation.x, deg_to_rad(-90), deg_to_rad(90))
+		camera.rotation_degrees.y -= event.relative.x * Sensitivity
+		camera.rotation_degrees.x -= event.relative.y * Sensitivity
+		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-90), deg_to_rad(90))
+		#neck.rotation.x = clamp(neck.rotation.x, deg_to_rad(-90), deg_to_rad(90))
