@@ -6,8 +6,8 @@ signal pause
 signal unpause
 
 
-#func _ready():
-	#Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+func _ready():
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	
 
 func pause_game():
