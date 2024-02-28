@@ -23,8 +23,8 @@ func unpause_game():
 	get_tree().paused = false
 
 func _process(delta):
-	if Input.is_action_pressed("Game_Pause") and !paused:
+	if Input.is_action_just_pressed("Game_Pause") and !paused:
 		pause_game()
-	elif Input.is_action_pressed("Game_Pause") and paused: 
+	elif Input.is_action_just_pressed("Game_Pause") and paused: 
 		unpause_game()
 		

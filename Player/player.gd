@@ -6,7 +6,7 @@ extends CharacterBody3D
 @export var JUMP_VELOCITY: float = 4.5
 @export var Sensitivity: float = 0.1
 @export var Controller_Sensitivity: float = 5
-@export var Acceleration: float = 10.0
+@export var Acceleration: float = 20
 
 @export var sprint_enabled: bool = true
 @export var crouch_enabled: bool = true
@@ -23,7 +23,7 @@ var state: String = "Normal" #Normal, Sprinting, Crouching
 var Normal_Player_Y_Scale: float = 1.0
 var Crouch_Player_Y_Scale: float = 0.6
 var SPEED: float = BASE_SPEED
-var camera_fov_extents: Array[float] = [75.0, 85.0, 55]
+var camera_fov_extents: Array[float] = [75.0, 85.0, 60]
 var look_dir: Vector2
 
 func _ready():
