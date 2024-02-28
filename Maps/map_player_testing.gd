@@ -11,12 +11,14 @@ func _ready():
 
 func pause_game():
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-	#get_tree().paused = true #In case you want to pause the game
+	get_tree().paused = true #In case you want to pause the game
+	paused = true
 	pause.emit()
 
 func unpause_game():
+	get_tree().paused = false
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-	#get_tree().paused = false
+	paused = false
 	unpause.emit()
 
 func _process(_delta):
