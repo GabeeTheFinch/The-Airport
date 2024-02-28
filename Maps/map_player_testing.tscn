@@ -37,6 +37,7 @@ size = Vector3(4.1, 0.3, 1)
 size = Vector3(4.1, 0.29, 1)
 
 [node name="Map_PlayerTesting" type="Node"]
+process_mode = 1
 script = ExtResource("1_2w811")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]

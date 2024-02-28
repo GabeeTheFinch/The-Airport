@@ -1,7 +1,7 @@
 extends CharacterBody3D
 
 @export var BASE_SPEED: float = 3
-@export var SPRINT_SPEED: float = 6
+@export var SPRINT_SPEED: float = 5
 @export var CROUCH_SPEED: float = 1
 @export var JUMP_VELOCITY: float = 4.5
 @export var Sensitivity: float = 0.1
@@ -23,6 +23,7 @@ var state: String = "Normal" #Normal, Sprinting, Crouching
 var Normal_Player_Y_Scale: float = 1.0
 var Crouch_Player_Y_Scale: float = 0.6
 var SPEED: float = BASE_SPEED
+var camera_fov_extents: Array[float] = [75.0, 85.0, 55]
 var look_dir: Vector2
 
 func _ready():
@@ -57,14 +58,17 @@ func move_character(delta: float) -> void:
 		if !$Roof_Detector.is_colliding():
 			state = "Sprinting"
 			SPEED = SPRINT_SPEED
+			camera.fov = lerp(camera.fov, camera_fov_extents[1], 10 * delta)
 	elif Input.is_action_pressed("Action_Crouch") and !Input.is_action_pressed("Action_Sprint") and crouch_enabled:
 		state = "Crouching"
 		SPEED = CROUCH_SPEED
+		camera.fov = lerp(camera.fov, camera_fov_extents[2], 10 * delta)
 		apply_crouch_transform(delta)
 	else:
 		if !$Roof_Detector.is_colliding():
 			state = "Normal"
 			SPEED = BASE_SPEED
+			camera.fov = lerp(camera.fov, camera_fov_extents[0], 10 * delta)
 			reset_transforms(delta)
 		
 	if is_on_floor():
