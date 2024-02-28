@@ -1,8 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://cew42ue1r4fb2"]
+[gd_scene load_steps=13 format=3 uid="uid://cew42ue1r4fb2"]
 
 [ext_resource type="Script" path="res://Maps/map_player_testing.gd" id="1_2w811"]
 [ext_resource type="PackedScene" uid="uid://h7c2nipeg7wv" path="res://Player/player.tscn" id="1_fb1a0"]
-[ext_resource type="Material" uid="uid://dd4xwrwmwhmmj" path="res://Materials/PlaceHolder_material_3d.tres" id="2_e2wn6"]
+[ext_resource type="Material" uid="uid://dd4xwrwmwhmmj" path="res://Materials/Placeholders/PlaceHolder_material_1.tres" id="2_e2wn6"]
+[ext_resource type="Material" uid="uid://b24kr425h1i46" path="res://Materials/Placeholders/PlaceHolder_material_2.tres" id="2_qhr7c"]
 [ext_resource type="PackedScene" uid="uid://dbuulp5flt325" path="res://Lights/spotlight_broken.tscn" id="4_7qvw8"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_gbb74"]
@@ -58,6 +59,7 @@ shadow_enabled = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Node/Ground"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25, 0)
+material_override = ExtResource("2_qhr7c")
 mesh = SubResource("BoxMesh_yupqm")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Node/Ground"]
@@ -123,4 +125,5 @@ shadow_enabled = true
 spot_range = 8.2
 spot_angle = 64.5797
 MAX_OFF_TIME = 0.5
-MAX_ON_TIME = 2.0
+MAX_ON_TIME = 30.0
+MIN_ON_TIME = 20.0
