@@ -1,11 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://cew42ue1r4fb2"]
+[gd_scene load_steps=10 format=3 uid="uid://cew42ue1r4fb2"]
 
 [ext_resource type="Script" path="res://Maps/map_player_testing.gd" id="1_2w811"]
 [ext_resource type="PackedScene" uid="uid://h7c2nipeg7wv" path="res://Player/player.tscn" id="1_fb1a0"]
 [ext_resource type="Material" uid="uid://dd4xwrwmwhmmj" path="res://Materials/Placeholders/PlaceHolder_material_1.tres" id="2_e2wn6"]
 [ext_resource type="Material" uid="uid://b24kr425h1i46" path="res://Materials/Placeholders/PlaceHolder_material_2.tres" id="2_qhr7c"]
 [ext_resource type="PackedScene" uid="uid://dbuulp5flt325" path="res://Lights/spotlight_broken.tscn" id="4_7qvw8"]
-[ext_resource type="AudioStream" uid="uid://b2xuimwvwlttu" path="res://Maps/Audio/AmbientTest2.WAV" id="5_svmji"]
 [ext_resource type="Texture2D" uid="uid://boawjvpufjqng" path="res://Player/Light_texture.png" id="7_h3qbo"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_gbb74"]
@@ -45,15 +44,11 @@ environment = SubResource("Environment_w0it4")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Node"]
 transform = Transform3D(-0.866025, -0.245452, 0.435607, -0.353554, -0.315425, -0.880629, 0.353553, -0.916657, 0.186386, 0, 0, 0)
 light_color = Color(0.654902, 0.803922, 1, 1)
-light_energy = 0.2
+light_energy = 0.0
 shadow_enabled = true
 
 [node name="Player" parent="Node" instance=ExtResource("1_fb1a0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5, 1, 0)
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Node"]
-stream = ExtResource("5_svmji")
-autoplay = true
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Node"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, -32)

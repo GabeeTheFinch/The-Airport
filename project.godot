@@ -10,8 +10,8 @@ config_version=5
 
 [Player]
 
-Mouse_sensitivity=1.0
-Controller_sensitivity=1.0
+Mouse_sensitivity=0.5
+Controller_sensitivity=3.0
 
 [application]
 
