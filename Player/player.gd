@@ -7,14 +7,18 @@ extends CharacterBody3D
 @export var Sensitivity: float = 0.1
 @export var Controller_Sensitivity: float = 5
 @export var Acceleration: float = 20
+@export var FlashLight_Intensity: float = 1
 
 @export var sprint_enabled: bool = true
 @export var crouch_enabled: bool = true
+@export var flashight_enabled: bool = true
 
 @onready var neck := $Neck
 @onready var camera := $Neck/Camera3D
 @onready var body := $MeshInstance3D
 @onready var collision := $CollisionShape3D
+@onready var Flashlight := $Neck/Camera3D/SpotLight3D
+@onready var FlashlightAudio := $Neck/Camera3D/AudioStreamPlayer
 @onready var world: SceneTree = get_tree()
 
 # Get the gravity from the project settings to be synced with RigidDynamicBody nodes.
@@ -25,12 +29,14 @@ var Crouch_Player_Y_Scale: float = 0.6
 var SPEED: float = BASE_SPEED
 var camera_fov_extents: Array[float] = [75.0, 85.0, 60]
 var look_dir: Vector2
+var IsLightOn: bool = false
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	
 
 func _physics_process(delta):
+	
 	if not is_on_floor():
 		velocity.y -= gravity * delta
 	if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED: _handle_joypad_camera_rotation(delta)
@@ -50,6 +56,16 @@ func move_character(delta: float) -> void:
 	var input_dir: Vector2 = Input.get_vector("Move_Left", "Move_Right", "Move_Forward", "Move_Backward")
 	var _forward: Vector3 = camera.global_transform.basis * Vector3(input_dir.x, 0, input_dir.y)
 	var direction: Vector3 = Vector3(_forward.x, 0, _forward.z).normalized()
+	
+	if Input.is_action_just_pressed("Action_Flashlight") and flashight_enabled:
+		if !IsLightOn:
+			FlashlightAudio.play()
+			Flashlight.light_energy = FlashLight_Intensity
+			IsLightOn = true
+		else:
+			FlashlightAudio.play()
+			Flashlight.light_energy = 0
+			IsLightOn = false
 	
 	if Input.is_action_pressed("Move_Jump") and is_on_floor():
 		velocity.y += JUMP_VELOCITY
