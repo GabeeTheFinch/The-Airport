@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://cew42ue1r4fb2"]
+[gd_scene load_steps=11 format=3 uid="uid://cew42ue1r4fb2"]
 
 [ext_resource type="Script" path="res://Maps/map_player_testing.gd" id="1_2w811"]
 [ext_resource type="PackedScene" uid="uid://h7c2nipeg7wv" path="res://Player/player.tscn" id="1_fb1a0"]
@@ -32,23 +32,6 @@ fog_sun_scatter = 0.3
 fog_density = 0.04
 fog_sky_affect = 0.5
 
-[sub_resource type="BoxMesh" id="BoxMesh_yupqm"]
-size = Vector3(32, 0.5, 32)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_a4trb"]
-size = Vector3(32, 0.5, 32)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_8fft4"]
-size = Vector3(4.1, 0.3, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_8smif"]
-size = Vector3(4.1, 0.29, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_16ecw"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_uqf0y"]
-size = Vector3(16, 4.9, 1)
-
 [node name="Map_PlayerTesting" type="Node"]
 process_mode = 3
 script = ExtResource("1_2w811")
@@ -65,117 +48,45 @@ light_color = Color(0.654902, 0.803922, 1, 1)
 light_energy = 0.2
 shadow_enabled = true
 
-[node name="Ground" type="StaticBody3D" parent="Node"]
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Node/Ground"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25, 0)
-material_override = ExtResource("2_qhr7c")
-mesh = SubResource("BoxMesh_yupqm")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Node/Ground"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.76837e-07, -0.25, 0)
-shape = SubResource("BoxShape3D_a4trb")
-
-[node name="Ramp1" type="StaticBody3D" parent="Node"]
-transform = Transform3D(0.965926, -0.258819, 0, 0.258819, 0.965926, 0, 0, 0, 1, 1.4, 0.3, -0.5)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Node/Ramp1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.55, -0.35, 0)
-shape = SubResource("BoxShape3D_8fft4")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Node/Ramp1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.55, -0.35, 0)
-mesh = SubResource("BoxMesh_8smif")
-surface_material_override/0 = ExtResource("2_e2wn6")
-
-[node name="Ramp4" type="StaticBody3D" parent="Node"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.4, 1.2, -0.5)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Node/Ramp4"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.55, -0.35, 0)
-shape = SubResource("BoxShape3D_8fft4")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Node/Ramp4"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.55, -0.35, 0)
-material_override = ExtResource("2_e2wn6")
-mesh = SubResource("BoxMesh_8smif")
-
-[node name="Ramp2" type="StaticBody3D" parent="Node"]
-transform = Transform3D(0.866025, -0.5, 0, 0.5, 0.866025, 0, 0, 0, 1, 1.4, 0.3, 1.5)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Node/Ramp2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.55, -0.35, 0)
-shape = SubResource("BoxShape3D_8fft4")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Node/Ramp2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.55, -0.35, 0)
-material_override = ExtResource("2_e2wn6")
-mesh = SubResource("BoxMesh_8smif")
-
-[node name="Ramp3" type="StaticBody3D" parent="Node"]
-transform = Transform3D(1, -2.98023e-08, 0, 2.98023e-08, 1, 0, 0, 0, 1, 5.1, 2.1, 1.5)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Node/Ramp3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.55, -0.35, 0)
-shape = SubResource("BoxShape3D_8fft4")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Node/Ramp3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.55, -0.35, 0)
-material_override = ExtResource("2_e2wn6")
-mesh = SubResource("BoxMesh_8smif")
-
 [node name="Player" parent="Node" instance=ExtResource("1_fb1a0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5, 1, 0)
-
-[node name="DarkHallway" type="Node3D" parent="Node"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -15.5)
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Node/DarkHallway"]
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Node/DarkHallway/StaticBody3D"]
-transform = Transform3D(16, 0, 0, 0, 2.6, 0, 0, 0, 1, 0, 0.8, 0)
-mesh = SubResource("BoxMesh_16ecw")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Node/DarkHallway/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
-shape = SubResource("BoxShape3D_uqf0y")
-
-[node name="StaticBody3D2" type="StaticBody3D" parent="Node/DarkHallway"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.9)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Node/DarkHallway/StaticBody3D2"]
-transform = Transform3D(16, 0, 0, 0, 2.6, 0, 0, 0, 1, 0, 0.8, 0)
-mesh = SubResource("BoxMesh_16ecw")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Node/DarkHallway/StaticBody3D2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
-shape = SubResource("BoxShape3D_uqf0y")
-
-[node name="StaticBody3D3" type="StaticBody3D" parent="Node/DarkHallway"]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 8.5, 0, 1.7)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Node/DarkHallway/StaticBody3D3"]
-transform = Transform3D(16, 0, 0, 0, 2.6, 0, 0, 0, 1, 0, 0.8, 0)
-mesh = SubResource("BoxMesh_16ecw")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Node/DarkHallway/StaticBody3D3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
-shape = SubResource("BoxShape3D_uqf0y")
-
-[node name="StaticBody3D4" type="StaticBody3D" parent="Node/DarkHallway"]
-transform = Transform3D(-1, 4.37114e-08, 4.37114e-08, -4.37114e-08, -4.37114e-08, -1, -4.37114e-08, -1, 4.37114e-08, -9.53674e-07, 2.6, 2.7)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Node/DarkHallway/StaticBody3D4"]
-transform = Transform3D(16, 0, 1.64203e-15, 0, 4.94, 0, 2.62725e-14, 0, 1, -2.27374e-13, 0.8, 0)
-mesh = SubResource("BoxMesh_16ecw")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Node/DarkHallway/StaticBody3D4"]
-transform = Transform3D(1, 0, 1.64203e-15, 0, 1, 0, 1.64203e-15, 0, 1, 0, 0.75, 0)
-shape = SubResource("BoxShape3D_uqf0y")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Node"]
 stream = ExtResource("5_svmji")
 autoplay = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Node"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, -32)
+use_collision = true
+size = Vector3(176, 1, 112)
+material = ExtResource("2_qhr7c")
+
+[node name="Ramp1" type="CSGCombiner3D" parent="Node"]
+use_collision = true
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Node/Ramp1"]
+transform = Transform3D(0.965926, -0.258819, 0, 0.258819, 0.965926, 0, 0, 0, 1, 1.68978, 0.377646, 0.5)
+size = Vector3(4.4, 0.2, 4.6)
+material = ExtResource("2_e2wn6")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Node/Ramp1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.97615, 0.941248, 0.5)
+size = Vector3(4.4, 0.2, 4.6)
+material = ExtResource("2_e2wn6")
+
+[node name="Ramp2" type="CSGCombiner3D" parent="Node"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5.8)
+use_collision = true
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Node/Ramp2"]
+transform = Transform3D(0.866025, -0.5, 0, 0.5, 0.866025, 0, 0, 0, 1, 1.68978, 0.377646, 0.5)
+size = Vector3(4.4, 0.2, 4.6)
+material = ExtResource("2_e2wn6")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Node/Ramp2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.75364, 1.4609, 0.5)
+size = Vector3(4.4, 0.2, 4.6)
+material = ExtResource("2_e2wn6")
 
 [node name="Spotlight_Broken" parent="." instance=ExtResource("4_7qvw8")]
 light_color = Color(1, 1, 0.737255, 1)
@@ -189,13 +100,34 @@ MAX_ON_TIME = 30.0
 MIN_ON_TIME = 20.0
 
 [node name="SpotLight3D" type="SpotLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3, 0)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 1.3, 9.2)
 light_energy = 10.0
 light_indirect_energy = 0.0
 light_projector = ExtResource("7_h3qbo")
 shadow_enabled = true
-editor_only = true
 spot_range = 37.3
 spot_attenuation = 1.03526
 spot_angle = 21.2134
 spot_angle_attenuation = 6.72716
+
+[node name="Hall" type="CSGCombiner3D" parent="."]
+material_override = ExtResource("2_e2wn6")
+material_overlay = ExtResource("2_e2wn6")
+gi_mode = 0
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Hall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 1.5, 11.75)
+size = Vector3(1, 3, 24.5)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Hall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.3, 1.5, 11.75)
+size = Vector3(1, 3, 24.5)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Hall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.65, 3.3, 11.75)
+size = Vector3(3.7, 0.6, 24.5)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Hall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.65, 1.5, 23.45)
+size = Vector3(1.7, 3, 1.1)
