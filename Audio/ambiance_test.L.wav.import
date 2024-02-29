@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://couc7t3i338ev"
-path="res://.godot/imported/ambiance_test.L.wav-539cad536a3ed962bd11cfcb4b599099.sample"
+path="res://.godot/imported/ambiance_test.L.wav-eee490c8a7574f83f37df6e06602ebb7.sample"
 
 [deps]
 
-source_file="res://Maps/Menu/Audio/ambiance_test.L.wav"
-dest_files=["res://.godot/imported/ambiance_test.L.wav-539cad536a3ed962bd11cfcb4b599099.sample"]
+source_file="res://Audio/ambiance_test.L.wav"
+dest_files=["res://.godot/imported/ambiance_test.L.wav-eee490c8a7574f83f37df6e06602ebb7.sample"]
 
 [params]
 

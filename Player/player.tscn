@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Player/player.gd" id="1_7ut02"]
 [ext_resource type="AudioStream" uid="uid://b6yejxl8xlko5" path="res://Player/audio/FlashLightSound.WAV" id="2_0d2dr"]
-[ext_resource type="Texture2D" uid="uid://boawjvpufjqng" path="res://Player/Light_texture.png" id="2_65jfx"]
+[ext_resource type="Texture2D" uid="uid://boawjvpufjqng" path="res://Materials/lights/Light_texture.png" id="2_65jfx"]
 [ext_resource type="Texture2D" uid="uid://byj5ah5ocfno1" path="res://Player/Crosshair/crosshair001.png" id="2_k010m"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_26458"]
