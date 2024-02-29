@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://c0owj6656go6y"]
+[gd_scene load_steps=6 format=3 uid="uid://c0owj6656go6y"]
 
 [ext_resource type="Script" path="res://Maps/Menu/menu.gd" id="1_w1pc7"]
+[ext_resource type="AudioStream" uid="uid://couc7t3i338ev" path="res://Maps/Menu/Audio/ambiance_test.L.wav" id="2_a25rs"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_kihgh"]
 sky_top_color = Color(0.243137, 0.407843, 0.866667, 1)
@@ -65,5 +66,9 @@ size_flags_horizontal = 6
 text = "Credits"
 
 [node name="Camera3D" type="Camera3D" parent="."]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_a25rs")
+autoplay = true
 
 [connection signal="pressed" from="HBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
