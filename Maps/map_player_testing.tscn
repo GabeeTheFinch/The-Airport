@@ -126,7 +126,6 @@ mesh = SubResource("BoxMesh_8smif")
 
 [node name="Player" parent="Node" instance=ExtResource("1_fb1a0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5, 1, 0)
-FlashLight_Intensity = 10.0
 
 [node name="DarkHallway" type="Node3D" parent="Node"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -15.5)

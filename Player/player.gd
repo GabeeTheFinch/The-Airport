@@ -1,112 +1,102 @@
 extends CharacterBody3D
 
-@export var BASE_SPEED: float = 3
-@export var SPRINT_SPEED: float = 5
-@export var CROUCH_SPEED: float = 1
-@export var JUMP_VELOCITY: float = 4.5
-@export var Sensitivity: float = 0.1
-@export var Controller_Sensitivity: float = 5
-@export var Acceleration: float = 20
-@export var FlashLight_Intensity: float = 1
+@export_category("Player Settings")
+@export var walk_speed = 2
+@export var acceleration = 15
+@export var run_speed = 4
+@export var crouch_speed = 1
+@export var jump_strength = 3
 
-@export var sprint_enabled: bool = true
-@export var crouch_enabled: bool = true
-@export var flashight_enabled: bool = true
+@export_group("Advanced")
+@export var normal_fov:float  = 75
+@export var run_fov: float = 85
+@export var crouch_fov: float = 60
+@export var Flashlight_Intensity = 7
 
-@onready var neck := $Neck
-@onready var camera := $Neck/Camera3D
-@onready var body := $MeshInstance3D
-@onready var collision := $CollisionShape3D
+@export_group("Features")
+@export var Can_Run = true
+@export var Can_Crouch = true
+@export var Can_Jump = true
+@export var Can_Use_Light = true
+
+@onready var Neck := $Neck
+@onready var Camera := $Neck/Camera3D
+@onready var RoofDetect := $Roof_Detector
+@onready var Collision := $CollisionShape3D
 @onready var Flashlight := $Neck/Camera3D/SpotLight3D
-@onready var FlashlightAudio := $Neck/Camera3D/AudioStreamPlayer
-@onready var world: SceneTree = get_tree()
+@onready var Flashlight_audio := $Neck/Camera3D/AudioStreamPlayer
 
-# Get the gravity from the project settings to be synced with RigidDynamicBody nodes.
-var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
-var state: String = "Normal" #Normal, Sprinting, Crouching
-var Normal_Player_Y_Scale: float = 1.0
-var Crouch_Player_Y_Scale: float = 0.6
-var SPEED: float = BASE_SPEED
-var camera_fov_extents: Array[float] = [75.0, 85.0, 60]
+var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
+var mouse_sens = ProjectSettings.get_setting("Player/Mouse_sensitivity")
+var controller_sens = ProjectSettings.get_setting("Player/Controller_sensitivity")
 var look_dir: Vector2
-var IsLightOn: bool = false
+var IsLightOn = false
+var speed = walk_speed
+var Normal_Player_Scale: Vector3 = Vector3(1,1,1)
+var Crouch_Player_Scale: Vector3 = Vector3(0.6,0.6,0.6)
+
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-	
 
 func _physics_process(delta):
-	
-	if not is_on_floor():
-		velocity.y -= gravity * delta
-	if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED: _handle_joypad_camera_rotation(delta)
-	move_character(delta)
-	
-func apply_crouch_transform(delta: float) -> void:
-	collision.scale.y = lerp(collision.scale.y, Crouch_Player_Y_Scale, 10 * delta)
-	collision.scale.z = lerp(collision.scale.y, Crouch_Player_Y_Scale, 10 * delta)
-	collision.scale.x = lerp(collision.scale.y, Crouch_Player_Y_Scale, 10 * delta)
-
-func reset_transforms(delta: float) -> void:
-	collision.scale.y = lerp(collision.scale.y, Normal_Player_Y_Scale, 10 * delta)
-	collision.scale.z = lerp(collision.scale.y, Normal_Player_Y_Scale, 10 * delta)
-	collision.scale.x = lerp(collision.scale.y, Normal_Player_Y_Scale, 10 * delta)
-
-func move_character(delta: float) -> void:
-	var input_dir: Vector2 = Input.get_vector("Move_Left", "Move_Right", "Move_Forward", "Move_Backward")
-	var _forward: Vector3 = camera.global_transform.basis * Vector3(input_dir.x, 0, input_dir.y)
-	var direction: Vector3 = Vector3(_forward.x, 0, _forward.z).normalized()
-	
-	if Input.is_action_just_pressed("Action_Flashlight") and flashight_enabled:
-		if !IsLightOn:
-			FlashlightAudio.play()
-			Flashlight.light_energy = FlashLight_Intensity
-			IsLightOn = true
-		else:
-			FlashlightAudio.play()
-			Flashlight.light_energy = 0
-			IsLightOn = false
-	
-	if Input.is_action_pressed("Move_Jump") and is_on_floor():
-		velocity.y += JUMP_VELOCITY
-	
-	if Input.is_action_pressed("Action_Sprint") and !Input.is_action_pressed("Action_Crouch") and sprint_enabled:
-		if !$Roof_Detector.is_colliding():
-			state = "Sprinting"
-			SPEED = SPRINT_SPEED
-			camera.fov = lerp(camera.fov, camera_fov_extents[1], 10 * delta)
-	elif Input.is_action_pressed("Action_Crouch") and !Input.is_action_pressed("Action_Sprint") and crouch_enabled:
-		state = "Crouching"
-		SPEED = CROUCH_SPEED
-		camera.fov = lerp(camera.fov, camera_fov_extents[2], 10 * delta)
-		apply_crouch_transform(delta)
-	else:
-		if !$Roof_Detector.is_colliding():
-			state = "Normal"
-			SPEED = BASE_SPEED
-			camera.fov = lerp(camera.fov, camera_fov_extents[0], 10 * delta)
-			reset_transforms(delta)
-		
-	if is_on_floor():
-		velocity = velocity.move_toward(direction * SPEED * input_dir.length(), Acceleration * delta)
+	controls_handler(delta)	
+	actions_Handler(delta)
 	move_and_slide()
-
-func _handle_joypad_camera_rotation(delta):
-	var joypad_dir: Vector2 = Input.get_vector("Camera_Left", "Camera_Right", "Camera_Up", "Camera_Down")
-	if joypad_dir.length() > 0:
-		look_dir += joypad_dir * delta
-		camera.rotation.y -= look_dir.x * Controller_Sensitivity
-		camera.rotation.x = clamp(camera.rotation.x - look_dir.y * Controller_Sensitivity, deg_to_rad(-90), deg_to_rad(90))
-		look_dir = Vector2.ZERO
 
 func _input(event):
 	if event is InputEventMouseMotion:
-		handle_mouse_movement(event)
+		Camera.rotation_degrees.y -= event.relative.x * mouse_sens
+		Camera.rotation_degrees.x -= event.relative.y * mouse_sens
+		Camera.rotation.x = clamp(Camera.rotation.x, deg_to_rad(-90), deg_to_rad(90))
+
+func controls_handler(delta):
+	var input_vect: = Input.get_vector("Move_Left","Move_Right","Move_Forward","Move_Backward")	
+	var rotation_input: Vector2 = Input.get_vector("Camera_Left", "Camera_Right", "Camera_Up", "Camera_Down")
+	
+	var _forward: Vector3 = Camera.global_transform.basis * Vector3(input_vect.x, 0, input_vect.y)
+	var direction: Vector3 = Vector3(_forward.x, 0, _forward.z).normalized()
+	
+	if is_on_floor():
+		velocity = velocity.move_toward(direction * speed * input_vect.length(), acceleration * delta)
+		if Input.is_action_just_pressed("Action_Jump") and !$Roof_Detector.is_colliding() and Can_Jump: 
+			velocity.y += jump_strength
+	else:
+		velocity.y -= gravity * delta
+	
+	if rotation_input.length() > 0:
+		look_dir += rotation_input * delta
+		Camera.rotation.y -= look_dir.x * controller_sens
+		Camera.rotation.x = clamp(Camera.rotation.x - look_dir.y * controller_sens, deg_to_rad(-90), deg_to_rad(90))
+		look_dir = Vector2.ZERO
+		
+func crouch_transform(delta):
+	Collision.scale = Collision.scale.lerp(Crouch_Player_Scale, 10 * delta)
+
+func reset_transforms(delta):
+	Collision.scale = Collision.scale.lerp(Normal_Player_Scale, 10 * delta)
 
 
-func handle_mouse_movement(event):
-	if !world.paused:
-		camera.rotation_degrees.y -= event.relative.x * Sensitivity
-		camera.rotation_degrees.x -= event.relative.y * Sensitivity
-		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-90), deg_to_rad(90))
-		#neck.rotation.x = clamp(neck.rotation.x, deg_to_rad(-90), deg_to_rad(90))
+func actions_Handler(delta):
+	if Input.is_action_pressed("Action_Sprint") and !Input.is_action_pressed("Action_Crouch") and Can_Run:
+		if !$Roof_Detector.is_colliding():
+			speed = run_speed
+			Camera.fov = lerp(Camera.fov, run_fov, 10 * delta)
+	elif Input.is_action_pressed("Action_Crouch") and !Input.is_action_pressed("Action_Sprint") and Can_Crouch:
+		speed = crouch_speed
+		Camera.fov = lerp(Camera.fov, crouch_fov, 10 * delta)
+		crouch_transform(delta)
+	elif !$Roof_Detector.is_colliding():
+		speed = walk_speed
+		Camera.fov = lerp(Camera.fov, normal_fov, 10 * delta)
+		reset_transforms(delta)
+		
+	if Input.is_action_just_pressed("Action_Flashlight") and Can_Use_Light:
+		Flashlight_audio.play()
+		if IsLightOn:
+			IsLightOn = false
+			Flashlight.light_energy = 0
+		else:
+			IsLightOn = true
+			Flashlight.light_energy = Flashlight_Intensity
+	
