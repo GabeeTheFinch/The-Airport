@@ -7,7 +7,6 @@ signal unpause
 
 
 func _ready():
-	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	$"Transition Screen".Fade_out(0.8)
 
 func pause_game():
@@ -22,7 +21,7 @@ func unpause_game():
 	unpause.emit()
 	get_tree().paused = false
 
-func _process(delta):
+func _process(_delta):
 	if Input.is_action_just_pressed("Game_Pause") and !paused:
 		pause_game()
 	elif Input.is_action_just_pressed("Game_Pause") and paused: 

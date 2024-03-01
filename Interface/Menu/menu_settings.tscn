@@ -1,0 +1,225 @@
+[gd_scene load_steps=3 format=3 uid="uid://dr0imdqu8gxhy"]
+
+[ext_resource type="Script" path="res://Interface/Menu/scripts/menu_settings.gd" id="1_e0e2u"]
+[ext_resource type="AudioStream" uid="uid://couc7t3i338ev" path="res://Audio/ambiance_test.L.wav" id="2_g237q"]
+
+[node name="Menu_settings" type="Control"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+script = ExtResource("1_e0e2u")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 250
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_right = 250
+theme_override_constants/margin_bottom = 120
+
+[node name="TabContainer" type="TabContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Video" type="TabBar" parent="MarginContainer/TabContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/TabContainer/Video"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 40
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer/TabContainer/Video/MarginContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 415
+theme_override_constants/v_separation = 20
+columns = 2
+
+[node name="Label_Display" type="Label" parent="MarginContainer/TabContainer/Video/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 30
+text = "Display Mode"
+
+[node name="Button_Display" type="OptionButton" parent="MarginContainer/TabContainer/Video/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+item_count = 2
+selected = 0
+popup/item_0/text = "Windowed"
+popup/item_0/id = 0
+popup/item_1/text = "Fullscreen"
+popup/item_1/id = 1
+
+[node name="Label_Vsync" type="Label" parent="MarginContainer/TabContainer/Video/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 30
+text = "Vsync"
+
+[node name="Button_Vsync" type="CheckButton" parent="MarginContainer/TabContainer/Video/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Label_MaxFPS" type="Label" parent="MarginContainer/TabContainer/Video/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 30
+text = "Max FPS"
+
+[node name="Slider_MaxFPS" type="HSlider" parent="MarginContainer/TabContainer/Video/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Label_Bright" type="Label" parent="MarginContainer/TabContainer/Video/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 30
+text = "Brightness"
+
+[node name="Slider_Bright" type="HSlider" parent="MarginContainer/TabContainer/Video/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Audio" type="TabBar" parent="MarginContainer/TabContainer"]
+visible = false
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/TabContainer/Audio"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 40
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer/TabContainer/Audio/MarginContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 390
+theme_override_constants/v_separation = 20
+columns = 2
+
+[node name="Label_MasterV" type="Label" parent="MarginContainer/TabContainer/Audio/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 30
+text = "Master Volume"
+
+[node name="Slider_MasterV" type="HSlider" parent="MarginContainer/TabContainer/Audio/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+min_value = -10.0
+max_value = 0.0
+
+[node name="Label_MusicV" type="Label" parent="MarginContainer/TabContainer/Audio/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 30
+text = "Music Volume"
+
+[node name="Slider_MusicV" type="HSlider" parent="MarginContainer/TabContainer/Audio/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+min_value = -10.0
+max_value = 10.0
+
+[node name="Label_SFXV" type="Label" parent="MarginContainer/TabContainer/Audio/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 30
+text = "SFX Volume"
+
+[node name="Slider_SFXV" type="HSlider" parent="MarginContainer/TabContainer/Audio/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+min_value = -10.0
+max_value = 10.0
+
+[node name="WIP" type="TabBar" parent="MarginContainer/TabContainer"]
+visible = false
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/TabContainer/WIP"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 40
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer/TabContainer/WIP/MarginContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 195
+theme_override_constants/v_separation = 20
+columns = 2
+
+[node name="Label_MouseSens" type="Label" parent="MarginContainer/TabContainer/WIP/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 30
+text = "Mouse Sensitivity"
+
+[node name="Slider_MouseSens" type="HSlider" parent="MarginContainer/TabContainer/WIP/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 5.0
+value = 1.0
+
+[node name="Label_ControllerSens" type="Label" parent="MarginContainer/TabContainer/WIP/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 30
+text = "Controller Sensitivity"
+
+[node name="Slider_ControllerSens" type="HSlider" parent="MarginContainer/TabContainer/WIP/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 5.0
+value = 3.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_g237q")
+autoplay = true
+bus = &"Music"
+
+[connection signal="item_selected" from="MarginContainer/TabContainer/Video/MarginContainer/GridContainer/Button_Display" to="." method="_on_button_display_item_selected"]
+[connection signal="toggled" from="MarginContainer/TabContainer/Video/MarginContainer/GridContainer/Button_Vsync" to="." method="_on_button_vsync_toggled"]
+[connection signal="value_changed" from="MarginContainer/TabContainer/Video/MarginContainer/GridContainer/Slider_MaxFPS" to="." method="_on_slider_max_fps_value_changed"]
+[connection signal="value_changed" from="MarginContainer/TabContainer/Video/MarginContainer/GridContainer/Slider_Bright" to="." method="_on_slider_bright_value_changed"]
+[connection signal="value_changed" from="MarginContainer/TabContainer/Audio/MarginContainer/GridContainer/Slider_MasterV" to="." method="_on_slider_master_v_value_changed"]
+[connection signal="value_changed" from="MarginContainer/TabContainer/Audio/MarginContainer/GridContainer/Slider_MusicV" to="." method="_on_slider_music_v_value_changed"]
+[connection signal="value_changed" from="MarginContainer/TabContainer/Audio/MarginContainer/GridContainer/Slider_SFXV" to="." method="_on_slider_sfxv_value_changed"]
+[connection signal="value_changed" from="MarginContainer/TabContainer/WIP/MarginContainer/GridContainer/Slider_MouseSens" to="." method="_on_slider_mouse_sens_value_changed"]
+[connection signal="value_changed" from="MarginContainer/TabContainer/WIP/MarginContainer/GridContainer/Slider_ControllerSens" to="." method="_on_slider_controller_sens_value_changed"]
