@@ -100,3 +100,8 @@ func actions_Handler(delta):
 			IsLightOn = true
 			Flashlight.light_energy = Flashlight_Intensity
 	
+	if Input.is_action_just_pressed("Game_Pause"):
+		if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
+			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		else: 
+			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
