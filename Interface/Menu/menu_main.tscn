@@ -200,13 +200,49 @@ size_flags_vertical = 0
 theme_override_font_sizes/font_size = 50
 horizontal_alignment = 1
 
+[node name="Map_Selector" type="MarginContainer" parent="Control"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 460
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 100
+
+[node name="Label" type="Label" parent="Control/Map_Selector"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 50
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/Map_Selector"]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="TestMap" type="Button" parent="Control/Map_Selector/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+text = "map_player_testing.tscn
+"
+
+[node name="Zone1Blocky" type="Button" parent="Control/Map_Selector/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+text = "Zone1_blocky.tscn
+"
+
 [node name="Audio_start" type="AudioStreamPlayer" parent="Control"]
 stream = ExtResource("2_3lygh")
-bus = &"SFX"
 
 [node name="Audio_Base" type="AudioStreamPlayer" parent="Control"]
 stream = ExtResource("3_3yw06")
-bus = &"SFX"
 
 [node name="Background" type="Node3D" parent="."]
 
@@ -302,4 +338,6 @@ mouse_filter = 2
 
 [connection signal="pressed" from="Control/MarginContainer/HBoxContainer/Btn_Start" to="." method="_on_btn_start_pressed"]
 [connection signal="pressed" from="Control/MarginContainer/HBoxContainer/Btn_Settings" to="." method="_on_btn_settings_pressed"]
+[connection signal="pressed" from="Control/Map_Selector/VBoxContainer/TestMap" to="." method="_on_test_map_pressed"]
+[connection signal="pressed" from="Control/Map_Selector/VBoxContainer/Zone1Blocky" to="." method="_on_zone_1_blocky_pressed"]
 [connection signal="Transition" from="Transition Screen" to="." method="_on_transition_screen_transition"]

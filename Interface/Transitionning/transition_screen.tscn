@@ -71,4 +71,5 @@ libraries = {
 "": SubResource("AnimationLibrary_82lqu")
 }
 
+[connection signal="Transition" from="." to="." method="_on_transition"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
