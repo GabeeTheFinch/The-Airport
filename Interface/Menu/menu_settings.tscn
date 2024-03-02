@@ -1,10 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://dr0imdqu8gxhy"]
+[gd_scene load_steps=2 format=3 uid="uid://dr0imdqu8gxhy"]
 
 [ext_resource type="Script" path="res://Interface/Menu/scripts/menu_settings.gd" id="1_e0e2u"]
-[ext_resource type="AudioStream" uid="uid://couc7t3i338ev" path="res://Audio/ambiance_test.L.wav" id="2_g237q"]
 
 [node name="Menu_settings" type="Control"]
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -29,8 +27,10 @@ theme_override_constants/margin_bottom = 120
 
 [node name="TabContainer" type="TabContainer" parent="MarginContainer"]
 layout_mode = 2
+current_tab = 2
 
 [node name="Video" type="TabBar" parent="MarginContainer/TabContainer"]
+visible = false
 layout_mode = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/TabContainer/Video"]
@@ -161,7 +161,6 @@ min_value = -10.0
 max_value = 10.0
 
 [node name="WIP" type="TabBar" parent="MarginContainer/TabContainer"]
-visible = false
 layout_mode = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/TabContainer/WIP"]
@@ -209,11 +208,20 @@ size_flags_vertical = 4
 max_value = 5.0
 value = 3.0
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_g237q")
-autoplay = true
-bus = &"Music"
+[node name="Label_FOV" type="Label" parent="MarginContainer/TabContainer/WIP/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 30
+text = "Field Of View"
 
+[node name="Slider_FOV" type="HSlider" parent="MarginContainer/TabContainer/WIP/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+min_value = 50.0
+value = 75.0
+
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
 [connection signal="item_selected" from="MarginContainer/TabContainer/Video/MarginContainer/GridContainer/Button_Display" to="." method="_on_button_display_item_selected"]
 [connection signal="toggled" from="MarginContainer/TabContainer/Video/MarginContainer/GridContainer/Button_Vsync" to="." method="_on_button_vsync_toggled"]
 [connection signal="value_changed" from="MarginContainer/TabContainer/Video/MarginContainer/GridContainer/Slider_MaxFPS" to="." method="_on_slider_max_fps_value_changed"]
@@ -223,3 +231,4 @@ bus = &"Music"
 [connection signal="value_changed" from="MarginContainer/TabContainer/Audio/MarginContainer/GridContainer/Slider_SFXV" to="." method="_on_slider_sfxv_value_changed"]
 [connection signal="value_changed" from="MarginContainer/TabContainer/WIP/MarginContainer/GridContainer/Slider_MouseSens" to="." method="_on_slider_mouse_sens_value_changed"]
 [connection signal="value_changed" from="MarginContainer/TabContainer/WIP/MarginContainer/GridContainer/Slider_ControllerSens" to="." method="_on_slider_controller_sens_value_changed"]
+[connection signal="value_changed" from="MarginContainer/TabContainer/WIP/MarginContainer/GridContainer/Slider_FOV" to="." method="_on_slider_fov_value_changed"]

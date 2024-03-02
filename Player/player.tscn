@@ -1,9 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://h7c2nipeg7wv"]
+[gd_scene load_steps=11 format=3 uid="uid://h7c2nipeg7wv"]
 
 [ext_resource type="Script" path="res://Player/player.gd" id="1_7ut02"]
 [ext_resource type="AudioStream" uid="uid://b6yejxl8xlko5" path="res://Player/audio/FlashLightSound.WAV" id="2_0d2dr"]
 [ext_resource type="Texture2D" uid="uid://boawjvpufjqng" path="res://Materials/lights/Light_texture.png" id="2_65jfx"]
-[ext_resource type="Texture2D" uid="uid://byj5ah5ocfno1" path="res://Player/Crosshair/crosshair001.png" id="2_k010m"]
+[ext_resource type="Material" uid="uid://bicuytk2megcw" path="res://Materials/Placeholders/PlaceHolder_material_3.tres" id="2_vaw2i"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_26458"]
 
@@ -87,6 +87,13 @@ _data = {
 "RESET": SubResource("Animation_n5gdl")
 }
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_21014"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 790
+corner_radius_top_right = 790
+corner_radius_bottom_right = 790
+corner_radius_bottom_left = 790
+
 [node name="Player" type="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 collision_layer = 4
@@ -94,7 +101,10 @@ collision_mask = 3
 script = ExtResource("1_7ut02")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+material_override = ExtResource("2_vaw2i")
+transparency = 0.5
 cast_shadow = 0
+gi_mode = 0
 mesh = SubResource("CapsuleMesh_26458")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
@@ -114,9 +124,9 @@ libraries = {
 stream = ExtResource("2_0d2dr")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Neck/Camera3D"]
+transform = Transform3D(0.99863, 0, 0.052336, 0, 1, 0, -0.052336, 0, 0.99863, 0.4, 0, 0)
 light_energy = 0.0
 light_indirect_energy = 0.0
-light_volumetric_fog_energy = 0.0
 light_projector = ExtResource("2_65jfx")
 shadow_enabled = true
 spot_range = 37.3
@@ -124,10 +134,30 @@ spot_attenuation = 1.04
 spot_angle = 21.2134
 spot_angle_attenuation = 6.73
 
-[node name="HUD" type="Camera2D" parent="."]
+[node name="Control" type="Control" parent="Neck"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
 
-[node name="Crosshair" type="Sprite2D" parent="HUD"]
-texture = ExtResource("2_k010m")
+[node name="Panel" type="Panel" parent="Neck/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -2.5
+offset_top = -2.5
+offset_right = 2.5
+offset_bottom = 2.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_21014")
 
 [node name="Roof_Detector" type="RayCast3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -1, -8.9407e-08, 0, 8.9407e-08, -1, 0, 0.2, 0)
+transform = Transform3D(12, 0, 0, 0, -1, -1.81195e-06, 0, 1.50996e-07, -12, 0, 0.2, 0)

@@ -51,3 +51,12 @@ func _on_slider_mouse_sens_value_changed(value):
 func _on_slider_controller_sens_value_changed(value):
 	GlobalSettings.update_controller_sens(value)
 
+func _on_slider_fov_value_changed(value):
+	GlobalSettings.update_FOV(value)
+
+
+func _on_visibility_changed():
+	if visible:
+		Save.load_data()
+	else :
+		Save.save_data()
