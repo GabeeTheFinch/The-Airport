@@ -30,7 +30,6 @@ layout_mode = 2
 current_tab = 2
 
 [node name="Video" type="TabBar" parent="MarginContainer/TabContainer"]
-visible = false
 layout_mode = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/TabContainer/Video"]
@@ -161,6 +160,7 @@ min_value = -10.0
 max_value = 10.0
 
 [node name="WIP" type="TabBar" parent="MarginContainer/TabContainer"]
+visible = false
 layout_mode = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/TabContainer/WIP"]
@@ -192,8 +192,9 @@ text = "Mouse Sensitivity"
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
-max_value = 5.0
-value = 1.0
+max_value = 1.0
+step = 0.05
+value = 0.5
 
 [node name="Label_ControllerSens" type="Label" parent="MarginContainer/TabContainer/WIP/MarginContainer/GridContainer"]
 layout_mode = 2

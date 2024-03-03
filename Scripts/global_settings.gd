@@ -1,11 +1,13 @@
 extends Node
 signal mouse_sens_update(value)
 
-func toggle_fullscreen(value):
-	if value:
+func Display_Mode(value):
+	if value == 0:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+	elif value == 1:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_EXCLUSIVE_FULLSCREEN)
 	else:
-		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 
 func toggle_vsync(value):
 	if value:

@@ -3,10 +3,10 @@
 [ext_resource type="Material" uid="uid://b24kr425h1i46" path="res://Materials/Placeholders/PlaceHolder_material_2.tres" id="1_e2fvw"]
 [ext_resource type="Script" path="res://Maps/Scripts/Zone1_blocky.gd" id="1_x1lgy"]
 [ext_resource type="Material" uid="uid://dd4xwrwmwhmmj" path="res://Materials/Placeholders/PlaceHolder_material_1.tres" id="2_2rki1"]
-[ext_resource type="PackedScene" uid="uid://dr0imdqu8gxhy" path="res://Interface/Menu/menu_settings.tscn" id="2_7nvgv"]
 [ext_resource type="PackedScene" uid="uid://btsarlqpqa5gx" path="res://Models/Doors/door_sliding.tscn" id="2_yu5em"]
 [ext_resource type="PackedScene" uid="uid://h7c2nipeg7wv" path="res://Player/player.tscn" id="3_3l4l1"]
 [ext_resource type="PackedScene" uid="uid://dbuulp5flt325" path="res://Models/Lights/spotlight_broken.tscn" id="4_i1xkl"]
+[ext_resource type="PackedScene" uid="uid://nwoq2cgc3rdl" path="res://Interface/Menu/new_settings.tscn" id="8_b45el"]
 [ext_resource type="PackedScene" uid="uid://cekcgwtk2c1dj" path="res://Interface/Transitionning/transition_screen.tscn" id="8_e65b5"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ymglx"]
@@ -39,9 +39,6 @@ volumetric_fog_gi_inject = 0.35
 [node name="Node3D" type="Node3D"]
 process_mode = 3
 script = ExtResource("1_x1lgy")
-
-[node name="Menu_settings" parent="." instance=ExtResource("2_7nvgv")]
-process_mode = 3
 
 [node name="Node" type="Node" parent="."]
 process_mode = 1
@@ -174,3 +171,18 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 85, 0,
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 22.3)
 
 [node name="Transition Screen" parent="." instance=ExtResource("8_e65b5")]
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 220
+theme_override_constants/margin_top = 70
+theme_override_constants/margin_right = 220
+theme_override_constants/margin_bottom = 130
+
+[node name="New_Settings" parent="MarginContainer" instance=ExtResource("8_b45el")]
+layout_mode = 2

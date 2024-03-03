@@ -23,9 +23,9 @@ func unpause_game():
 
 func _process(_delta):
 	if Input.is_action_just_pressed("Game_Pause") and !paused:
-		$Menu_settings.visible = true
+		$MarginContainer.visible = true
 		pause_game()
 	elif Input.is_action_just_pressed("Game_Pause") and paused: 
-		$Menu_settings.visible = false
+		$MarginContainer.visible = false
 		unpause_game()
 		

@@ -1,0 +1,365 @@
+[gd_scene load_steps=10 format=3 uid="uid://nwoq2cgc3rdl"]
+
+[ext_resource type="Script" path="res://Interface/Menu/scripts/new_settings.gd" id="1_1avgm"]
+[ext_resource type="PackedScene" uid="uid://cekcgwtk2c1dj" path="res://Interface/Transitionning/transition_screen.tscn" id="2_djnnn"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6l1if"]
+content_margin_left = 50.0
+content_margin_right = 50.0
+bg_color = Color(0, 0, 0, 0.141176)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c4xc4"]
+content_margin_left = 30.0
+content_margin_right = 30.0
+bg_color = Color(0, 0, 0, 0.141176)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l33l6"]
+content_margin_left = 30.0
+content_margin_right = 30.0
+bg_color = Color(0, 0, 0, 0.141176)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hoy44"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cjcjm"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i4qlc"]
+bg_color = Color(0, 0, 0, 0.141176)
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_v6hf3"]
+
+[node name="New_Settings" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1avgm")
+
+[node name="SETTINGS" type="TabContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_neighbor_bottom = NodePath("../../HBoxContainer/Settings")
+theme_override_styles/tab_selected = SubResource("StyleBoxFlat_6l1if")
+theme_override_styles/tab_hovered = SubResource("StyleBoxFlat_c4xc4")
+theme_override_styles/tab_unselected = SubResource("StyleBoxFlat_l33l6")
+theme_override_styles/tab_disabled = SubResource("StyleBoxEmpty_hoy44")
+theme_override_styles/tab_focus = SubResource("StyleBoxEmpty_cjcjm")
+theme_override_styles/panel = SubResource("StyleBoxFlat_i4qlc")
+theme_override_styles/tabbar_background = SubResource("StyleBoxEmpty_v6hf3")
+current_tab = 1
+
+[node name="Video" type="TabBar" parent="SETTINGS"]
+visible = false
+layout_mode = 2
+focus_neighbor_left = NodePath("../Display")
+focus_neighbor_right = NodePath("../Display")
+focus_next = NodePath("../Display")
+focus_previous = NodePath("../Controls")
+
+[node name="MarginContainer" type="MarginContainer" parent="SETTINGS/Video"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 15
+
+[node name="GridContainer" type="GridContainer" parent="SETTINGS/Video/MarginContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 70
+theme_override_constants/v_separation = 90
+columns = 4
+
+[node name="Label_Shadows" type="Label" parent="SETTINGS/Video/MarginContainer/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Shadows"
+
+[node name="Option_Shadows" type="OptionButton" parent="SETTINGS/Video/MarginContainer/GridContainer"]
+layout_mode = 2
+item_count = 4
+selected = 0
+popup/item_0/text = "Ultra"
+popup/item_0/id = 0
+popup/item_1/text = "High"
+popup/item_1/id = 1
+popup/item_2/text = "Medium"
+popup/item_2/id = 2
+popup/item_3/text = "Low"
+popup/item_3/id = 3
+
+[node name="Label_Textures" type="Label" parent="SETTINGS/Video/MarginContainer/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Textures"
+
+[node name="Option_Textures" type="OptionButton" parent="SETTINGS/Video/MarginContainer/GridContainer"]
+layout_mode = 2
+item_count = 4
+selected = 0
+popup/item_0/text = "Ultra"
+popup/item_0/id = 0
+popup/item_1/text = "High"
+popup/item_1/id = 1
+popup/item_2/text = "Medium"
+popup/item_2/id = 2
+popup/item_3/text = "Low"
+popup/item_3/id = 3
+
+[node name="Label_Antialiasing" type="Label" parent="SETTINGS/Video/MarginContainer/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Antialiasing"
+
+[node name="Option_Antialiasing" type="OptionButton" parent="SETTINGS/Video/MarginContainer/GridContainer"]
+layout_mode = 2
+item_count = 4
+selected = 0
+popup/item_0/text = "Ultra"
+popup/item_0/id = 0
+popup/item_1/text = "High"
+popup/item_1/id = 1
+popup/item_2/text = "Medium"
+popup/item_2/id = 2
+popup/item_3/text = "Low"
+popup/item_3/id = 3
+
+[node name="Label4" type="Label" parent="SETTINGS/Video/MarginContainer/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Antialiasing"
+
+[node name="OptionButton4" type="OptionButton" parent="SETTINGS/Video/MarginContainer/GridContainer"]
+layout_mode = 2
+item_count = 4
+selected = 0
+popup/item_0/text = "Ultra"
+popup/item_0/id = 0
+popup/item_1/text = "High"
+popup/item_1/id = 1
+popup/item_2/text = "Medium"
+popup/item_2/id = 2
+popup/item_3/text = "Low"
+popup/item_3/id = 3
+
+[node name="Display" type="TabBar" parent="SETTINGS"]
+layout_mode = 2
+focus_neighbor_left = NodePath("../Video")
+focus_neighbor_right = NodePath(".")
+focus_next = NodePath("../Audio")
+focus_previous = NodePath("../Video")
+
+[node name="MarginContainer2" type="MarginContainer" parent="SETTINGS/Display"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 15
+
+[node name="GridContainer" type="GridContainer" parent="SETTINGS/Display/MarginContainer2"]
+layout_mode = 2
+theme_override_constants/h_separation = 70
+theme_override_constants/v_separation = 90
+columns = 2
+
+[node name="Label_Display" type="Label" parent="SETTINGS/Display/MarginContainer2/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Display Mode"
+
+[node name="Option_Display" type="OptionButton" parent="SETTINGS/Display/MarginContainer2/GridContainer"]
+layout_mode = 2
+item_count = 3
+selected = 0
+popup/item_0/text = "Windowed"
+popup/item_0/id = 0
+popup/item_1/text = "Fullscreen"
+popup/item_1/id = 1
+popup/item_2/text = "Borderless"
+popup/item_2/id = 2
+
+[node name="Label_Resolution" type="Label" parent="SETTINGS/Display/MarginContainer2/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Screen Resolution"
+
+[node name="Option_Resolution" type="OptionButton" parent="SETTINGS/Display/MarginContainer2/GridContainer"]
+layout_mode = 2
+item_count = 2
+selected = 0
+popup/item_0/text = "1280x720"
+popup/item_0/id = 0
+popup/item_1/text = "1920x1080"
+popup/item_1/id = 1
+
+[node name="Label_Vsync" type="Label" parent="SETTINGS/Display/MarginContainer2/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Vsync"
+
+[node name="Check_Vsync" type="CheckButton" parent="SETTINGS/Display/MarginContainer2/GridContainer"]
+layout_mode = 2
+
+[node name="Label_Brightness" type="Label" parent="SETTINGS/Display/MarginContainer2/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Brightness
+"
+
+[node name="Slider_Brightness" type="HSlider" parent="SETTINGS/Display/MarginContainer2/GridContainer"]
+layout_mode = 2
+
+[node name="Audio" type="TabBar" parent="SETTINGS"]
+visible = false
+layout_mode = 2
+focus_neighbor_left = NodePath(".")
+focus_neighbor_right = NodePath("../Video")
+focus_next = NodePath("../Controls")
+focus_previous = NodePath("../Display")
+
+[node name="MarginContainer2" type="MarginContainer" parent="SETTINGS/Audio"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 15
+
+[node name="GridContainer" type="GridContainer" parent="SETTINGS/Audio/MarginContainer2"]
+layout_mode = 2
+theme_override_constants/h_separation = 70
+theme_override_constants/v_separation = 90
+columns = 2
+
+[node name="Label_Master" type="Label" parent="SETTINGS/Audio/MarginContainer2/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Master Volume"
+
+[node name="Slider_Master" type="HSlider" parent="SETTINGS/Audio/MarginContainer2/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+min_value = -10.0
+max_value = 0.0
+step = 0.1
+
+[node name="Label_Music" type="Label" parent="SETTINGS/Audio/MarginContainer2/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Music Volume"
+
+[node name="Slider_Music" type="HSlider" parent="SETTINGS/Audio/MarginContainer2/GridContainer"]
+layout_mode = 2
+min_value = -10.0
+max_value = 0.0
+step = 0.1
+
+[node name="Label_SFX" type="Label" parent="SETTINGS/Audio/MarginContainer2/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "SFX Volume
+
+"
+
+[node name="Slider_SFX" type="HSlider" parent="SETTINGS/Audio/MarginContainer2/GridContainer"]
+layout_mode = 2
+min_value = -10.0
+max_value = 0.0
+step = 0.1
+
+[node name="Controls" type="TabBar" parent="SETTINGS"]
+visible = false
+layout_mode = 2
+focus_neighbor_left = NodePath("../Video")
+focus_neighbor_right = NodePath(".")
+focus_next = NodePath("../Video")
+focus_previous = NodePath("../Audio")
+
+[node name="MarginContainer2" type="MarginContainer" parent="SETTINGS/Controls"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 15
+
+[node name="GridContainer" type="GridContainer" parent="SETTINGS/Controls/MarginContainer2"]
+layout_mode = 2
+theme_override_constants/h_separation = 70
+theme_override_constants/v_separation = 90
+columns = 2
+
+[node name="Label_Mouse" type="Label" parent="SETTINGS/Controls/MarginContainer2/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Mouse Sensitivity"
+
+[node name="Slider_Mouse" type="HSlider" parent="SETTINGS/Controls/MarginContainer2/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.1
+value = 0.5
+
+[node name="Label_Controller" type="Label" parent="SETTINGS/Controls/MarginContainer2/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Controller Sensitivity
+
+"
+
+[node name="Silder_Controller" type="HSlider" parent="SETTINGS/Controls/MarginContainer2/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 6.0
+value = 3.0
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -4.0
+offset_top = -8.0
+offset_right = 4.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 25
+text = "Go Back To Menu
+"
+
+[node name="Transition Screen" parent="." instance=ExtResource("2_djnnn")]
+
+[connection signal="item_selected" from="SETTINGS/Display/MarginContainer2/GridContainer/Option_Display" to="." method="_on_option_display_item_selected"]
+[connection signal="toggled" from="SETTINGS/Display/MarginContainer2/GridContainer/Check_Vsync" to="." method="_on_check_vsync_toggled"]
+[connection signal="value_changed" from="SETTINGS/Audio/MarginContainer2/GridContainer/Slider_Master" to="." method="_on_slider_master_value_changed"]
+[connection signal="value_changed" from="SETTINGS/Audio/MarginContainer2/GridContainer/Slider_Music" to="." method="_on_slider_music_value_changed"]
+[connection signal="value_changed" from="SETTINGS/Audio/MarginContainer2/GridContainer/Slider_SFX" to="." method="_on_slider_sfx_value_changed"]
+[connection signal="value_changed" from="SETTINGS/Controls/MarginContainer2/GridContainer/Slider_Mouse" to="." method="_on_slider_mouse_value_changed"]
+[connection signal="value_changed" from="SETTINGS/Controls/MarginContainer2/GridContainer/Silder_Controller" to="." method="_on_silder_controller_value_changed"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

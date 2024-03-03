@@ -38,6 +38,7 @@ var Crouch_Player_Scale: Vector3 = Vector3(0.6,0.6,0.6)
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	print(mouse_sens)
 
 func _physics_process(delta):
 	controls_handler(delta)	
