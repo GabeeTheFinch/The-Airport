@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://b4wrbf00ud6qn"]
+
+[ext_resource type="PackedScene" uid="uid://b06a31kd37re" path="res://Models/WallDoorTest.glb" id="1_78j8r"]
+[ext_resource type="Material" uid="uid://dd4xwrwmwhmmj" path="res://Materials/Placeholders/PlaceHolder_material_1.tres" id="2_koug2"]
+
+[node name="WallDoorTest" instance=ExtResource("1_78j8r")]
+
+[node name="Plane" parent="." index="0"]
+material_override = ExtResource("2_koug2")
+gi_lightmap_scale = 3

@@ -37,4 +37,5 @@ func load_data():
 		AudioServer.set_bus_volume_db(2, config.get_value("Settings", "SFX_Volume"))
 		AudioServer.set_bus_mute(2, config.get_value("Settings", "SFX_Mute"))
 	else:
+		print("No data")
 		save_data()

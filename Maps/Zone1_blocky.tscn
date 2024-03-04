@@ -145,6 +145,9 @@ light_color = Color(0.831373, 0.901961, 1, 1)
 light_volumetric_fog_energy = 0.5
 light_bake_mode = 1
 shadow_enabled = true
+shadow_blur = 1.212
+directional_shadow_mode = 0
+sky_mode = 1
 
 [node name="Spotlight_Broken" parent="Node" instance=ExtResource("4_i1xkl")]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 4, 24)

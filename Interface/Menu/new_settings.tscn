@@ -355,6 +355,7 @@ text = "Go Back To Menu
 
 [node name="Transition Screen" parent="." instance=ExtResource("2_djnnn")]
 
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
 [connection signal="item_selected" from="SETTINGS/Display/MarginContainer2/GridContainer/Option_Display" to="." method="_on_option_display_item_selected"]
 [connection signal="toggled" from="SETTINGS/Display/MarginContainer2/GridContainer/Check_Vsync" to="." method="_on_check_vsync_toggled"]
 [connection signal="value_changed" from="SETTINGS/Audio/MarginContainer2/GridContainer/Slider_Master" to="." method="_on_slider_master_value_changed"]

@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://Player/player.gd" id="1_7ut02"]
 [ext_resource type="AudioStream" uid="uid://b6yejxl8xlko5" path="res://Player/audio/FlashLightSound.WAV" id="2_0d2dr"]
-[ext_resource type="Texture2D" uid="uid://boawjvpufjqng" path="res://Materials/lights/Light_texture.png" id="2_65jfx"]
 [ext_resource type="Material" uid="uid://bicuytk2megcw" path="res://Materials/Placeholders/PlaceHolder_material_3.tres" id="2_vaw2i"]
+[ext_resource type="Texture2D" uid="uid://c8wmvrd56dctl" path="res://Materials/lights/Projector_Flashlight.png" id="4_tny6k"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_26458"]
 
@@ -124,14 +124,15 @@ libraries = {
 stream = ExtResource("2_0d2dr")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Neck/Camera3D"]
-transform = Transform3D(0.99863, 0, 0.052336, 0, 1, 0, -0.052336, 0, 0.99863, 0.4, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 light_energy = 0.0
 light_indirect_energy = 0.0
-light_projector = ExtResource("2_65jfx")
+light_volumetric_fog_energy = 0.0
+light_projector = ExtResource("4_tny6k")
 shadow_enabled = true
 spot_range = 37.3
 spot_attenuation = 1.04
-spot_angle = 21.2134
+spot_angle = 25.0
 spot_angle_attenuation = 6.73
 
 [node name="Control" type="Control" parent="Neck"]

@@ -16,7 +16,7 @@ FOV=75.0
 
 [application]
 
-config/name="Untitled"
+config/name="The Airport"
 run/main_scene="res://Interface/Menu/new_menu.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"

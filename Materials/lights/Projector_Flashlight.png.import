@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://boawjvpufjqng"
-path.s3tc="res://.godot/imported/Light_texture.png-06c8e9f997aefd03711695b84c361ed6.s3tc.ctex"
+uid="uid://c8wmvrd56dctl"
+path.s3tc="res://.godot/imported/Projector_Flashlight.png-8f4e1ad39332ba131227ccf504259088.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Materials/lights/Light_texture.png"
-dest_files=["res://.godot/imported/Light_texture.png-06c8e9f997aefd03711695b84c361ed6.s3tc.ctex"]
+source_file="res://Materials/lights/Projector_Flashlight.png"
+dest_files=["res://.godot/imported/Projector_Flashlight.png-8f4e1ad39332ba131227ccf504259088.s3tc.ctex"]
 
 [params]
 
