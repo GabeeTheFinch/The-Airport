@@ -31,6 +31,8 @@ var mouse_sens = ProjectSettings.get_setting("Player/Mouse_sensitivity")
 var controller_sens = ProjectSettings.get_setting("Player/Controller_sensitivity")
 var look_dir: Vector2
 var IsLightOn = false
+var IsCrouched = false
+var IsRunning = false
 var speed = walk_speed
 var Normal_Player_Scale: Vector3 = Vector3(1,1,1)
 var Crouch_Player_Scale: Vector3 = Vector3(0.6,0.6,0.6)
@@ -79,16 +81,20 @@ func reset_transforms(delta):
 
 
 func actions_Handler(delta):
-	if Input.is_action_pressed("Action_Sprint") and !Input.is_action_pressed("Action_Crouch") and Can_Run:
+	if Input.is_action_pressed("Action_Sprint") and !IsCrouched and Can_Run:
 		if !$Roof_Detector.is_colliding():
+			IsRunning = true
 			speed = run_speed
 			Camera.fov = lerp(Camera.fov, run_fov, 10 * delta)
-	elif Input.is_action_pressed("Action_Crouch") and !Input.is_action_pressed("Action_Sprint") and Can_Crouch:
+	elif Input.is_action_pressed("Action_Crouch") and !IsRunning and Can_Crouch:
+		IsCrouched = true
 		speed = crouch_speed
 		Camera.fov = lerp(Camera.fov, crouch_fov, 10 * delta)
 		crouch_transform(delta)
 	elif !$Roof_Detector.is_colliding():
 		speed = walk_speed
+		IsRunning = false
+		IsCrouched = false
 		Camera.fov = lerp(Camera.fov, normal_fov, 10 * delta)
 		reset_transforms(delta)
 		
