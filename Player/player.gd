@@ -6,12 +6,7 @@ extends CharacterBody3D
 @export var run_speed = 4
 @export var crouch_speed = 1
 @export var jump_strength = 3
-
-@export_group("Advanced")
-@export var normal_fov:float  = ProjectSettings.get_setting("Player/FOV")
-var run_fov: float = normal_fov + 10
-var crouch_fov: float = normal_fov - 15
-@export var Flashlight_Intensity = 7
+@export var flashlight_Intensity = 7
 
 @export_group("Features")
 @export var Can_Run = true
@@ -29,13 +24,18 @@ var crouch_fov: float = normal_fov - 15
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 var mouse_sens = ProjectSettings.get_setting("Player/Mouse_sensitivity")
 var controller_sens = ProjectSettings.get_setting("Player/Controller_sensitivity")
+
 var look_dir: Vector2
+var Normal_Player_Scale: Vector3 = Vector3(1,1,1)
+var Crouch_Player_Scale: Vector3 = Vector3(0.6,0.6,0.6)
+
+var speed = walk_speed
 var IsLightOn = false
 var IsCrouched = false
 var IsRunning = false
-var speed = walk_speed
-var Normal_Player_Scale: Vector3 = Vector3(1,1,1)
-var Crouch_Player_Scale: Vector3 = Vector3(0.6,0.6,0.6)
+var normal_fov:float  = ProjectSettings.get_setting("Player/FOV")
+var run_fov: float = normal_fov + 10
+var crouch_fov: float = normal_fov - 15
 
 
 func _ready():
@@ -105,5 +105,5 @@ func actions_Handler(delta):
 			Flashlight.light_energy = 0
 		else:
 			IsLightOn = true
-			Flashlight.light_energy = Flashlight_Intensity
+			Flashlight.light_energy = flashlight_Intensity
 	

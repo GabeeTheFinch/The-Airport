@@ -2,7 +2,7 @@ extends Control
 
 @export var IsMainMenu := false
 
-@onready var BackToMenu := $Button
+@onready var BackToMenu := $HBoxContainer/Button_Return
 @onready var TransitionScreen := $"Transition Screen"
 
 @onready var Shadows := $SETTINGS/Video/MarginContainer/GridContainer/Option_Shadows
@@ -26,8 +26,7 @@ func _ready():
 	Load_Saved_Settings()
 	print("Loaded Save Data")
 	if IsMainMenu == true:
-		BackToMenu.visible = false
-
+		BackToMenu.queue_free()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
@@ -61,18 +60,15 @@ func _on_silder_controller_value_changed(value):
 
 func _on_option_display_item_selected(index):
 	GlobalSettings.Display_Mode(index)
-
 func _on_check_vsync_toggled(toggled_on):
 	GlobalSettings.toggle_vsync(toggled_on)
+func _on_option_resolution_item_selected(index):
+	GlobalSettings.Displayr_Res(index)
+
 
 
 func _on_button_pressed():
 	TransitionScreen.Fade_Transition(0.5, "res://Interface/Menu/new_menu.tscn")
 	get_tree().paused = false
-
-
-func _on_visibility_changed():
-	if visible == false:	
-		Save.save_data()
-	else:
-		Save.load_data()
+func _on_button_save_pressed():
+	Save.save_data()

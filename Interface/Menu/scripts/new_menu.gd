@@ -36,13 +36,10 @@ func _on_credits_pressed():
 		Hide_All()
 		CREDITS.visible = true 
 
-
-
 func _on_map_test_pressed():
 	Start_Button_Sound.play()
 	Hide_All()
 	TransitionScreen.Fade_Transition(0.5, "res://Maps/map_player_testing.tscn")
-
 
 func _on_zone_1_blocky_pressed():
 	Start_Button_Sound.play()

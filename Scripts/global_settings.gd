@@ -10,6 +10,23 @@ func Display_Mode(value):
 	else:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 
+func update_container():
+	pass
+
+func Displayr_Res(value):
+	if value == 0:
+		var Test = Vector2(1280, 720)
+		DisplayServer.window_set_size(Vector2(Test))
+		get_tree().root.content_scale_size = Test
+		print("Window Size ", DisplayServer.window_get_size())
+		print("Content Scale Size ", get_tree().root.content_scale_size)
+	else:
+		var Test = Vector2(1920, 1080)
+		DisplayServer.window_set_size(Vector2(Test))
+		get_tree().root.content_scale_size = Test
+		print("Window Size ", DisplayServer.window_get_size())
+		print("Content Scale Size ", get_tree().root.content_scale_size)
+
 func toggle_vsync(value):
 	if value:
 		DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_ENABLED)

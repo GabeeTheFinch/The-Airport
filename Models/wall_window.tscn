@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://bdcj3ailm8llo"]
+
+[ext_resource type="PackedScene" uid="uid://b2uie1obxauw7" path="res://Models/WallWindow.glb" id="1_v1xhv"]
+[ext_resource type="Material" uid="uid://dd4xwrwmwhmmj" path="res://Materials/Placeholders/PlaceHolder_material_1.tres" id="2_vgncw"]
+
+[node name="WallWindow" instance=ExtResource("1_v1xhv")]
+
+[node name="Cube" parent="." index="0"]
+gi_mode = 0
+surface_material_override/0 = ExtResource("2_vgncw")

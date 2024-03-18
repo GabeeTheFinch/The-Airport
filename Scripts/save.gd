@@ -22,7 +22,6 @@ func save_data():
 	
 	config.save(SAVEFILE)
 
-
 func load_data():
 	var config := ConfigFile.new()
 	if FileAccess.file_exists(SAVEFILE):
