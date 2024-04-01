@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://c6qc0x2e23vlc"]
+[gd_scene load_steps=14 format=3 uid="uid://c6qc0x2e23vlc"]
 
 [ext_resource type="Material" uid="uid://b24kr425h1i46" path="res://Materials/Placeholders/PlaceHolder_material_2.tres" id="1_e2fvw"]
 [ext_resource type="Script" path="res://Maps/Scripts/Zone1_blocky.gd" id="1_x1lgy"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bdcj3ailm8llo" path="res://Models/wall_window.tscn" id="7_hkeit"]
 [ext_resource type="PackedScene" uid="uid://nwoq2cgc3rdl" path="res://Interface/Menu/new_settings.tscn" id="8_b45el"]
 [ext_resource type="PackedScene" uid="uid://cekcgwtk2c1dj" path="res://Interface/Transitionning/transition_screen.tscn" id="8_e65b5"]
+[ext_resource type="AudioStream" uid="uid://dc30u0gdug0he" path="res://Audio/Distorted_Trumpets.mp3" id="8_r80im"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ymglx"]
 sky_top_color = Color(0, 0.12549, 0.278431, 1)
@@ -16,17 +17,17 @@ sky_horizon_color = Color(0.258824, 0.341176, 0.341176, 1)
 ground_bottom_color = Color(0.2, 0.168627, 0.133333, 1)
 ground_horizon_color = Color(0.611765, 0.643137, 0.74902, 1)
 
-[sub_resource type="Sky" id="Sky_kyyl1"]
+[sub_resource type="Sky" id="Sky_xd5r8"]
 sky_material = SubResource("ProceduralSkyMaterial_ymglx")
 
 [sub_resource type="Environment" id="Environment_hxbti"]
 background_mode = 1
 background_energy_multiplier = 0.0
-sky = SubResource("Sky_kyyl1")
+sky = SubResource("Sky_xd5r8")
 ambient_light_energy = 0.0
 tonemap_mode = 2
 tonemap_white = 6.0
-ssil_enabled = true
+ssao_enabled = true
 sdfgi_enabled = true
 sdfgi_use_occlusion = true
 sdfgi_read_sky_light = false
@@ -139,12 +140,9 @@ material = ExtResource("2_2rki1")
 [node name="CSGCombiner3D3" type="CSGCombiner3D" parent="Node/CSGCombiner3D"]
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Node/CSGCombiner3D/CSGCombiner3D3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0500031, 9.7, 0.0499983)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0500031, 10.7, 0.0499983)
 size = Vector3(170.3, 1.6, 50.1)
 material = ExtResource("1_e2fvw")
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="Node"]
-environment = SubResource("Environment_hxbti")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Node"]
 transform = Transform3D(1, 0, 0, 0, -0.965926, 0.258819, 0, -0.258819, -0.965926, 0, 0, -4.6)
@@ -241,6 +239,15 @@ transform = Transform3D(-2.9, 0, 2.53526e-07, 0, 2.9, 0, -2.53526e-07, 0, -2.9, 
 [node name="WallWindow20" parent="Node/Node3D" instance=ExtResource("7_hkeit")]
 transform = Transform3D(-2.9, 0, 2.53526e-07, 0, 2.9, 0, -2.53526e-07, 0, -2.9, -85.1, 0.1, -24.9)
 
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Node"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 22.1412)
+stream = ExtResource("8_r80im")
+unit_size = 1.0
+max_db = 0.5
+autoplay = true
+max_distance = 20.0
+bus = &"Music"
+
 [node name="Transition Screen" parent="." instance=ExtResource("8_e65b5")]
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
@@ -257,3 +264,6 @@ theme_override_constants/margin_bottom = 130
 
 [node name="New_Settings" parent="MarginContainer" instance=ExtResource("8_b45el")]
 layout_mode = 2
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_hxbti")

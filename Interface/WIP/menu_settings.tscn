@@ -1,0 +1,417 @@
+[gd_scene load_steps=5 format=3 uid="uid://ccavqfkqxq564"]
+
+[ext_resource type="Script" path="res://Interface/WIP/settings.gd" id="1_xntp7"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_nvlp1"]
+sky_top_color = Color(0, 0.12549, 0.278431, 1)
+sky_horizon_color = Color(0.258824, 0.341176, 0.341176, 1)
+ground_bottom_color = Color(0.2, 0.168627, 0.133333, 1)
+ground_horizon_color = Color(0.611765, 0.643137, 0.74902, 1)
+
+[sub_resource type="Sky" id="Sky_dm5rn"]
+sky_material = SubResource("ProceduralSkyMaterial_nvlp1")
+
+[sub_resource type="Environment" id="Environment_myui5"]
+background_mode = 1
+background_energy_multiplier = 16.0
+sky = SubResource("Sky_dm5rn")
+ambient_light_energy = 16.0
+reflected_light_source = 1
+tonemap_mode = 2
+tonemap_white = 6.0
+ssao_enabled = true
+sdfgi_enabled = true
+sdfgi_use_occlusion = true
+sdfgi_read_sky_light = false
+fog_light_color = Color(0, 0, 0, 1)
+fog_density = 0.0
+fog_sky_affect = 0.0
+volumetric_fog_enabled = true
+adjustment_enabled = true
+
+[node name="Menu_Settings" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xntp7")
+
+[node name="TabContainer" type="TabContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+
+[node name="Display" type="TabBar" parent="TabContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="TabContainer/Display"]
+layout_mode = 2
+offset_right = 1420.0
+offset_bottom = 799.0
+size_flags_vertical = 3
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Display/MarginContainer"]
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="TabContainer/Display/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 2
+columns = 2
+
+[node name="Resolution" type="Label" parent="TabContainer/Display/MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 40
+text = "Resolution Scale:"
+
+[node name="HSlider_Res" type="HSlider" parent="TabContainer/Display/MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+min_value = 0.25
+max_value = 2.0
+step = 0.05
+value = 1.0
+
+[node name="Fullscreen" type="Label" parent="TabContainer/Display/MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 40
+text = "Fullscreen:"
+
+[node name="Option_FullScreen" type="OptionButton" parent="TabContainer/Display/MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 35
+item_count = 2
+selected = 0
+popup/item_0/text = "Disabled"
+popup/item_0/id = 0
+popup/item_1/text = "Fullscreen"
+popup/item_1/id = 1
+
+[node name="Vsync" type="Label" parent="TabContainer/Display/MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 40
+text = "V-Sync:"
+
+[node name="Option_Vsync" type="OptionButton" parent="TabContainer/Display/MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 35
+item_count = 3
+selected = 0
+popup/item_0/text = "Disabled"
+popup/item_0/id = 0
+popup/item_1/text = "Adaptive"
+popup/item_1/id = 1
+popup/item_2/text = "Enabled"
+popup/item_2/id = 2
+
+[node name="FOV" type="Label" parent="TabContainer/Display/MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 40
+text = "Field Of View:"
+
+[node name="HSlider_FOV" type="HSlider" parent="TabContainer/Display/MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Brightness" type="Label" parent="TabContainer/Display/MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 40
+text = "Brightness:"
+
+[node name="HSlider_Bright" type="HSlider" parent="TabContainer/Display/MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+min_value = 0.5
+max_value = 2.0
+step = 0.01
+value = 1.0
+
+[node name="Contrast" type="Label" parent="TabContainer/Display/MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 40
+text = "Contrast:"
+
+[node name="HSlider_Contrast" type="HSlider" parent="TabContainer/Display/MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+min_value = 0.5
+max_value = 2.0
+step = 0.01
+value = 1.0
+
+[node name="Saturation" type="Label" parent="TabContainer/Display/MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 40
+text = "Saturation:"
+
+[node name="HSlider_Saturation" type="HSlider" parent="TabContainer/Display/MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+min_value = 0.01
+max_value = 2.0
+step = 0.01
+value = 1.0
+
+[node name="Video" type="TabBar" parent="TabContainer"]
+visible = false
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="TabContainer/Video"]
+layout_mode = 2
+offset_right = 1420.0
+offset_bottom = 799.0
+size_flags_vertical = 3
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Video/MarginContainer"]
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="TabContainer/Video/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 2
+columns = 2
+
+[node name="ShadowRes" type="Label" parent="TabContainer/Video/MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 40
+text = "Shadow Resolution:"
+
+[node name="Option_ShadowRes" type="OptionButton" parent="TabContainer/Video/MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 35
+item_count = 4
+selected = 3
+popup/item_0/text = "Very Low"
+popup/item_0/id = 0
+popup/item_1/text = "Low"
+popup/item_1/id = 1
+popup/item_2/text = "Medium"
+popup/item_2/id = 2
+popup/item_3/text = "High"
+popup/item_3/id = 3
+
+[node name="Option_Base" type="OptionButton" parent="TabContainer/Video/MarginContainer/VBoxContainer/GridContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 35
+item_count = 4
+selected = 0
+popup/item_0/text = "Very Low"
+popup/item_0/id = 0
+popup/item_1/text = "Low"
+popup/item_1/id = 1
+popup/item_2/text = "Medium"
+popup/item_2/id = 2
+popup/item_3/text = "High"
+popup/item_3/id = 3
+
+[node name="ShadowFilter" type="Label" parent="TabContainer/Video/MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 40
+text = "Shadow Filtering:"
+
+[node name="Option_ShadowFilter2" type="OptionButton" parent="TabContainer/Video/MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 35
+item_count = 4
+selected = 3
+popup/item_0/text = "Very Low"
+popup/item_0/id = 0
+popup/item_1/text = "Low"
+popup/item_1/id = 1
+popup/item_2/text = "Medium"
+popup/item_2/id = 2
+popup/item_3/text = "High"
+popup/item_3/id = 3
+
+[node name="ModelQ" type="Label" parent="TabContainer/Video/MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 40
+text = "Model Quality:"
+
+[node name="Option_ModelQ" type="OptionButton" parent="TabContainer/Video/MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 35
+item_count = 4
+selected = 3
+popup/item_0/text = "Very Low"
+popup/item_0/id = 0
+popup/item_1/text = "Low"
+popup/item_1/id = 1
+popup/item_2/text = "Medium"
+popup/item_2/id = 2
+popup/item_3/text = "High"
+popup/item_3/id = 3
+
+[node name="TAA" type="Label" parent="TabContainer/Video/MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 40
+text = "Anti-Aliasing (TAA):"
+
+[node name="Option_TAA" type="OptionButton" parent="TabContainer/Video/MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 35
+item_count = 1
+selected = 0
+popup/item_0/text = "Disabled"
+popup/item_0/id = 0
+
+[node name="MSAA" type="Label" parent="TabContainer/Video/MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 40
+text = "Anti-Aliasing (MSAA):"
+
+[node name="Option_MSAA" type="OptionButton" parent="TabContainer/Video/MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 35
+item_count = 1
+selected = 0
+popup/item_0/text = "Disabled"
+popup/item_0/id = 0
+
+[node name="FXAA" type="Label" parent="TabContainer/Video/MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 40
+text = "Anti-Aliasing (FXAA):"
+
+[node name="Option_FXAA" type="OptionButton" parent="TabContainer/Video/MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 35
+item_count = 1
+selected = 0
+popup/item_0/text = "Disabled"
+popup/item_0/id = 0
+
+[node name="Bloom" type="Label" parent="TabContainer/Video/MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 40
+text = "Bloom"
+
+[node name="Option_Bloom" type="OptionButton" parent="TabContainer/Video/MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 35
+item_count = 2
+selected = 0
+popup/item_0/text = "Disabled"
+popup/item_0/id = 0
+popup/item_1/text = "Enabled"
+popup/item_1/id = 1
+
+[node name="Ambient Occlusion" type="Label" parent="TabContainer/Video/MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 40
+text = "Ambient Occlusion:"
+
+[node name="Option_AO" type="OptionButton" parent="TabContainer/Video/MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 35
+item_count = 4
+selected = 3
+popup/item_0/text = "Disabled"
+popup/item_0/id = 0
+popup/item_1/text = "Low"
+popup/item_1/id = 1
+popup/item_2/text = "Medium"
+popup/item_2/id = 2
+popup/item_3/text = "High"
+popup/item_3/id = 3
+
+[node name="SSR" type="Label" parent="TabContainer/Video/MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 40
+text = "Screen-Space Reflections:"
+
+[node name="Option_SSR" type="OptionButton" parent="TabContainer/Video/MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 35
+item_count = 4
+selected = 0
+popup/item_0/text = "Disabled"
+popup/item_0/id = 0
+popup/item_1/text = "Low"
+popup/item_1/id = 1
+popup/item_2/text = "Medium"
+popup/item_2/id = 2
+popup/item_3/text = "High"
+popup/item_3/id = 3
+
+[node name="Volumetric Fog" type="Label" parent="TabContainer/Video/MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 40
+text = "Volumetric Fog:"
+
+[node name="Option_VolFog" type="OptionButton" parent="TabContainer/Video/MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 35
+item_count = 3
+selected = 2
+popup/item_0/text = "Disabled"
+popup/item_0/id = 0
+popup/item_1/text = "Low"
+popup/item_1/id = 1
+popup/item_2/text = "High"
+popup/item_2/id = 2
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_myui5")
+
+[connection signal="value_changed" from="TabContainer/Display/MarginContainer/VBoxContainer/GridContainer/HSlider_Res" to="." method="_on_h_slider_res_value_changed"]
+[connection signal="item_selected" from="TabContainer/Display/MarginContainer/VBoxContainer/GridContainer/Option_FullScreen" to="." method="_on_option_full_screen_item_selected"]
+[connection signal="item_selected" from="TabContainer/Display/MarginContainer/VBoxContainer/GridContainer/Option_Vsync" to="." method="_on_option_vsync_item_selected"]
+[connection signal="value_changed" from="TabContainer/Display/MarginContainer/VBoxContainer/GridContainer/HSlider_Bright" to="." method="_on_h_slider_bright_value_changed"]
+[connection signal="value_changed" from="TabContainer/Display/MarginContainer/VBoxContainer/GridContainer/HSlider_Contrast" to="." method="_on_h_slider_contrast_value_changed"]
+[connection signal="value_changed" from="TabContainer/Display/MarginContainer/VBoxContainer/GridContainer/HSlider_Saturation" to="." method="_on_h_slider_saturation_value_changed"]
+[connection signal="item_selected" from="TabContainer/Video/MarginContainer/VBoxContainer/GridContainer/Option_ShadowRes" to="." method="_on_option_shadow_res_item_selected"]
+[connection signal="item_selected" from="TabContainer/Video/MarginContainer/VBoxContainer/GridContainer/Option_ShadowFilter2" to="." method="_on_option_shadow_filter_2_item_selected"]
+[connection signal="item_selected" from="TabContainer/Video/MarginContainer/VBoxContainer/GridContainer/Option_ModelQ" to="." method="_on_option_model_q_item_selected"]
+[connection signal="item_selected" from="TabContainer/Video/MarginContainer/VBoxContainer/GridContainer/Option_Bloom" to="." method="_on_option_bloom_item_selected"]
+[connection signal="item_selected" from="TabContainer/Video/MarginContainer/VBoxContainer/GridContainer/Option_AO" to="." method="_on_option_ao_item_selected"]
+[connection signal="item_selected" from="TabContainer/Video/MarginContainer/VBoxContainer/GridContainer/Option_SSR" to="." method="_on_option_ssr_item_selected"]
+[connection signal="item_selected" from="TabContainer/Video/MarginContainer/VBoxContainer/GridContainer/Option_VolFog" to="." method="_on_option_vol_fog_item_selected"]

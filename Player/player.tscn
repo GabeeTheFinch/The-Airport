@@ -5,9 +5,9 @@
 [ext_resource type="Material" uid="uid://bicuytk2megcw" path="res://Materials/Placeholders/PlaceHolder_material_3.tres" id="2_vaw2i"]
 [ext_resource type="Texture2D" uid="uid://c8wmvrd56dctl" path="res://Materials/lights/Projector_Flashlight.png" id="4_tny6k"]
 
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_26458"]
-
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_wp11s"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_26458"]
 
 [sub_resource type="Animation" id="Animation_fiye5"]
 resource_name = "CameraAnimTest"
@@ -100,15 +100,17 @@ collision_layer = 4
 collision_mask = 3
 script = ExtResource("1_7ut02")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_wp11s")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D"]
 material_override = ExtResource("2_vaw2i")
 transparency = 0.5
 cast_shadow = 0
+ignore_occlusion_culling = true
 gi_mode = 0
 mesh = SubResource("CapsuleMesh_26458")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-shape = SubResource("CapsuleShape3D_wp11s")
+skeleton = NodePath("../..")
 
 [node name="Neck" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.493447, 0)
@@ -124,7 +126,6 @@ libraries = {
 stream = ExtResource("2_0d2dr")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Neck/Camera3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 light_energy = 0.0
 light_indirect_energy = 0.0
 light_volumetric_fog_energy = 0.0

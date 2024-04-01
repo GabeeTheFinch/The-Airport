@@ -7,6 +7,7 @@ extends CharacterBody3D
 @export var crouch_speed = 1
 @export var jump_strength = 3
 @export var flashlight_Intensity = 7
+@export var crouched_height = 1
 
 @export_group("Features")
 @export var Can_Run = true
@@ -72,12 +73,6 @@ func controls_handler(delta):
 		Camera.rotation.y -= look_dir.x * controller_sens
 		Camera.rotation.x = clamp(Camera.rotation.x - look_dir.y * controller_sens, deg_to_rad(-90), deg_to_rad(90))
 		look_dir = Vector2.ZERO
-		
-func crouch_transform(delta):
-	Collision.scale = Collision.scale.lerp(Crouch_Player_Scale, 10 * delta)
-
-func reset_transforms(delta):
-	Collision.scale = Collision.scale.lerp(Normal_Player_Scale, 10 * delta)
 
 
 func actions_Handler(delta):
@@ -89,14 +84,14 @@ func actions_Handler(delta):
 	elif Input.is_action_pressed("Action_Crouch") and !IsRunning and Can_Crouch:
 		IsCrouched = true
 		speed = crouch_speed
+		Collision.shape.height = crouched_height
 		Camera.fov = lerp(Camera.fov, crouch_fov, 10 * delta)
-		crouch_transform(delta)
 	elif !$Roof_Detector.is_colliding():
 		speed = walk_speed
 		IsRunning = false
 		IsCrouched = false
+		Collision.shape.height = 2
 		Camera.fov = lerp(Camera.fov, normal_fov, 10 * delta)
-		reset_transforms(delta)
 		
 	if Input.is_action_just_pressed("Action_Flashlight") and Can_Use_Light:
 		Flashlight_audio.play()

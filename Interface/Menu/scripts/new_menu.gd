@@ -1,7 +1,7 @@
 extends Control
 
 @onready var MAP_SELECTOR := $MarginContainer/Menus/MAP_SELECTOR
-@onready var SETTINGS := $MarginContainer/Menus/SETTINGS
+@onready var SETTINGS := $MarginContainer/Menus/Menu_Settings#$MarginContainer/Menus/SETTINGS
 @onready var CREDITS := $MarginContainer/Menus/CREDITS
 @onready var TransitionScreen := $"Transition Screen"
 @onready var Base_Button_Sound := $MarginContainer/Button_click

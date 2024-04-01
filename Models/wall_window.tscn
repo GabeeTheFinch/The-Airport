@@ -6,5 +6,4 @@
 [node name="WallWindow" instance=ExtResource("1_v1xhv")]
 
 [node name="Cube" parent="." index="0"]
-gi_mode = 0
 surface_material_override/0 = ExtResource("2_vgncw")
