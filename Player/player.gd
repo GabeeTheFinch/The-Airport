@@ -78,18 +78,15 @@ func controls_handler(delta):
 func actions_Handler(delta):
 	if Input.is_action_pressed("Action_Sprint") and !IsCrouched and Can_Run:
 		if !RoofDetect.is_colliding():
-			print(RoofDetect.is_colliding())
 			IsRunning = true
 			speed = run_speed
 			Camera.fov = lerp(Camera.fov, run_fov, 5 * delta)
 	elif Input.is_action_pressed("Action_Crouch") and !IsRunning and Can_Crouch:
-		print(RoofDetect.is_colliding())
 		IsCrouched = true
 		speed = crouch_speed
 		Collision.shape.height = lerp(Collision.shape.height, crouched_height, 5 * delta)
 		Camera.fov = lerp(Camera.fov, crouch_fov, 5 * delta)
 	elif !RoofDetect.is_colliding():
-		print(RoofDetect.is_colliding())
 		speed = walk_speed
 		IsRunning = false
 		IsCrouched = false
