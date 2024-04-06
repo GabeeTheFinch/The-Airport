@@ -1,23 +1,23 @@
 extends CharacterBody3D
 
 @export_category("Player Settings")
-@export var walk_speed = 2
-@export var acceleration = 15
-@export var run_speed = 4
-@export var crouch_speed = 1
-@export var jump_strength = 3
-@export var flashlight_Intensity = 7
-@export var crouched_height = 1
+@export var walk_speed := 2
+@export var acceleration := 15
+@export var run_speed := 4
+@export var crouch_speed := 1
+@export var jump_strength := 3
+@export var flashlight_Intensity := 7
+@export var crouched_height := 1.0
 
 @export_group("Features")
-@export var Can_Run = true
-@export var Can_Crouch = true
-@export var Can_Jump = true
-@export var Can_Use_Light = true
+@export var Can_Run := true
+@export var Can_Crouch := true
+@export var Can_Jump := true
+@export var Can_Use_Light := true
 
 @onready var Neck := $Neck
 @onready var Camera := $Neck/Camera3D
-@onready var RoofDetect := $Roof_Detector
+@onready var RoofDetect := $ShapeCast3D #$Roof_Detector
 @onready var Collision := $CollisionShape3D
 @onready var Flashlight := $Neck/Camera3D/SpotLight3D
 @onready var Flashlight_audio := $Neck/Camera3D/AudioStreamPlayer
@@ -63,7 +63,7 @@ func controls_handler(delta):
 	
 	if is_on_floor():
 		velocity = velocity.move_toward(direction * speed * input_vect.length(), acceleration * delta)
-		if Input.is_action_just_pressed("Action_Jump") and !$Roof_Detector.is_colliding() and Can_Jump: 
+		if Input.is_action_just_pressed("Action_Jump") and !RoofDetect.is_colliding() and Can_Jump: 
 			velocity.y += jump_strength
 	else:
 		velocity.y -= gravity * delta
@@ -77,21 +77,24 @@ func controls_handler(delta):
 
 func actions_Handler(delta):
 	if Input.is_action_pressed("Action_Sprint") and !IsCrouched and Can_Run:
-		if !$Roof_Detector.is_colliding():
+		if !RoofDetect.is_colliding():
+			print(RoofDetect.is_colliding())
 			IsRunning = true
 			speed = run_speed
-			Camera.fov = lerp(Camera.fov, run_fov, 10 * delta)
+			Camera.fov = lerp(Camera.fov, run_fov, 5 * delta)
 	elif Input.is_action_pressed("Action_Crouch") and !IsRunning and Can_Crouch:
+		print(RoofDetect.is_colliding())
 		IsCrouched = true
 		speed = crouch_speed
-		Collision.shape.height = crouched_height
-		Camera.fov = lerp(Camera.fov, crouch_fov, 10 * delta)
-	elif !$Roof_Detector.is_colliding():
+		Collision.shape.height = lerp(Collision.shape.height, crouched_height, 5 * delta)
+		Camera.fov = lerp(Camera.fov, crouch_fov, 5 * delta)
+	elif !RoofDetect.is_colliding():
+		print(RoofDetect.is_colliding())
 		speed = walk_speed
 		IsRunning = false
 		IsCrouched = false
-		Collision.shape.height = 2
-		Camera.fov = lerp(Camera.fov, normal_fov, 10 * delta)
+		Collision.shape.height = lerp(Collision.shape.height, 2.0, 5 * delta)
+		Camera.fov = lerp(Camera.fov, normal_fov, 5 * delta)
 		
 	if Input.is_action_just_pressed("Action_Flashlight") and Can_Use_Light:
 		Flashlight_audio.play()

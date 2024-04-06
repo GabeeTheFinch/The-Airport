@@ -19,6 +19,8 @@ FOV=75.0
 config/name="The Airport"
 run/main_scene="res://Interface/Menu/new_menu.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
+boot_splash/bg_color=Color(0, 0, 0, 1)
+boot_splash/show_image=false
 config/icon="res://icon.svg"
 
 [audio]
@@ -32,11 +34,8 @@ Save="*res://Scripts/save.gd"
 
 [display]
 
-window/size/viewport_width=1920
-window/size/viewport_height=1050
+window/size/mode=3
 window/size/resizable=false
-window/stretch/mode="viewport"
-window/stretch/aspect="expand"
 window/vsync/vsync_mode=0
 
 [dotnet]

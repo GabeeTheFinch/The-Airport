@@ -2,9 +2,9 @@
 
 [ext_resource type="Material" uid="uid://dd4xwrwmwhmmj" path="res://Materials/Placeholders/PlaceHolder_material_1.tres" id="1_vsxas"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o7up4"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uhqof"]
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_2m61d"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_cpak4"]
 _surfaces = [{
 "aabb": AABB(-1, -1, -0.1, 2, 3.00001, 0.20001),
 "format": 34359742465,
@@ -17,7 +17,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_8mi8e"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_xbl7p"]
 resource_name = "3x2_Wall_Cube_002"
 lightmap_size_hint = Vector2i(86, 86)
 _surfaces = [{
@@ -26,26 +26,26 @@ _surfaces = [{
 "format": 34359742519,
 "index_count": 36,
 "index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 0, 0, 3, 0, 1, 0, 4, 0, 5, 0, 6, 0, 4, 0, 7, 0, 5, 0, 8, 0, 9, 0, 10, 0, 8, 0, 11, 0, 9, 0, 12, 0, 13, 0, 14, 0, 12, 0, 15, 0, 13, 0, 16, 0, 17, 0, 18, 0, 16, 0, 19, 0, 17, 0, 20, 0, 21, 0, 22, 0, 20, 0, 23, 0, 21, 0),
-"material": SubResource("StandardMaterial3D_o7up4"),
+"material": SubResource("StandardMaterial3D_uhqof"),
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
 "vertex_count": 24,
 "vertex_data": PackedByteArray(0, 0, 128, 191, 0, 0, 0, 64, 200, 204, 204, 61, 0, 0, 128, 63, 0, 0, 0, 64, 200, 204, 204, 189, 0, 0, 128, 63, 0, 0, 0, 64, 200, 204, 204, 61, 0, 0, 128, 191, 0, 0, 0, 64, 200, 204, 204, 189, 0, 0, 128, 63, 0, 0, 128, 191, 200, 204, 204, 189, 0, 0, 128, 63, 0, 0, 0, 64, 200, 204, 204, 61, 0, 0, 128, 63, 0, 0, 0, 64, 200, 204, 204, 189, 0, 0, 128, 63, 0, 0, 128, 191, 200, 204, 204, 61, 0, 0, 128, 191, 0, 0, 128, 191, 200, 204, 204, 61, 0, 0, 128, 191, 0, 0, 0, 64, 200, 204, 204, 189, 0, 0, 128, 191, 0, 0, 0, 64, 200, 204, 204, 61, 0, 0, 128, 191, 0, 0, 128, 191, 200, 204, 204, 189, 0, 0, 128, 191, 0, 0, 128, 191, 200, 204, 204, 189, 0, 0, 128, 63, 0, 0, 128, 191, 200, 204, 204, 61, 0, 0, 128, 63, 0, 0, 128, 191, 200, 204, 204, 189, 0, 0, 128, 191, 0, 0, 128, 191, 200, 204, 204, 61, 0, 0, 128, 191, 0, 0, 128, 191, 200, 204, 204, 189, 0, 0, 128, 63, 0, 0, 0, 64, 200, 204, 204, 189, 0, 0, 128, 191, 0, 0, 0, 64, 200, 204, 204, 189, 0, 0, 128, 63, 0, 0, 128, 191, 200, 204, 204, 189, 0, 0, 128, 63, 0, 0, 0, 64, 200, 204, 204, 61, 0, 0, 128, 191, 0, 0, 128, 191, 200, 204, 204, 61, 0, 0, 128, 191, 0, 0, 0, 64, 200, 204, 204, 61, 0, 0, 128, 63, 0, 0, 128, 191, 200, 204, 204, 61, 255, 127, 255, 255, 255, 255, 255, 191, 255, 127, 255, 255, 255, 255, 255, 191, 255, 127, 255, 255, 255, 255, 255, 191, 255, 127, 255, 255, 255, 255, 255, 191, 255, 255, 255, 127, 255, 255, 255, 191, 255, 255, 255, 127, 255, 255, 255, 191, 255, 255, 255, 127, 255, 255, 255, 191, 255, 255, 255, 127, 255, 255, 255, 191, 0, 0, 255, 127, 255, 255, 255, 191, 0, 0, 255, 127, 255, 255, 255, 191, 0, 0, 255, 127, 255, 255, 255, 191, 0, 0, 255, 127, 255, 255, 255, 191, 255, 127, 0, 0, 255, 255, 255, 191, 255, 127, 0, 0, 255, 255, 255, 191, 255, 127, 0, 0, 255, 255, 255, 191, 255, 127, 0, 0, 255, 255, 255, 191, 255, 255, 255, 255, 255, 255, 255, 191, 255, 255, 255, 255, 255, 255, 255, 191, 255, 255, 255, 255, 255, 255, 255, 191, 255, 255, 255, 255, 255, 255, 255, 191, 255, 127, 255, 127, 255, 255, 255, 191, 255, 127, 255, 127, 255, 255, 255, 191, 255, 127, 255, 127, 255, 255, 255, 191, 255, 127, 255, 127, 255, 255, 255, 191)
 }]
 blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_2m61d")
+shadow_mesh = SubResource("ArrayMesh_cpak4")
 
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_yrekl"]
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_fe2ln"]
 data = PackedVector3Array(-1, 2, 0.1, 1, 2, -0.1, 1, 2, 0.1, -1, 2, 0.1, -1, 2, -0.1, 1, 2, -0.1, 1, -1, -0.1, 1, 2, 0.1, 1, 2, -0.1, 1, -1, -0.1, 1, -1, 0.1, 1, 2, 0.1, -1, -1, 0.1, -1, 2, -0.1, -1, 2, 0.1, -1, -1, 0.1, -1, -1, -0.1, -1, 2, -0.1, -1, -1, -0.1, 1, -1, 0.1, 1, -1, -0.1, -1, -1, -0.1, -1, -1, 0.1, 1, -1, 0.1, -1, -1, -0.1, 1, 2, -0.1, -1, 2, -0.1, -1, -1, -0.1, 1, -1, -0.1, 1, 2, -0.1, 1, 2, 0.1, -1, -1, 0.1, -1, 2, 0.1, 1, 2, 0.1, 1, -1, 0.1, -1, -1, 0.1)
 
 [node name="3x2_Wall" type="StaticBody3D"]
 
 [node name="Cube" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-mesh = SubResource("ArrayMesh_8mi8e")
+material_override = ExtResource("1_vsxas")
+mesh = SubResource("ArrayMesh_xbl7p")
 skeleton = NodePath("")
-surface_material_override/0 = ExtResource("1_vsxas")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-shape = SubResource("ConcavePolygonShape3D_yrekl")
+shape = SubResource("ConcavePolygonShape3D_fe2ln")

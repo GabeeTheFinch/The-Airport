@@ -1,11 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://h7c2nipeg7wv"]
+[gd_scene load_steps=12 format=3 uid="uid://h7c2nipeg7wv"]
 
 [ext_resource type="Script" path="res://Player/player.gd" id="1_7ut02"]
 [ext_resource type="AudioStream" uid="uid://b6yejxl8xlko5" path="res://Player/audio/FlashLightSound.WAV" id="2_0d2dr"]
 [ext_resource type="Material" uid="uid://bicuytk2megcw" path="res://Materials/Placeholders/PlaceHolder_material_3.tres" id="2_vaw2i"]
 [ext_resource type="Texture2D" uid="uid://c8wmvrd56dctl" path="res://Materials/lights/Projector_Flashlight.png" id="4_tny6k"]
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_wp11s"]
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ckgdl"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_26458"]
 
@@ -94,6 +94,9 @@ corner_radius_top_right = 790
 corner_radius_bottom_right = 790
 corner_radius_bottom_left = 790
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_dw1nd"]
+size = Vector3(0.8, 0.3, 0.8)
+
 [node name="Player" type="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 collision_layer = 4
@@ -101,7 +104,7 @@ collision_mask = 3
 script = ExtResource("1_7ut02")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-shape = SubResource("CapsuleShape3D_wp11s")
+shape = SubResource("CapsuleShape3D_ckgdl")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D"]
 material_override = ExtResource("2_vaw2i")
@@ -161,5 +164,7 @@ grow_vertical = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_21014")
 
-[node name="Roof_Detector" type="RayCast3D" parent="."]
-transform = Transform3D(12, 0, 0, 0, -1, -1.81195e-06, 0, 1.50996e-07, -12, 0, 0.2, 0)
+[node name="ShapeCast3D" type="ShapeCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
+shape = SubResource("BoxShape3D_dw1nd")
+target_position = Vector3(0, 0, 0)

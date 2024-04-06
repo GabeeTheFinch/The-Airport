@@ -1,10 +1,12 @@
-[gd_scene load_steps=9 format=3 uid="uid://bkr1sdyy6js2o"]
+[gd_scene load_steps=11 format=3 uid="uid://bkr1sdyy6js2o"]
 
 [ext_resource type="PackedScene" uid="uid://c3bl8uftrj304" path="res://Models/6x_6_wall.tscn" id="1_vdyx0"]
 [ext_resource type="PackedScene" uid="uid://h7c2nipeg7wv" path="res://Player/player.tscn" id="2_n6eu4"]
 [ext_resource type="PackedScene" uid="uid://dbn6anhtommt2" path="res://Models/3x_2_door.tscn" id="2_ydxwx"]
 [ext_resource type="PackedScene" uid="uid://b4gcmdrl73eq4" path="res://Models/3x_4_wall.tscn" id="3_k2326"]
 [ext_resource type="PackedScene" uid="uid://ut0tmij51q30" path="res://Models/3x_2_wall.tscn" id="5_xbawk"]
+[ext_resource type="VoxelGIData" uid="uid://c3civox5cbxa6" path="res://Maps/Lightmaps/node_3d.VoxelGI_data.res" id="6_5e0lh"]
+[ext_resource type="LightmapGIData" uid="uid://bh7oc4i5rowrc" path="res://Maps/Lightmaps/node_3d.lmbake" id="7_vq3bq"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_44sly"]
 sky_top_color = Color(0, 0.12549, 0.278431, 1)
@@ -1271,10 +1273,24 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 1, 
 environment = SubResource("Environment_0rh1l")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-1, -2.26267e-08, -8.44439e-08, 0, -0.965926, 0.258819, -8.74228e-08, 0.258819, 0.965926, 0, 0, -4.6)
+transform = Transform3D(-1, -8.74228e-08, 0, 8.44439e-08, -0.965926, 0.258819, -2.26267e-08, 0.258819, 0.965926, 0, 0, 0)
 light_color = Color(0.831373, 0.901961, 1, 1)
 light_volumetric_fog_energy = 0.5
 light_bake_mode = 1
 shadow_enabled = true
 directional_shadow_blend_splits = true
 sky_mode = 1
+
+[node name="VoxelGI" type="VoxelGI" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 6)
+visible = false
+subdiv = 3
+size = Vector3(126, 12, 30)
+data = ExtResource("6_5e0lh")
+
+[node name="LightmapGI" type="LightmapGI" parent="."]
+quality = 2
+directional = true
+interior = true
+generate_probes_subdiv = 0
+light_data = ExtResource("7_vq3bq")
