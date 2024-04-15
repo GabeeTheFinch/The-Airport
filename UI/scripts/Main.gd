@@ -4,6 +4,8 @@ extends Control
 @export var SettingsMenu: Node
 @export var CreditsMenu: Node
 @onready var Clicked := $ButtonClick
+@onready var Animator := $AnimationTree
+
 
 func ClearAll():
 	SettingsMenu.visible = false
