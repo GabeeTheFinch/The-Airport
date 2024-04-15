@@ -1,0 +1,101 @@
+[gd_scene load_steps=11 format=3 uid="uid://b4gackficavcv"]
+
+[ext_resource type="Script" path="res://UI/scripts/Main.gd" id="1_uqoe6"]
+[ext_resource type="PackedScene" path="res://UI/credits.tscn" id="2_1t85u"]
+[ext_resource type="PackedScene" path="res://UI/settings.tscn" id="3_bhdl8"]
+[ext_resource type="PackedScene" path="res://UI/show_fps.tscn" id="4_jlloi"]
+[ext_resource type="AudioStream" uid="uid://emj3gtccptvc" path="res://Audio/Music/BaseMusic.mp3" id="5_oplbl"]
+[ext_resource type="AudioStream" uid="uid://cf8cwl6hcnbjg" path="res://Audio/Interfaces/BadSound.WAV" id="6_v7mu5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_31o51"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_erwij"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_vuf2d"]
+
+[sub_resource type="Environment" id="Environment_rbhxe"]
+
+[node name="Control" type="Control" node_paths=PackedStringArray("SettingsMenu", "CreditsMenu")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_uqoe6")
+SettingsMenu = NodePath("MarginContainer/Settings")
+CreditsMenu = NodePath("MarginContainer/Credits")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_bottom = 35
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="Start" type="Button" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxEmpty_31o51")
+theme_override_styles/hover = SubResource("StyleBoxLine_erwij")
+theme_override_styles/pressed = SubResource("StyleBoxLine_vuf2d")
+text = "Start Game"
+
+[node name="Settings" type="Button" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxEmpty_31o51")
+theme_override_styles/hover = SubResource("StyleBoxLine_erwij")
+theme_override_styles/pressed = SubResource("StyleBoxLine_vuf2d")
+text = "Settings"
+
+[node name="Credits" type="Button" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxEmpty_31o51")
+theme_override_styles/hover = SubResource("StyleBoxLine_erwij")
+theme_override_styles/pressed = SubResource("StyleBoxLine_vuf2d")
+text = "Credits"
+
+[node name="Credits" parent="MarginContainer" instance=ExtResource("2_1t85u")]
+visible = false
+layout_mode = 2
+
+[node name="Settings" parent="MarginContainer" node_paths=PackedStringArray("world_environment") instance=ExtResource("3_bhdl8")]
+visible = false
+layout_mode = 2
+world_environment = NodePath("../../WorldEnvironment")
+
+[node name="Show_FPS" parent="MarginContainer" instance=ExtResource("4_jlloi")]
+layout_mode = 2
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_rbhxe")
+
+[node name="Music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_oplbl")
+autoplay = true
+bus = &"Music"
+
+[node name="ButtonClick" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_v7mu5")
+bus = &"SFX"
+
+[connection signal="pressed" from="MarginContainer/HBoxContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/Credits" to="." method="_on_credits_pressed"]

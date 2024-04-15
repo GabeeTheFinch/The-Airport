@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://b4gcmdrl73eq4"]
 
-[ext_resource type="Material" uid="uid://dd4xwrwmwhmmj" path="res://Materials/Placeholders/PlaceHolder_material_1.tres" id="1_b21mo"]
+[ext_resource type="Material" uid="uid://dd4xwrwmwhmmj" path="res://Textures/Placeholders/PlaceHolder_material_1.tres" id="1_b21mo"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ghgbh"]
 

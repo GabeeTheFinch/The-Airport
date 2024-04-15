@@ -1,9 +1,0 @@
-[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://b24kr425h1i46"]
-
-[ext_resource type="Texture2D" uid="uid://baqc6sgtwv2w7" path="res://Materials/Placeholders/Textures/Prototypes/prototype_grey.png" id="1_leayu"]
-
-[resource]
-albedo_texture = ExtResource("1_leayu")
-roughness_texture = ExtResource("1_leayu")
-uv1_triplanar = true
-uv1_world_triplanar = true

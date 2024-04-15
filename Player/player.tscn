@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://Player/player.gd" id="1_7ut02"]
 [ext_resource type="AudioStream" uid="uid://b6yejxl8xlko5" path="res://Player/audio/FlashLightSound.WAV" id="2_0d2dr"]
-[ext_resource type="Material" uid="uid://bicuytk2megcw" path="res://Materials/Placeholders/PlaceHolder_material_3.tres" id="2_vaw2i"]
-[ext_resource type="Texture2D" uid="uid://c8wmvrd56dctl" path="res://Materials/lights/Projector_Flashlight.png" id="4_tny6k"]
+[ext_resource type="Material" uid="uid://bicuytk2megcw" path="res://Textures/Placeholders/PlaceHolder_material_3.tres" id="2_vaw2i"]
+[ext_resource type="Texture2D" uid="uid://c8wmvrd56dctl" path="res://Textures/lights/Projector_Flashlight.png" id="4_tny6k"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ckgdl"]
 

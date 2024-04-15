@@ -17,7 +17,9 @@ FOV=75.0
 [application]
 
 config/name="The Airport"
-run/main_scene="res://Interface/Menu/new_menu.tscn"
+config/description="The Airport is a 3D horror game made in Godot currently in development "
+config/tags=PackedStringArray("3d")
+run/main_scene="res://UI/Main.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 boot_splash/bg_color=Color(0, 0, 0, 1)
 boot_splash/show_image=false
@@ -25,7 +27,7 @@ config/icon="res://icon.svg"
 
 [audio]
 
-buses/default_bus_layout="res://Audio/bus/default_bus_layout.tres"
+buses/default_bus_layout="res://Audio/Bus/default_bus_layout.tres"
 
 [autoload]
 
@@ -34,8 +36,6 @@ Save="*res://Scripts/save.gd"
 
 [display]
 
-window/size/mode=3
-window/size/resizable=false
 window/vsync/vsync_mode=0
 
 [dotnet]
