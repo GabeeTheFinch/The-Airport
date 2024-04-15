@@ -7,8 +7,8 @@ signal unpause
 
 
 func _ready():
-	$"Transition Screen".Fade_out(0.8)
-
+	pass
+	
 func pause_game():
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	paused = true
@@ -22,10 +22,4 @@ func unpause_game():
 	get_tree().paused = false
 
 func _process(_delta):
-	if Input.is_action_just_pressed("Game_Pause") and !paused:
-		$MarginContainer.visible = true
-		pause_game()
-	elif Input.is_action_just_pressed("Game_Pause") and paused: 
-		$MarginContainer.visible = false
-		unpause_game()
-		
+	pass

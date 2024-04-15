@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cew42ue1r4fb2"]
+[gd_scene load_steps=14 format=3 uid="uid://cew42ue1r4fb2"]
 
 [ext_resource type="LightmapGIData" uid="uid://hqxkmi2tybj2" path="res://Levels/Lightmaps/map_player_testing.lmbake" id="1_02x4x"]
 [ext_resource type="PackedScene" uid="uid://h7c2nipeg7wv" path="res://Player/player.tscn" id="1_fb1a0"]
@@ -8,9 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://dbn6anhtommt2" path="res://Models/3x_2_door.tscn" id="4_3homr"]
 [ext_resource type="PackedScene" uid="uid://ut0tmij51q30" path="res://Models/3x_2_wall.tscn" id="6_1bk1f"]
 [ext_resource type="PackedScene" uid="uid://c3bl8uftrj304" path="res://Models/6x_6_wall.tscn" id="7_s5j55"]
-[ext_resource type="AudioStream" path="res://Audio/Distorted_Trumpets.mp3" id="9_7hn48"]
-[ext_resource type="PackedScene" path="res://Interface/show_fps.tscn" id="10_r8yov"]
-[ext_resource type="AudioStream" path="res://Audio/int-rainy-ambience-rain-heard-from-inside-a-room-105096.mp3" id="11_3uste"]
+[ext_resource type="PackedScene" path="res://UI/show_fps.tscn" id="10_r8yov"]
+[ext_resource type="AudioStream" uid="uid://emj3gtccptvc" path="res://Audio/Music/BaseMusic.mp3" id="11_3uste"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_hc8cn"]
 sky_energy_multiplier = 0.0
@@ -379,7 +378,6 @@ surface_material_override/0 = null
 
 [node name="6x6_Wall14" parent="Floor_Ground" instance=ExtResource("7_s5j55")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 12)
-surface_material_override/0 = null
 
 [node name="6x6_Wall15" parent="Floor_Ground" instance=ExtResource("7_s5j55")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 0)
@@ -456,7 +454,7 @@ spot_angle = 63.86
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-stream = ExtResource("9_7hn48")
+stream = ExtResource("11_3uste")
 volume_db = -1.0
 unit_size = 1.0
 max_db = 0.5
@@ -465,7 +463,3 @@ max_distance = 20.0
 bus = &"Music"
 
 [node name="Show_FPS" parent="." instance=ExtResource("10_r8yov")]
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("11_3uste")
-autoplay = true

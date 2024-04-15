@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://c6qc0x2e23vlc"]
+[gd_scene load_steps=16 format=3 uid="uid://c6qc0x2e23vlc"]
 
 [ext_resource type="Script" path="res://Levels/Scripts/Zone1_blocky.gd" id="1_x1lgy"]
 [ext_resource type="Material" uid="uid://dd4xwrwmwhmmj" path="res://Textures/Placeholders/PlaceHolder_material_1.tres" id="2_2rki1"]
@@ -6,11 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://h7c2nipeg7wv" path="res://Player/player.tscn" id="3_3l4l1"]
 [ext_resource type="PackedScene" uid="uid://dbuulp5flt325" path="res://Models/Lights/spotlight_broken.tscn" id="4_i1xkl"]
 [ext_resource type="PackedScene" uid="uid://bdcj3ailm8llo" path="res://Models/wall_window.tscn" id="7_hkeit"]
-[ext_resource type="PackedScene" path="res://Interface/Transitionning/transition_screen.tscn" id="8_e65b5"]
-[ext_resource type="AudioStream" path="res://Audio/Distorted_Trumpets.mp3" id="8_r80im"]
 [ext_resource type="LightmapGIData" uid="uid://gtpb2dmvi55m" path="res://Levels/Lightmaps/Zone1_blocky.lmbake" id="11_t1677"]
-[ext_resource type="PackedScene" path="res://Interface/show_fps.tscn" id="13_i2dsm"]
-[ext_resource type="AudioStream" path="res://Audio/int-rainy-ambience-rain-heard-from-inside-a-room-105096.mp3" id="13_nxwa4"]
+[ext_resource type="PackedScene" path="res://UI/show_fps.tscn" id="13_i2dsm"]
 [ext_resource type="PackedScene" uid="uid://c3bl8uftrj304" path="res://Models/6x_6_wall.tscn" id="14_k2uap"]
 [ext_resource type="PackedScene" uid="uid://b4gcmdrl73eq4" path="res://Models/3x_4_wall.tscn" id="15_ir6dh"]
 
@@ -145,17 +142,6 @@ transform = Transform3D(-2.9, 0, 2.53526e-07, 0, 2.9, 0, -2.53526e-07, 0, -2.9, 
 
 [node name="WallWindow20" parent="Node/Node3D" instance=ExtResource("7_hkeit")]
 transform = Transform3D(-2.9, 0, 2.53526e-07, 0, 2.9, 0, -2.53526e-07, 0, -2.9, -85.1, 0.1, -24.9)
-
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Node"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 22.1412)
-stream = ExtResource("8_r80im")
-unit_size = 1.0
-max_db = 0.5
-autoplay = true
-max_distance = 20.0
-bus = &"Music"
-
-[node name="Transition Screen" parent="." instance=ExtResource("8_e65b5")]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_hxbti")
@@ -625,10 +611,6 @@ skeleton = NodePath("../..")
 shape = SubResource("ConcavePolygonShape3D_e7loq")
 
 [node name="Show_FPS" parent="." instance=ExtResource("13_i2dsm")]
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("13_nxwa4")
-autoplay = true
 
 [node name="Node3D2" type="Node3D" parent="."]
 
