@@ -95,8 +95,9 @@ tracks/5/keys = {
 "times": PackedFloat32Array(0, 10)
 }
 
-[sub_resource type="Animation" id="Animation_6vp7a"]
-length = 0.001
+[sub_resource type="Animation" id="Animation_jnui4"]
+resource_name = "INSIDE"
+length = 10.0
 tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -104,9 +105,9 @@ tracks/0/path = NodePath("SubViewportContainer/SubViewport/Camera3D:position:x")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(30, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(30, -0.25, 0, 0.25, 0, 5, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 10)
 }
 tracks/1/type = "bezier"
 tracks/1/imported = false
@@ -115,9 +116,9 @@ tracks/1/path = NodePath("SubViewportContainer/SubViewport/Camera3D:position:y")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(6, -0.25, 0, 0.25, 0, 6, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 10)
 }
 tracks/2/type = "bezier"
 tracks/2/imported = false
@@ -126,9 +127,9 @@ tracks/2/path = NodePath("SubViewportContainer/SubViewport/Camera3D:position:z")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(10, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(4, -0.25, 0, 0.25, 0, 4, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 10)
 }
 tracks/3/type = "bezier"
 tracks/3/imported = false
@@ -137,9 +138,9 @@ tracks/3/path = NodePath("SubViewportContainer/SubViewport/Camera3D:rotation:x")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(0.20944, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(-0.191986, -0.25, 0, 0.25, 0, -0.191986, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 10)
 }
 tracks/4/type = "bezier"
 tracks/4/imported = false
@@ -148,9 +149,9 @@ tracks/4/path = NodePath("SubViewportContainer/SubViewport/Camera3D:rotation:y")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(-0.261799, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(2.35619, -0.25, 0, 0.25, 0, 2.35619, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 10)
 }
 tracks/5/type = "bezier"
 tracks/5/imported = false
@@ -159,9 +160,9 @@ tracks/5/path = NodePath("SubViewportContainer/SubViewport/Camera3D:rotation:z")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 10)
 }
 
 [sub_resource type="Animation" id="Animation_a63vy"]
@@ -234,9 +235,8 @@ tracks/5/keys = {
 "times": PackedFloat32Array(0, 10)
 }
 
-[sub_resource type="Animation" id="Animation_jnui4"]
-resource_name = "INSIDE"
-length = 10.0
+[sub_resource type="Animation" id="Animation_6vp7a"]
+length = 0.001
 tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -244,9 +244,9 @@ tracks/0/path = NodePath("SubViewportContainer/SubViewport/Camera3D:position:x")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(30, -0.25, 0, 0.25, 0, 5, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 10)
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(30, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
 }
 tracks/1/type = "bezier"
 tracks/1/imported = false
@@ -255,9 +255,9 @@ tracks/1/path = NodePath("SubViewportContainer/SubViewport/Camera3D:position:y")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(6, -0.25, 0, 0.25, 0, 6, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 10)
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
 }
 tracks/2/type = "bezier"
 tracks/2/imported = false
@@ -266,9 +266,9 @@ tracks/2/path = NodePath("SubViewportContainer/SubViewport/Camera3D:position:z")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(4, -0.25, 0, 0.25, 0, 4, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 10)
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(10, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
 }
 tracks/3/type = "bezier"
 tracks/3/imported = false
@@ -277,9 +277,9 @@ tracks/3/path = NodePath("SubViewportContainer/SubViewport/Camera3D:rotation:x")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(-0.191986, -0.25, 0, 0.25, 0, -0.191986, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 10)
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.20944, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
 }
 tracks/4/type = "bezier"
 tracks/4/imported = false
@@ -288,9 +288,9 @@ tracks/4/path = NodePath("SubViewportContainer/SubViewport/Camera3D:rotation:y")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(2.35619, -0.25, 0, 0.25, 0, 2.35619, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 10)
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-0.261799, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
 }
 tracks/5/type = "bezier"
 tracks/5/imported = false
@@ -299,9 +299,9 @@ tracks/5/path = NodePath("SubViewportContainer/SubViewport/Camera3D:rotation:z")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 10)
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_wmot7"]
@@ -444,7 +444,7 @@ size = Vector2i(1152, 648)
 render_target_update_mode = 4
 
 [node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport"]
-transform = Transform3D(0.965926, -0.0538115, -0.253163, 0, 0.978148, -0.207912, 0.258819, 0.200827, 0.944818, 30, 1, 10)
+transform = Transform3D(0.965926, -0.0538116, -0.253163, 0, 0.978148, -0.207912, 0.258819, 0.200828, 0.944818, 30, 1, 10)
 attributes = SubResource("CameraAttributesPractical_47vxm")
 current = true
 fov = 50.0
