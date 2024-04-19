@@ -1,19 +1,20 @@
 extends CharacterBody3D
 
 @export_category("Player Settings")
-@export var walk_speed := 2
-@export var acceleration := 15
-@export var run_speed := 4
-@export var crouch_speed := 1
-@export var jump_strength := 3
-@export var flashlight_Intensity := 7
-@export var crouched_height := 1.0
+@export var walk_speed : float = 2
+@export var run_speed : float = 4
+@export var crouch_speed : float = 1
+@export var crouch_height : float = 1.0
+@export var acceleration : float = 15
+@export var jump_strength : float = 3
+@export var flashlight_Intensity : float = 7
+
 
 @export_group("Features")
-@export var Can_Run := true
-@export var Can_Crouch := true
-@export var Can_Jump := true
-@export var Can_Use_Light := true
+@export var Can_Run : bool = true
+@export var Can_Crouch : bool = true
+@export var Can_Jump : bool = true
+@export var Can_Use_Light : bool = true
 
 @onready var Neck := $Neck
 @onready var Camera := $Neck/Camera3D
@@ -74,7 +75,6 @@ func controls_handler(delta):
 		Camera.rotation.x = clamp(Camera.rotation.x - look_dir.y * controller_sens, deg_to_rad(-90), deg_to_rad(90))
 		look_dir = Vector2.ZERO
 
-
 func actions_Handler(delta):
 	if Input.is_action_pressed("Action_Sprint") and !IsCrouched and Can_Run:
 		if !RoofDetect.is_colliding():
@@ -84,7 +84,7 @@ func actions_Handler(delta):
 	elif Input.is_action_pressed("Action_Crouch") and !IsRunning and Can_Crouch:
 		IsCrouched = true
 		speed = crouch_speed
-		Collision.shape.height = lerp(Collision.shape.height, crouched_height, 5 * delta)
+		Collision.shape.height = lerp(Collision.shape.height, crouch_height, 5 * delta)
 		Camera.fov = lerp(Camera.fov, crouch_fov, 5 * delta)
 	elif !RoofDetect.is_colliding():
 		speed = walk_speed

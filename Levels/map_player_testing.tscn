@@ -1,9 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://cew42ue1r4fb2"]
+[gd_scene load_steps=13 format=3 uid="uid://cew42ue1r4fb2"]
 
-[ext_resource type="LightmapGIData" uid="uid://hqxkmi2tybj2" path="res://Levels/Lightmaps/map_player_testing.lmbake" id="1_02x4x"]
+[ext_resource type="LightmapGIData" uid="uid://yq4lnb4t0b" path="res://Levels/Lightmaps/map_player_testing.lmbake" id="1_02x4x"]
 [ext_resource type="PackedScene" uid="uid://h7c2nipeg7wv" path="res://Player/player.tscn" id="1_fb1a0"]
 [ext_resource type="Material" uid="uid://dd4xwrwmwhmmj" path="res://Textures/Placeholders/PlaceHolder_material_1.tres" id="2_e2wn6"]
-[ext_resource type="Material" uid="uid://b24kr425h1i46" path="res://Textures/Placeholders/PlaceHolder_material_2.tres" id="2_qhr7c"]
 [ext_resource type="PackedScene" uid="uid://bajsmfdedcmkg" path="res://Models/Lights/Light.tscn" id="3_v1w1k"]
 [ext_resource type="PackedScene" uid="uid://dbn6anhtommt2" path="res://Models/3x_2_door.tscn" id="4_3homr"]
 [ext_resource type="PackedScene" uid="uid://ut0tmij51q30" path="res://Models/3x_2_wall.tscn" id="6_1bk1f"]
@@ -46,9 +45,8 @@ volumetric_fog_temporal_reprojection_enabled = false
 environment = SubResource("Environment_yapjj")
 
 [node name="LightmapGI" type="LightmapGI" parent="."]
-quality = 2
-bounce_indirect_energy = 0.1
 directional = true
+interior = true
 light_data = ExtResource("1_02x4x")
 
 [node name="Player" parent="." instance=ExtResource("1_fb1a0")]
@@ -63,7 +61,6 @@ shadow_enabled = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.7, 1, 1)
 light_color = Color(0, 0.560784, 0.560784, 1)
 light_energy = 1.5
-light_indirect_energy = 5.0
 light_volumetric_fog_energy = 16.0
 light_bake_mode = 1
 
@@ -71,7 +68,6 @@ light_bake_mode = 1
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.7, 1, 13)
 light_color = Color(0, 0.560784, 0.560784, 1)
 light_energy = 1.5
-light_indirect_energy = 5.0
 light_volumetric_fog_energy = 16.0
 light_bake_mode = 1
 
@@ -92,21 +88,9 @@ omni_shadow_mode = 0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.7, 1, 10)
 light_color = Color(0.811765, 0.270588, 0.333333, 1)
 light_energy = 1.5
-light_indirect_energy = 16.0
 light_specular = 16.0
 light_bake_mode = 1
 shadow_enabled = true
-
-[node name="SpotLight3D2" type="SpotLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 10, 3, 6)
-light_bake_mode = 1
-shadow_enabled = true
-
-[node name="SpotLight3D3" type="SpotLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 10, 3, 10)
-light_bake_mode = 1
-shadow_enabled = true
-spot_angle = 79.62
 
 [node name="Node3D" parent="." instance=ExtResource("3_v1w1k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.1, 2.8, 2)
@@ -270,182 +254,134 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 10.3)
 
 [node name="6x6_Wall" parent="Floor_Ground" instance=ExtResource("7_s5j55")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 3, 6)
-surface_material_override/0 = null
 
 [node name="6x6_Wall2" parent="Floor_Ground" instance=ExtResource("7_s5j55")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 3, 6)
-surface_material_override/0 = null
 
 [node name="6x6_Wall5" parent="Floor_Ground" instance=ExtResource("7_s5j55")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 3, 12)
-surface_material_override/0 = null
 
 [node name="6x6_Wall6" parent="Floor_Ground" instance=ExtResource("7_s5j55")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 3, 12)
-surface_material_override/0 = null
 
 [node name="6x6_Wall3" parent="Floor_Ground" instance=ExtResource("7_s5j55")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 3, 0)
-surface_material_override/0 = null
 
 [node name="6x6_Wall16" parent="Floor_Ground" instance=ExtResource("7_s5j55")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 3, 6)
-surface_material_override/0 = null
 
 [node name="6x6_Wall17" parent="Floor_Ground" instance=ExtResource("7_s5j55")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 3, 12)
-surface_material_override/0 = null
 
 [node name="6x6_Wall18" parent="Floor_Ground" instance=ExtResource("7_s5j55")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 3, 0)
-surface_material_override/0 = null
 
 [node name="6x6_Wall19" parent="Floor_Ground" instance=ExtResource("7_s5j55")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 3, 6)
-surface_material_override/0 = null
 
 [node name="6x6_Wall20" parent="Floor_Ground" instance=ExtResource("7_s5j55")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 3, 12)
-surface_material_override/0 = null
 
 [node name="6x6_Wall21" parent="Floor_Ground" instance=ExtResource("7_s5j55")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 3, 0)
-surface_material_override/0 = null
 
 [node name="6x6_Wall22" parent="Floor_Ground" instance=ExtResource("7_s5j55")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17, 3, 6)
-surface_material_override/0 = null
 
 [node name="6x6_Wall23" parent="Floor_Ground" instance=ExtResource("7_s5j55")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17, 3, 12)
-surface_material_override/0 = null
 
 [node name="6x6_Wall24" parent="Floor_Ground" instance=ExtResource("7_s5j55")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17, 3, 0)
-surface_material_override/0 = null
 
 [node name="6x6_Wall4" parent="Floor_Ground" instance=ExtResource("7_s5j55")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 3, 0)
-surface_material_override/0 = null
 
 [node name="6x6_Wall37" parent="Floor_Ground" instance=ExtResource("7_s5j55")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 5, -7)
-surface_material_override/0 = null
 
 [node name="6x6_Wall38" parent="Floor_Ground" instance=ExtResource("7_s5j55")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 5, -7)
-surface_material_override/0 = null
 
 [node name="6x6_Wall39" parent="Floor_Ground" instance=ExtResource("7_s5j55")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 5, -7)
-surface_material_override/0 = null
 
 [node name="6x6_Wall40" parent="Floor_Ground" instance=ExtResource("7_s5j55")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 5, -13)
-surface_material_override/0 = null
 
 [node name="6x6_Wall41" parent="Floor_Ground" instance=ExtResource("7_s5j55")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 5, -13)
-surface_material_override/0 = null
 
 [node name="6x6_Wall42" parent="Floor_Ground" instance=ExtResource("7_s5j55")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 5, -13)
-surface_material_override/0 = null
 
 [node name="6x6_Wall7" parent="Floor_Ground" instance=ExtResource("7_s5j55")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 6)
-surface_material_override/0 = null
 
 [node name="6x6_Wall8" parent="Floor_Ground" instance=ExtResource("7_s5j55")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 6)
-surface_material_override/0 = null
 
 [node name="6x6_Wall9" parent="Floor_Ground" instance=ExtResource("7_s5j55")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 12)
-surface_material_override/0 = null
 
 [node name="6x6_Wall10" parent="Floor_Ground" instance=ExtResource("7_s5j55")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 12)
-surface_material_override/0 = null
 
 [node name="6x6_Wall11" parent="Floor_Ground" instance=ExtResource("7_s5j55")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
-surface_material_override/0 = null
 
 [node name="6x6_Wall13" parent="Floor_Ground" instance=ExtResource("7_s5j55")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 6)
-surface_material_override/0 = null
 
 [node name="6x6_Wall14" parent="Floor_Ground" instance=ExtResource("7_s5j55")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 12)
 
 [node name="6x6_Wall15" parent="Floor_Ground" instance=ExtResource("7_s5j55")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 0)
-surface_material_override/0 = null
 
 [node name="6x6_Wall25" parent="Floor_Ground" instance=ExtResource("7_s5j55")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 0, 6)
-material_override = ExtResource("2_qhr7c")
-surface_material_override/0 = null
 
 [node name="6x6_Wall26" parent="Floor_Ground" instance=ExtResource("7_s5j55")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 0, 12)
-material_override = ExtResource("2_qhr7c")
-surface_material_override/0 = null
 
 [node name="6x6_Wall27" parent="Floor_Ground" instance=ExtResource("7_s5j55")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 0, 0)
-material_override = ExtResource("2_qhr7c")
-surface_material_override/0 = null
 
 [node name="6x6_Wall28" parent="Floor_Ground" instance=ExtResource("7_s5j55")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17, 0, 6)
-material_override = ExtResource("2_qhr7c")
-surface_material_override/0 = null
 
 [node name="6x6_Wall29" parent="Floor_Ground" instance=ExtResource("7_s5j55")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17, 0, 12)
-material_override = ExtResource("2_qhr7c")
-surface_material_override/0 = null
 
 [node name="6x6_Wall30" parent="Floor_Ground" instance=ExtResource("7_s5j55")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17, 0, 0)
-material_override = ExtResource("2_qhr7c")
-surface_material_override/0 = null
 
 [node name="6x6_Wall12" parent="Floor_Ground" instance=ExtResource("7_s5j55")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 0)
-surface_material_override/0 = null
 
 [node name="6x6_Wall31" parent="Floor_Ground" instance=ExtResource("7_s5j55")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -6)
-surface_material_override/0 = null
 
 [node name="6x6_Wall32" parent="Floor_Ground" instance=ExtResource("7_s5j55")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -6)
-surface_material_override/0 = null
 
 [node name="6x6_Wall33" parent="Floor_Ground" instance=ExtResource("7_s5j55")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, -6)
-surface_material_override/0 = null
 
 [node name="6x6_Wall34" parent="Floor_Ground" instance=ExtResource("7_s5j55")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -12)
-surface_material_override/0 = null
 
 [node name="6x6_Wall35" parent="Floor_Ground" instance=ExtResource("7_s5j55")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -12)
-surface_material_override/0 = null
 
 [node name="6x6_Wall36" parent="Floor_Ground" instance=ExtResource("7_s5j55")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, -12)
-surface_material_override/0 = null
 
 [node name="SpotLight3D" type="SpotLight3D" parent="."]
 transform = Transform3D(0.965926, 0.183013, -0.183013, 0, 0.707107, 0.707107, 0.258819, -0.683013, 0.683013, -3, 4, -4)
 light_color = Color(1, 0.415686, 0, 1)
-light_energy = 10.0
-light_indirect_energy = 16.0
+light_energy = 20.0
 light_volumetric_fog_energy = 40.0
 light_size = 5.0
 shadow_enabled = true

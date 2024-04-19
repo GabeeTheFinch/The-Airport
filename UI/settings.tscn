@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://dfykr6801pkg3"]
+[gd_scene load_steps=4 format=3 uid="uid://dfykr6801pkg3"]
 
 [ext_resource type="Script" path="res://UI/scripts/Settings/Display.gd" id="1_dluy2"]
 [ext_resource type="Script" path="res://UI/scripts/Settings/settings.gd" id="1_wadmk"]
+[ext_resource type="Script" path="res://UI/scripts/Settings/Video.gd" id="3_mso42"]
 
 [node name="Settings" type="Control"]
 layout_mode = 3
@@ -28,8 +29,10 @@ theme_override_constants/margin_bottom = 50
 
 [node name="TabContainer" type="TabContainer" parent="MarginContainer"]
 layout_mode = 2
+current_tab = 1
 
 [node name="Display" type="TabBar" parent="MarginContainer/TabContainer" node_paths=PackedStringArray("SettingsNode")]
+visible = false
 layout_mode = 2
 script = ExtResource("1_dluy2")
 SettingsNode = NodePath("../../..")
@@ -149,9 +152,181 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
 
-[node name="Video" type="TabBar" parent="MarginContainer/TabContainer"]
-visible = false
+[node name="Video" type="TabBar" parent="MarginContainer/TabContainer" node_paths=PackedStringArray("SettingsNode")]
 layout_mode = 2
+script = ExtResource("3_mso42")
+SettingsNode = NodePath("../../..")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/TabContainer/Video"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer/TabContainer/Video/MarginContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 70
+columns = 2
+
+[node name="Label" type="Label" parent="MarginContainer/TabContainer/Video/MarginContainer/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 2
+theme_override_font_sizes/font_size = 35
+text = "Shadow Resolution:"
+
+[node name="Option_ShadowRes" type="OptionButton" parent="MarginContainer/TabContainer/Video/MarginContainer/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+item_count = 4
+selected = 3
+popup/item_0/text = "Very Low"
+popup/item_0/id = 0
+popup/item_1/text = "Low"
+popup/item_1/id = 1
+popup/item_2/text = "Medium"
+popup/item_2/id = 2
+popup/item_3/text = "High"
+popup/item_3/id = 3
+
+[node name="Label2" type="Label" parent="MarginContainer/TabContainer/Video/MarginContainer/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 2
+theme_override_font_sizes/font_size = 35
+text = "Shadow Filtering:"
+
+[node name="Option_ShadowFilter" type="OptionButton" parent="MarginContainer/TabContainer/Video/MarginContainer/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+item_count = 4
+selected = 3
+popup/item_0/text = "Very Low"
+popup/item_0/id = 0
+popup/item_1/text = "Low"
+popup/item_1/id = 1
+popup/item_2/text = "Medium"
+popup/item_2/id = 2
+popup/item_3/text = "High"
+popup/item_3/id = 3
+
+[node name="Label3" type="Label" parent="MarginContainer/TabContainer/Video/MarginContainer/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 2
+theme_override_font_sizes/font_size = 35
+text = "Model Quality:"
+
+[node name="Option_ModelQuality" type="OptionButton" parent="MarginContainer/TabContainer/Video/MarginContainer/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+item_count = 4
+selected = 3
+popup/item_0/text = "Very Low"
+popup/item_0/id = 0
+popup/item_1/text = "Low"
+popup/item_1/id = 1
+popup/item_2/text = "Medium"
+popup/item_2/id = 2
+popup/item_3/text = "High"
+popup/item_3/id = 3
+
+[node name="Label4" type="Label" parent="MarginContainer/TabContainer/Video/MarginContainer/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 2
+theme_override_font_sizes/font_size = 35
+text = "Anti-Aliasing (TAA):"
+
+[node name="Option_TAA" type="OptionButton" parent="MarginContainer/TabContainer/Video/MarginContainer/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+item_count = 2
+selected = 1
+popup/item_0/text = "Disabled"
+popup/item_0/id = 0
+popup/item_1/text = "Enabled"
+popup/item_1/id = 1
+
+[node name="Label5" type="Label" parent="MarginContainer/TabContainer/Video/MarginContainer/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 2
+theme_override_font_sizes/font_size = 35
+text = "Anti-Aliasing (MSAA):"
+
+[node name="Option_MSAA" type="OptionButton" parent="MarginContainer/TabContainer/Video/MarginContainer/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+item_count = 2
+selected = 1
+popup/item_0/text = "Disabled"
+popup/item_0/id = 0
+popup/item_1/text = "Enabled"
+popup/item_1/id = 1
+
+[node name="Label6" type="Label" parent="MarginContainer/TabContainer/Video/MarginContainer/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 2
+theme_override_font_sizes/font_size = 35
+text = "Anti-Aliasing (FXAA):"
+
+[node name="Option_FXAA" type="OptionButton" parent="MarginContainer/TabContainer/Video/MarginContainer/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+item_count = 2
+selected = 1
+popup/item_0/text = "Disabled"
+popup/item_0/id = 0
+popup/item_1/text = "Enabled"
+popup/item_1/id = 1
+
+[node name="Label7" type="Label" parent="MarginContainer/TabContainer/Video/MarginContainer/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 2
+theme_override_font_sizes/font_size = 35
+text = "Ambien Occlusion:"
+
+[node name="Option_AO" type="OptionButton" parent="MarginContainer/TabContainer/Video/MarginContainer/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+item_count = 4
+selected = 3
+popup/item_0/text = "Disabled"
+popup/item_0/id = 0
+popup/item_1/text = "Low"
+popup/item_1/id = 1
+popup/item_2/text = "Medium"
+popup/item_2/id = 2
+popup/item_3/text = "High"
+popup/item_3/id = 3
+
+[node name="Label8" type="Label" parent="MarginContainer/TabContainer/Video/MarginContainer/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 2
+theme_override_font_sizes/font_size = 35
+text = "Volumetric Fog:"
+
+[node name="Option_VolFog" type="OptionButton" parent="MarginContainer/TabContainer/Video/MarginContainer/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+item_count = 3
+selected = 2
+popup/item_0/text = "Disabled"
+popup/item_0/id = 0
+popup/item_1/text = "Low"
+popup/item_1/id = 1
+popup/item_2/text = "High"
+popup/item_2/id = 2
 
 [connection signal="value_changed" from="MarginContainer/TabContainer/Display/MarginContainer/GridContainer/Slider_Resolution" to="MarginContainer/TabContainer/Display" method="_on_slider_resolution_value_changed"]
 [connection signal="item_selected" from="MarginContainer/TabContainer/Display/MarginContainer/GridContainer/Option_Fullscreen" to="MarginContainer/TabContainer/Display" method="_on_option_fullscreen_item_selected"]
@@ -160,3 +335,8 @@ layout_mode = 2
 [connection signal="value_changed" from="MarginContainer/TabContainer/Display/MarginContainer/GridContainer/Slider_Brightness" to="MarginContainer/TabContainer/Display" method="_on_slider_brightness_value_changed"]
 [connection signal="value_changed" from="MarginContainer/TabContainer/Display/MarginContainer/GridContainer/Slider_Contrast" to="MarginContainer/TabContainer/Display" method="_on_slider_contrast_value_changed"]
 [connection signal="value_changed" from="MarginContainer/TabContainer/Display/MarginContainer/GridContainer/Slider_Saturation" to="MarginContainer/TabContainer/Display" method="_on_slider_saturation_value_changed"]
+[connection signal="item_selected" from="MarginContainer/TabContainer/Video/MarginContainer/GridContainer/Option_ShadowRes" to="MarginContainer/TabContainer/Video" method="_on_option_shadow_res_item_selected"]
+[connection signal="item_selected" from="MarginContainer/TabContainer/Video/MarginContainer/GridContainer/Option_ShadowFilter" to="MarginContainer/TabContainer/Video" method="_on_option_shadow_filter_item_selected"]
+[connection signal="item_selected" from="MarginContainer/TabContainer/Video/MarginContainer/GridContainer/Option_ModelQuality" to="MarginContainer/TabContainer/Video" method="_on_option_model_quality_item_selected"]
+[connection signal="item_selected" from="MarginContainer/TabContainer/Video/MarginContainer/GridContainer/Option_AO" to="MarginContainer/TabContainer/Video" method="_on_option_ao_item_selected"]
+[connection signal="item_selected" from="MarginContainer/TabContainer/Video/MarginContainer/GridContainer/Option_VolFog" to="MarginContainer/TabContainer/Video" method="_on_option_vol_fog_item_selected"]

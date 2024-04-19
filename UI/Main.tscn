@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://UI/scripts/Main.gd" id="1_uqoe6"]
 [ext_resource type="PackedScene" path="res://UI/credits.tscn" id="2_1t85u"]
-[ext_resource type="PackedScene" path="res://UI/settings.tscn" id="3_bhdl8"]
+[ext_resource type="PackedScene" uid="uid://dfykr6801pkg3" path="res://UI/settings.tscn" id="3_bhdl8"]
 [ext_resource type="PackedScene" path="res://UI/show_fps.tscn" id="4_jlloi"]
 [ext_resource type="AudioStream" uid="uid://emj3gtccptvc" path="res://Audio/Music/BaseMusic.mp3" id="5_oplbl"]
 [ext_resource type="Environment" uid="uid://dk2ck6n8ed5vv" path="res://Levels/Environments/Base_environment.tres" id="5_viwiq"]
@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://dbuulp5flt325" path="res://Models/Lights/spotlight_broken.tscn" id="8_0bmjj"]
 [ext_resource type="PackedScene" uid="uid://btsarlqpqa5gx" path="res://Models/Doors/door_sliding.tscn" id="9_ym61d"]
 [ext_resource type="PackedScene" uid="uid://bdcj3ailm8llo" path="res://Models/wall_window.tscn" id="11_b2tvo"]
-[ext_resource type="LightmapGIData" uid="uid://gtpb2dmvi55m" path="res://Levels/Lightmaps/Zone1_blocky.lmbake" id="12_06y04"]
+[ext_resource type="LightmapGIData" uid="uid://d3inoxiix08dv" path="res://Levels/Lightmaps/Main.lmbake" id="11_mfu5w"]
 [ext_resource type="PackedScene" uid="uid://b4gcmdrl73eq4" path="res://Models/3x_4_wall.tscn" id="13_y2o1m"]
 [ext_resource type="Material" uid="uid://dd4xwrwmwhmmj" path="res://Textures/Placeholders/PlaceHolder_material_1.tres" id="14_0o88d"]
 [ext_resource type="PackedScene" uid="uid://c3bl8uftrj304" path="res://Models/6x_6_wall.tscn" id="15_ngfir"]
@@ -487,6 +487,7 @@ light_color = Color(0.831373, 0.901961, 1, 1)
 light_volumetric_fog_energy = 6.0
 light_bake_mode = 1
 shadow_enabled = true
+shadow_blur = 0.5
 directional_shadow_blend_splits = true
 
 [node name="Spotlight_Broken" parent="Node3D2/Node" instance=ExtResource("8_0bmjj")]
@@ -567,10 +568,10 @@ transform = Transform3D(-2.9, 0, 2.53526e-07, 0, 2.9, 0, -2.53526e-07, 0, -2.9, 
 transform = Transform3D(-2.9, 0, 2.53526e-07, 0, 2.9, 0, -2.53526e-07, 0, -2.9, -85.1, 0.1, -24.9)
 
 [node name="LightmapGI" type="LightmapGI" parent="Node3D2"]
+directional = true
 interior = true
-denoiser_strength = 0.2
-generate_probes_subdiv = 3
-light_data = ExtResource("12_06y04")
+generate_probes_subdiv = 4
+light_data = ExtResource("11_mfu5w")
 
 [node name="Walls" type="Node3D" parent="Node3D2"]
 
@@ -1036,2315 +1037,1739 @@ shape = SubResource("ConcavePolygonShape3D_gl7kr")
 
 [node name="Cube272" parent="Node3D2/Node3D3" instance=ExtResource("15_ngfir")]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 87, 3, -21)
-surface_material_override/0 = null
 
 [node name="Cube273" parent="Node3D2/Node3D3" instance=ExtResource("15_ngfir")]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 87, 3, -15)
-surface_material_override/0 = null
 
 [node name="Cube274" parent="Node3D2/Node3D3" instance=ExtResource("15_ngfir")]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 87, 9, -21)
-surface_material_override/0 = null
 
 [node name="Cube275" parent="Node3D2/Node3D3" instance=ExtResource("15_ngfir")]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 87, 9, -15)
-surface_material_override/0 = null
 
 [node name="Cube276" parent="Node3D2/Node3D3" instance=ExtResource("15_ngfir")]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 87, 3, -9)
-surface_material_override/0 = null
 
 [node name="Cube277" parent="Node3D2/Node3D3" instance=ExtResource("15_ngfir")]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 87, 3, -3)
-surface_material_override/0 = null
 
 [node name="Cube278" parent="Node3D2/Node3D3" instance=ExtResource("15_ngfir")]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 87, 9, -9)
-surface_material_override/0 = null
 
 [node name="Cube279" parent="Node3D2/Node3D3" instance=ExtResource("15_ngfir")]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 87, 9, -3)
-surface_material_override/0 = null
 
 [node name="Cube280" parent="Node3D2/Node3D3" instance=ExtResource("15_ngfir")]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 87, 3, 3)
-surface_material_override/0 = null
 
 [node name="Cube281" parent="Node3D2/Node3D3" instance=ExtResource("15_ngfir")]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 87, 3, 9)
-surface_material_override/0 = null
 
 [node name="Cube282" parent="Node3D2/Node3D3" instance=ExtResource("15_ngfir")]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 87, 9, 3)
-surface_material_override/0 = null
 
 [node name="Cube283" parent="Node3D2/Node3D3" instance=ExtResource("15_ngfir")]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 87, 9, 9)
-surface_material_override/0 = null
 
 [node name="Cube284" parent="Node3D2/Node3D3" instance=ExtResource("15_ngfir")]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 87, 3, 15)
-surface_material_override/0 = null
 
 [node name="Cube285" parent="Node3D2/Node3D3" instance=ExtResource("15_ngfir")]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 87, 3, 21)
-surface_material_override/0 = null
 
 [node name="Cube286" parent="Node3D2/Node3D3" instance=ExtResource("15_ngfir")]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 87, 9, 15)
-surface_material_override/0 = null
 
 [node name="Cube287" parent="Node3D2/Node3D3" instance=ExtResource("15_ngfir")]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 87, 9, 21)
-surface_material_override/0 = null
 
 [node name="Cube288" parent="Node3D2/Node3D3" instance=ExtResource("15_ngfir")]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 87, 3, 27)
-surface_material_override/0 = null
 
 [node name="Cube289" parent="Node3D2/Node3D3" instance=ExtResource("15_ngfir")]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 87, 9, 27)
-surface_material_override/0 = null
 
 [node name="Node3D4" type="Node3D" parent="Node3D2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -174, 0, 0)
 
 [node name="Cube272" parent="Node3D2/Node3D4" instance=ExtResource("15_ngfir")]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 87, 3, -21)
-surface_material_override/0 = null
 
 [node name="Cube273" parent="Node3D2/Node3D4" instance=ExtResource("15_ngfir")]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 87, 3, -15)
-surface_material_override/0 = null
 
 [node name="Cube274" parent="Node3D2/Node3D4" instance=ExtResource("15_ngfir")]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 87, 9, -21)
-surface_material_override/0 = null
 
 [node name="Cube275" parent="Node3D2/Node3D4" instance=ExtResource("15_ngfir")]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 87, 9, -15)
-surface_material_override/0 = null
 
 [node name="Cube276" parent="Node3D2/Node3D4" instance=ExtResource("15_ngfir")]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 87, 3, -9)
-surface_material_override/0 = null
 
 [node name="Cube277" parent="Node3D2/Node3D4" instance=ExtResource("15_ngfir")]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 87, 3, -3)
-surface_material_override/0 = null
 
 [node name="Cube278" parent="Node3D2/Node3D4" instance=ExtResource("15_ngfir")]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 87, 9, -9)
-surface_material_override/0 = null
 
 [node name="Cube279" parent="Node3D2/Node3D4" instance=ExtResource("15_ngfir")]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 87, 9, -3)
-surface_material_override/0 = null
 
 [node name="Cube280" parent="Node3D2/Node3D4" instance=ExtResource("15_ngfir")]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 87, 3, 3)
-surface_material_override/0 = null
 
 [node name="Cube281" parent="Node3D2/Node3D4" instance=ExtResource("15_ngfir")]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 87, 3, 9)
-surface_material_override/0 = null
 
 [node name="Cube282" parent="Node3D2/Node3D4" instance=ExtResource("15_ngfir")]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 87, 9, 3)
-surface_material_override/0 = null
 
 [node name="Cube283" parent="Node3D2/Node3D4" instance=ExtResource("15_ngfir")]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 87, 9, 9)
-surface_material_override/0 = null
 
 [node name="Cube284" parent="Node3D2/Node3D4" instance=ExtResource("15_ngfir")]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 87, 3, 15)
-surface_material_override/0 = null
 
 [node name="Cube285" parent="Node3D2/Node3D4" instance=ExtResource("15_ngfir")]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 87, 3, 21)
-surface_material_override/0 = null
 
 [node name="Cube286" parent="Node3D2/Node3D4" instance=ExtResource("15_ngfir")]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 87, 9, 15)
-surface_material_override/0 = null
 
 [node name="Cube287" parent="Node3D2/Node3D4" instance=ExtResource("15_ngfir")]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 87, 9, 21)
-surface_material_override/0 = null
 
 [node name="Cube288" parent="Node3D2/Node3D4" instance=ExtResource("15_ngfir")]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 87, 3, 27)
-surface_material_override/0 = null
 
 [node name="Cube289" parent="Node3D2/Node3D4" instance=ExtResource("15_ngfir")]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 87, 9, 27)
-surface_material_override/0 = null
 
 [node name="Node3D5" type="Node3D" parent="Node3D2"]
 
 [node name="Cube2" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 78, 0, 10)
-surface_material_override/0 = null
 
 [node name="Cube3" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72, 0, 10)
-surface_material_override/0 = null
 
 [node name="Cube4" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 78, 0, 4)
-surface_material_override/0 = null
 
 [node name="Cube5" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72, 0, 4)
-surface_material_override/0 = null
 
 [node name="Cube6" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 78, 0, 22)
-surface_material_override/0 = null
 
 [node name="Cube7" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72, 0, 22)
-surface_material_override/0 = null
 
 [node name="Cube8" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 78, 0, 16)
-surface_material_override/0 = null
 
 [node name="Cube10" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 84, 0, 10)
-surface_material_override/0 = null
 
 [node name="Cube11" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 84, 0, 4)
-surface_material_override/0 = null
 
 [node name="Cube14" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 78, 0, -2)
-surface_material_override/0 = null
 
 [node name="Cube15" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72, 0, -2)
-surface_material_override/0 = null
 
 [node name="Cube16" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 84, 0, -2)
-surface_material_override/0 = null
 
 [node name="Cube17" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 78, 0, -8)
-surface_material_override/0 = null
 
 [node name="Cube18" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72, 0, -8)
-surface_material_override/0 = null
 
 [node name="Cube19" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 84, 0, -8)
-surface_material_override/0 = null
 
 [node name="Cube20" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 78, 0, -14)
-surface_material_override/0 = null
 
 [node name="Cube21" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72, 0, -14)
-surface_material_override/0 = null
 
 [node name="Cube22" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 84, 0, -14)
-surface_material_override/0 = null
 
 [node name="Cube23" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 78, 0, -20)
-surface_material_override/0 = null
 
 [node name="Cube24" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72, 0, -20)
-surface_material_override/0 = null
 
 [node name="Cube25" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 84, 0, -20)
-surface_material_override/0 = null
 
 [node name="Cube26" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 78, 0, -26)
-surface_material_override/0 = null
 
 [node name="Cube27" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72, 0, -26)
-surface_material_override/0 = null
 
 [node name="Cube28" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 84, 0, -26)
-surface_material_override/0 = null
 
 [node name="Cube12" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 84, 0, 22)
-surface_material_override/0 = null
 
 [node name="Cube13" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 84, 0, 16)
-surface_material_override/0 = null
 
 [node name="Cube9" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72, 0, 16)
-surface_material_override/0 = null
 
 [node name="Cube29" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, 10)
-surface_material_override/0 = null
 
 [node name="Cube30" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54, 0, 10)
-surface_material_override/0 = null
 
 [node name="Cube31" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, 4)
-surface_material_override/0 = null
 
 [node name="Cube32" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54, 0, 4)
-surface_material_override/0 = null
 
 [node name="Cube33" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, 22)
-surface_material_override/0 = null
 
 [node name="Cube34" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54, 0, 22)
-surface_material_override/0 = null
 
 [node name="Cube35" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, 16)
-surface_material_override/0 = null
 
 [node name="Cube36" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66, 0, 10)
-surface_material_override/0 = null
 
 [node name="Cube37" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66, 0, 4)
-surface_material_override/0 = null
 
 [node name="Cube38" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, -2)
-surface_material_override/0 = null
 
 [node name="Cube39" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54, 0, -2)
-surface_material_override/0 = null
 
 [node name="Cube40" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66, 0, -2)
-surface_material_override/0 = null
 
 [node name="Cube41" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, -8)
-surface_material_override/0 = null
 
 [node name="Cube42" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54, 0, -8)
-surface_material_override/0 = null
 
 [node name="Cube43" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66, 0, -8)
-surface_material_override/0 = null
 
 [node name="Cube44" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, -14)
-surface_material_override/0 = null
 
 [node name="Cube45" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54, 0, -14)
-surface_material_override/0 = null
 
 [node name="Cube46" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66, 0, -14)
-surface_material_override/0 = null
 
 [node name="Cube47" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, -20)
-surface_material_override/0 = null
 
 [node name="Cube48" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54, 0, -20)
-surface_material_override/0 = null
 
 [node name="Cube49" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66, 0, -20)
-surface_material_override/0 = null
 
 [node name="Cube50" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, -26)
-surface_material_override/0 = null
 
 [node name="Cube51" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54, 0, -26)
-surface_material_override/0 = null
 
 [node name="Cube52" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66, 0, -26)
-surface_material_override/0 = null
 
 [node name="Cube53" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66, 0, 22)
-surface_material_override/0 = null
 
 [node name="Cube54" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66, 0, 16)
-surface_material_override/0 = null
 
 [node name="Cube55" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54, 0, 16)
-surface_material_override/0 = null
 
 [node name="Cube56" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42, 0, 10)
-surface_material_override/0 = null
 
 [node name="Cube57" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, 10)
-surface_material_override/0 = null
 
 [node name="Cube58" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42, 0, 4)
-surface_material_override/0 = null
 
 [node name="Cube59" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, 4)
-surface_material_override/0 = null
 
 [node name="Cube60" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42, 0, 22)
-surface_material_override/0 = null
 
 [node name="Cube61" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, 22)
-surface_material_override/0 = null
 
 [node name="Cube62" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42, 0, 16)
-surface_material_override/0 = null
 
 [node name="Cube63" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 0, 10)
-surface_material_override/0 = null
 
 [node name="Cube64" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 0, 4)
-surface_material_override/0 = null
 
 [node name="Cube65" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42, 0, -2)
-surface_material_override/0 = null
 
 [node name="Cube66" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, -2)
-surface_material_override/0 = null
 
 [node name="Cube67" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 0, -2)
-surface_material_override/0 = null
 
 [node name="Cube68" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42, 0, -8)
-surface_material_override/0 = null
 
 [node name="Cube69" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, -8)
-surface_material_override/0 = null
 
 [node name="Cube70" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 0, -8)
-surface_material_override/0 = null
 
 [node name="Cube71" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42, 0, -14)
-surface_material_override/0 = null
 
 [node name="Cube72" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, -14)
-surface_material_override/0 = null
 
 [node name="Cube73" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 0, -14)
-surface_material_override/0 = null
 
 [node name="Cube74" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42, 0, -20)
-surface_material_override/0 = null
 
 [node name="Cube75" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, -20)
-surface_material_override/0 = null
 
 [node name="Cube76" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 0, -20)
-surface_material_override/0 = null
 
 [node name="Cube77" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42, 0, -26)
-surface_material_override/0 = null
 
 [node name="Cube78" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, -26)
-surface_material_override/0 = null
 
 [node name="Cube79" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 0, -26)
-surface_material_override/0 = null
 
 [node name="Cube80" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 0, 22)
-surface_material_override/0 = null
 
 [node name="Cube81" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 0, 16)
-surface_material_override/0 = null
 
 [node name="Cube82" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, 16)
-surface_material_override/0 = null
 
 [node name="Cube83" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 10)
-surface_material_override/0 = null
 
 [node name="Cube84" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 10)
-surface_material_override/0 = null
 
 [node name="Cube85" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 4)
-surface_material_override/0 = null
 
 [node name="Cube86" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 4)
-surface_material_override/0 = null
 
 [node name="Cube87" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 22)
-surface_material_override/0 = null
 
 [node name="Cube88" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 22)
-surface_material_override/0 = null
 
 [node name="Cube89" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 16)
-surface_material_override/0 = null
 
 [node name="Cube90" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 10)
-surface_material_override/0 = null
 
 [node name="Cube91" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 4)
-surface_material_override/0 = null
 
 [node name="Cube92" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, -2)
-surface_material_override/0 = null
 
 [node name="Cube93" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, -2)
-surface_material_override/0 = null
 
 [node name="Cube94" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, -2)
-surface_material_override/0 = null
 
 [node name="Cube95" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, -8)
-surface_material_override/0 = null
 
 [node name="Cube96" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, -8)
-surface_material_override/0 = null
 
 [node name="Cube97" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, -8)
-surface_material_override/0 = null
 
 [node name="Cube98" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, -14)
-surface_material_override/0 = null
 
 [node name="Cube99" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, -14)
-surface_material_override/0 = null
 
 [node name="Cube100" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, -14)
-surface_material_override/0 = null
 
 [node name="Cube101" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, -20)
-surface_material_override/0 = null
 
 [node name="Cube102" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, -20)
-surface_material_override/0 = null
 
 [node name="Cube103" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, -20)
-surface_material_override/0 = null
 
 [node name="Cube104" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, -26)
-surface_material_override/0 = null
 
 [node name="Cube105" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, -26)
-surface_material_override/0 = null
 
 [node name="Cube106" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, -26)
-surface_material_override/0 = null
 
 [node name="Cube107" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 22)
-surface_material_override/0 = null
 
 [node name="Cube108" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 16)
-surface_material_override/0 = null
 
 [node name="Cube109" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 16)
-surface_material_override/0 = null
 
 [node name="Cube110" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 10)
-surface_material_override/0 = null
 
 [node name="Cube111" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10)
-surface_material_override/0 = null
 
 [node name="Cube112" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 4)
-surface_material_override/0 = null
 
 [node name="Cube113" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
-surface_material_override/0 = null
 
 [node name="Cube114" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 22)
-surface_material_override/0 = null
 
 [node name="Cube115" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 22)
-surface_material_override/0 = null
 
 [node name="Cube116" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 16)
-surface_material_override/0 = null
 
 [node name="Cube117" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 10)
-surface_material_override/0 = null
 
 [node name="Cube118" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 4)
-surface_material_override/0 = null
 
 [node name="Cube119" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -2)
-surface_material_override/0 = null
 
 [node name="Cube120" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)
-surface_material_override/0 = null
 
 [node name="Cube121" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, -2)
-surface_material_override/0 = null
 
 [node name="Cube122" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -8)
-surface_material_override/0 = null
 
 [node name="Cube123" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -8)
-surface_material_override/0 = null
 
 [node name="Cube124" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, -8)
-surface_material_override/0 = null
 
 [node name="Cube125" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -14)
-surface_material_override/0 = null
 
 [node name="Cube126" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -14)
-surface_material_override/0 = null
 
 [node name="Cube127" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, -14)
-surface_material_override/0 = null
 
 [node name="Cube128" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -20)
-surface_material_override/0 = null
 
 [node name="Cube129" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -20)
-surface_material_override/0 = null
 
 [node name="Cube130" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, -20)
-surface_material_override/0 = null
 
 [node name="Cube131" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -26)
-surface_material_override/0 = null
 
 [node name="Cube132" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -26)
-surface_material_override/0 = null
 
 [node name="Cube133" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, -26)
-surface_material_override/0 = null
 
 [node name="Cube134" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 22)
-surface_material_override/0 = null
 
 [node name="Cube135" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 16)
-surface_material_override/0 = null
 
 [node name="Cube136" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 16)
-surface_material_override/0 = null
 
 [node name="Cube137" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, 10)
-surface_material_override/0 = null
 
 [node name="Cube138" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 0, 10)
-surface_material_override/0 = null
 
 [node name="Cube139" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, 4)
-surface_material_override/0 = null
 
 [node name="Cube140" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 0, 4)
-surface_material_override/0 = null
 
 [node name="Cube141" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, 22)
-surface_material_override/0 = null
 
 [node name="Cube142" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 0, 22)
-surface_material_override/0 = null
 
 [node name="Cube143" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, 16)
-surface_material_override/0 = null
 
 [node name="Cube144" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 10)
-surface_material_override/0 = null
 
 [node name="Cube145" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 4)
-surface_material_override/0 = null
 
 [node name="Cube146" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, -2)
-surface_material_override/0 = null
 
 [node name="Cube147" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 0, -2)
-surface_material_override/0 = null
 
 [node name="Cube148" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -2)
-surface_material_override/0 = null
 
 [node name="Cube149" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, -8)
-surface_material_override/0 = null
 
 [node name="Cube150" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 0, -8)
-surface_material_override/0 = null
 
 [node name="Cube151" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -8)
-surface_material_override/0 = null
 
 [node name="Cube152" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, -14)
-surface_material_override/0 = null
 
 [node name="Cube153" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 0, -14)
-surface_material_override/0 = null
 
 [node name="Cube154" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -14)
-surface_material_override/0 = null
 
 [node name="Cube155" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, -20)
-surface_material_override/0 = null
 
 [node name="Cube156" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 0, -20)
-surface_material_override/0 = null
 
 [node name="Cube157" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -20)
-surface_material_override/0 = null
 
 [node name="Cube158" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, -26)
-surface_material_override/0 = null
 
 [node name="Cube159" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 0, -26)
-surface_material_override/0 = null
 
 [node name="Cube160" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -26)
-surface_material_override/0 = null
 
 [node name="Cube161" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 22)
-surface_material_override/0 = null
 
 [node name="Cube162" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 16)
-surface_material_override/0 = null
 
 [node name="Cube163" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 0, 16)
-surface_material_override/0 = null
 
 [node name="Cube164" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 0, 10)
-surface_material_override/0 = null
 
 [node name="Cube165" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36, 0, 10)
-surface_material_override/0 = null
 
 [node name="Cube166" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 0, 4)
-surface_material_override/0 = null
 
 [node name="Cube167" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36, 0, 4)
-surface_material_override/0 = null
 
 [node name="Cube168" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 0, 22)
-surface_material_override/0 = null
 
 [node name="Cube169" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36, 0, 22)
-surface_material_override/0 = null
 
 [node name="Cube170" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 0, 16)
-surface_material_override/0 = null
 
 [node name="Cube171" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 0, 10)
-surface_material_override/0 = null
 
 [node name="Cube172" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 0, 4)
-surface_material_override/0 = null
 
 [node name="Cube173" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 0, -2)
-surface_material_override/0 = null
 
 [node name="Cube174" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36, 0, -2)
-surface_material_override/0 = null
 
 [node name="Cube175" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 0, -2)
-surface_material_override/0 = null
 
 [node name="Cube176" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 0, -8)
-surface_material_override/0 = null
 
 [node name="Cube177" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36, 0, -8)
-surface_material_override/0 = null
 
 [node name="Cube178" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 0, -8)
-surface_material_override/0 = null
 
 [node name="Cube179" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 0, -14)
-surface_material_override/0 = null
 
 [node name="Cube180" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36, 0, -14)
-surface_material_override/0 = null
 
 [node name="Cube181" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 0, -14)
-surface_material_override/0 = null
 
 [node name="Cube182" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 0, -20)
-surface_material_override/0 = null
 
 [node name="Cube183" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36, 0, -20)
-surface_material_override/0 = null
 
 [node name="Cube184" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 0, -20)
-surface_material_override/0 = null
 
 [node name="Cube185" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 0, -26)
-surface_material_override/0 = null
 
 [node name="Cube186" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36, 0, -26)
-surface_material_override/0 = null
 
 [node name="Cube187" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 0, -26)
-surface_material_override/0 = null
 
 [node name="Cube188" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 0, 22)
-surface_material_override/0 = null
 
 [node name="Cube189" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 0, 16)
-surface_material_override/0 = null
 
 [node name="Cube190" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36, 0, 16)
-surface_material_override/0 = null
 
 [node name="Cube191" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48, 0, 10)
-surface_material_override/0 = null
 
 [node name="Cube192" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54, 0, 10)
-surface_material_override/0 = null
 
 [node name="Cube193" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48, 0, 4)
-surface_material_override/0 = null
 
 [node name="Cube194" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54, 0, 4)
-surface_material_override/0 = null
 
 [node name="Cube195" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48, 0, 22)
-surface_material_override/0 = null
 
 [node name="Cube196" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54, 0, 22)
-surface_material_override/0 = null
 
 [node name="Cube197" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48, 0, 16)
-surface_material_override/0 = null
 
 [node name="Cube198" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42, 0, 10)
-surface_material_override/0 = null
 
 [node name="Cube199" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42, 0, 4)
-surface_material_override/0 = null
 
 [node name="Cube200" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48, 0, -2)
-surface_material_override/0 = null
 
 [node name="Cube201" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54, 0, -2)
-surface_material_override/0 = null
 
 [node name="Cube202" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42, 0, -2)
-surface_material_override/0 = null
 
 [node name="Cube203" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48, 0, -8)
-surface_material_override/0 = null
 
 [node name="Cube204" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54, 0, -8)
-surface_material_override/0 = null
 
 [node name="Cube205" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42, 0, -8)
-surface_material_override/0 = null
 
 [node name="Cube206" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48, 0, -14)
-surface_material_override/0 = null
 
 [node name="Cube207" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54, 0, -14)
-surface_material_override/0 = null
 
 [node name="Cube208" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42, 0, -14)
-surface_material_override/0 = null
 
 [node name="Cube209" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48, 0, -20)
-surface_material_override/0 = null
 
 [node name="Cube210" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54, 0, -20)
-surface_material_override/0 = null
 
 [node name="Cube211" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42, 0, -20)
-surface_material_override/0 = null
 
 [node name="Cube212" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48, 0, -26)
-surface_material_override/0 = null
 
 [node name="Cube213" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54, 0, -26)
-surface_material_override/0 = null
 
 [node name="Cube214" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42, 0, -26)
-surface_material_override/0 = null
 
 [node name="Cube215" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42, 0, 22)
-surface_material_override/0 = null
 
 [node name="Cube216" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42, 0, 16)
-surface_material_override/0 = null
 
 [node name="Cube217" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54, 0, 16)
-surface_material_override/0 = null
 
 [node name="Cube218" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -66, 0, 10)
-surface_material_override/0 = null
 
 [node name="Cube219" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -72, 0, 10)
-surface_material_override/0 = null
 
 [node name="Cube220" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -66, 0, 4)
-surface_material_override/0 = null
 
 [node name="Cube221" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -72, 0, 4)
-surface_material_override/0 = null
 
 [node name="Cube222" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -66, 0, 22)
-surface_material_override/0 = null
 
 [node name="Cube223" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -72, 0, 22)
-surface_material_override/0 = null
 
 [node name="Cube224" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -66, 0, 16)
-surface_material_override/0 = null
 
 [node name="Cube225" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60, 0, 10)
-surface_material_override/0 = null
 
 [node name="Cube226" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60, 0, 4)
-surface_material_override/0 = null
 
 [node name="Cube227" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -66, 0, -2)
-surface_material_override/0 = null
 
 [node name="Cube228" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -72, 0, -2)
-surface_material_override/0 = null
 
 [node name="Cube229" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60, 0, -2)
-surface_material_override/0 = null
 
 [node name="Cube230" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -66, 0, -8)
-surface_material_override/0 = null
 
 [node name="Cube231" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -72, 0, -8)
-surface_material_override/0 = null
 
 [node name="Cube232" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60, 0, -8)
-surface_material_override/0 = null
 
 [node name="Cube233" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -66, 0, -14)
-surface_material_override/0 = null
 
 [node name="Cube234" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -72, 0, -14)
-surface_material_override/0 = null
 
 [node name="Cube235" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60, 0, -14)
-surface_material_override/0 = null
 
 [node name="Cube236" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -66, 0, -20)
-surface_material_override/0 = null
 
 [node name="Cube237" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -72, 0, -20)
-surface_material_override/0 = null
 
 [node name="Cube238" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60, 0, -20)
-surface_material_override/0 = null
 
 [node name="Cube239" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -66, 0, -26)
-surface_material_override/0 = null
 
 [node name="Cube240" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -72, 0, -26)
-surface_material_override/0 = null
 
 [node name="Cube241" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60, 0, -26)
-surface_material_override/0 = null
 
 [node name="Cube242" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60, 0, 22)
-surface_material_override/0 = null
 
 [node name="Cube243" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60, 0, 16)
-surface_material_override/0 = null
 
 [node name="Cube244" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -72, 0, 16)
-surface_material_override/0 = null
 
 [node name="Cube245" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -84, 0, 10)
-surface_material_override/0 = null
 
 [node name="Cube246" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -90, 0, 10)
-surface_material_override/0 = null
 
 [node name="Cube247" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -84, 0, 4)
-surface_material_override/0 = null
 
 [node name="Cube248" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -90, 0, 4)
-surface_material_override/0 = null
 
 [node name="Cube249" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -84, 0, 22)
-surface_material_override/0 = null
 
 [node name="Cube250" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -90, 0, 22)
-surface_material_override/0 = null
 
 [node name="Cube251" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -84, 0, 16)
-surface_material_override/0 = null
 
 [node name="Cube252" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -78, 0, 10)
-surface_material_override/0 = null
 
 [node name="Cube253" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -78, 0, 4)
-surface_material_override/0 = null
 
 [node name="Cube254" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -84, 0, -2)
-surface_material_override/0 = null
 
 [node name="Cube255" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -90, 0, -2)
-surface_material_override/0 = null
 
 [node name="Cube256" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -78, 0, -2)
-surface_material_override/0 = null
 
 [node name="Cube257" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -84, 0, -8)
-surface_material_override/0 = null
 
 [node name="Cube258" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -90, 0, -8)
-surface_material_override/0 = null
 
 [node name="Cube259" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -78, 0, -8)
-surface_material_override/0 = null
 
 [node name="Cube260" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -84, 0, -14)
-surface_material_override/0 = null
 
 [node name="Cube261" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -90, 0, -14)
-surface_material_override/0 = null
 
 [node name="Cube262" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -78, 0, -14)
-surface_material_override/0 = null
 
 [node name="Cube263" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -84, 0, -20)
-surface_material_override/0 = null
 
 [node name="Cube264" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -90, 0, -20)
-surface_material_override/0 = null
 
 [node name="Cube265" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -78, 0, -20)
-surface_material_override/0 = null
 
 [node name="Cube266" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -84, 0, -26)
-surface_material_override/0 = null
 
 [node name="Cube267" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -90, 0, -26)
-surface_material_override/0 = null
 
 [node name="Cube268" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -78, 0, -26)
-surface_material_override/0 = null
 
 [node name="Cube269" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -78, 0, 22)
-surface_material_override/0 = null
 
 [node name="Cube270" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -78, 0, 16)
-surface_material_override/0 = null
 
 [node name="Cube271" parent="Node3D2/Node3D5" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -90, 0, 16)
-surface_material_override/0 = null
 
 [node name="Node3D6" type="Node3D" parent="Node3D2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9, 5)
 
 [node name="Cube2" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 78, 0, 10)
-surface_material_override/0 = null
 
 [node name="Cube3" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72, 0, 10)
-surface_material_override/0 = null
 
 [node name="Cube4" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 78, 0, 4)
-surface_material_override/0 = null
 
 [node name="Cube5" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72, 0, 4)
-surface_material_override/0 = null
 
 [node name="Cube6" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 78, 0, 22)
-surface_material_override/0 = null
 
 [node name="Cube7" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72, 0, 22)
-surface_material_override/0 = null
 
 [node name="Cube8" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 78, 0, 16)
-surface_material_override/0 = null
 
 [node name="Cube10" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 84, 0, 10)
-surface_material_override/0 = null
 
 [node name="Cube11" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 84, 0, 4)
-surface_material_override/0 = null
 
 [node name="Cube14" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 78, 0, -2)
-surface_material_override/0 = null
 
 [node name="Cube15" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72, 0, -2)
-surface_material_override/0 = null
 
 [node name="Cube16" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 84, 0, -2)
-surface_material_override/0 = null
 
 [node name="Cube17" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 78, 0, -8)
-surface_material_override/0 = null
 
 [node name="Cube18" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72, 0, -8)
-surface_material_override/0 = null
 
 [node name="Cube19" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 84, 0, -8)
-surface_material_override/0 = null
 
 [node name="Cube20" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 78, 0, -14)
-surface_material_override/0 = null
 
 [node name="Cube21" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72, 0, -14)
-surface_material_override/0 = null
 
 [node name="Cube22" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 84, 0, -14)
-surface_material_override/0 = null
 
 [node name="Cube23" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 78, 0, -20)
-surface_material_override/0 = null
 
 [node name="Cube24" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72, 0, -20)
-surface_material_override/0 = null
 
 [node name="Cube25" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 84, 0, -20)
-surface_material_override/0 = null
 
 [node name="Cube26" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 78, 0, -26)
-surface_material_override/0 = null
 
 [node name="Cube27" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72, 0, -26)
-surface_material_override/0 = null
 
 [node name="Cube28" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 84, 0, -26)
-surface_material_override/0 = null
 
 [node name="Cube12" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 84, 0, 22)
-surface_material_override/0 = null
 
 [node name="Cube13" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 84, 0, 16)
-surface_material_override/0 = null
 
 [node name="Cube9" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72, 0, 16)
-surface_material_override/0 = null
 
 [node name="Cube29" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, 10)
-surface_material_override/0 = null
 
 [node name="Cube30" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54, 0, 10)
-surface_material_override/0 = null
 
 [node name="Cube31" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, 4)
-surface_material_override/0 = null
 
 [node name="Cube32" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54, 0, 4)
-surface_material_override/0 = null
 
 [node name="Cube33" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, 22)
-surface_material_override/0 = null
 
 [node name="Cube34" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54, 0, 22)
-surface_material_override/0 = null
 
 [node name="Cube35" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, 16)
-surface_material_override/0 = null
 
 [node name="Cube36" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66, 0, 10)
-surface_material_override/0 = null
 
 [node name="Cube37" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66, 0, 4)
-surface_material_override/0 = null
 
 [node name="Cube38" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, -2)
-surface_material_override/0 = null
 
 [node name="Cube39" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54, 0, -2)
-surface_material_override/0 = null
 
 [node name="Cube40" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66, 0, -2)
-surface_material_override/0 = null
 
 [node name="Cube41" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, -8)
-surface_material_override/0 = null
 
 [node name="Cube42" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54, 0, -8)
-surface_material_override/0 = null
 
 [node name="Cube43" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66, 0, -8)
-surface_material_override/0 = null
 
 [node name="Cube44" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, -14)
-surface_material_override/0 = null
 
 [node name="Cube45" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54, 0, -14)
-surface_material_override/0 = null
 
 [node name="Cube46" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66, 0, -14)
-surface_material_override/0 = null
 
 [node name="Cube47" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, -20)
-surface_material_override/0 = null
 
 [node name="Cube48" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54, 0, -20)
-surface_material_override/0 = null
 
 [node name="Cube49" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66, 0, -20)
-surface_material_override/0 = null
 
 [node name="Cube50" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, -26)
-surface_material_override/0 = null
 
 [node name="Cube51" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54, 0, -26)
-surface_material_override/0 = null
 
 [node name="Cube52" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66, 0, -26)
-surface_material_override/0 = null
 
 [node name="Cube53" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66, 0, 22)
-surface_material_override/0 = null
 
 [node name="Cube54" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66, 0, 16)
-surface_material_override/0 = null
 
 [node name="Cube55" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54, 0, 16)
-surface_material_override/0 = null
 
 [node name="Cube56" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42, 0, 10)
-surface_material_override/0 = null
 
 [node name="Cube57" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, 10)
-surface_material_override/0 = null
 
 [node name="Cube58" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42, 0, 4)
-surface_material_override/0 = null
 
 [node name="Cube59" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, 4)
-surface_material_override/0 = null
 
 [node name="Cube60" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42, 0, 22)
-surface_material_override/0 = null
 
 [node name="Cube61" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, 22)
-surface_material_override/0 = null
 
 [node name="Cube62" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42, 0, 16)
-surface_material_override/0 = null
 
 [node name="Cube63" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 0, 10)
-surface_material_override/0 = null
 
 [node name="Cube64" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 0, 4)
-surface_material_override/0 = null
 
 [node name="Cube65" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42, 0, -2)
-surface_material_override/0 = null
 
 [node name="Cube66" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, -2)
-surface_material_override/0 = null
 
 [node name="Cube67" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 0, -2)
-surface_material_override/0 = null
 
 [node name="Cube68" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42, 0, -8)
-surface_material_override/0 = null
 
 [node name="Cube69" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, -8)
-surface_material_override/0 = null
 
 [node name="Cube70" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 0, -8)
-surface_material_override/0 = null
 
 [node name="Cube71" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42, 0, -14)
-surface_material_override/0 = null
 
 [node name="Cube72" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, -14)
-surface_material_override/0 = null
 
 [node name="Cube73" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 0, -14)
-surface_material_override/0 = null
 
 [node name="Cube74" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42, 0, -20)
-surface_material_override/0 = null
 
 [node name="Cube75" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, -20)
-surface_material_override/0 = null
 
 [node name="Cube76" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 0, -20)
-surface_material_override/0 = null
 
 [node name="Cube77" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42, 0, -26)
-surface_material_override/0 = null
 
 [node name="Cube78" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, -26)
-surface_material_override/0 = null
 
 [node name="Cube79" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 0, -26)
-surface_material_override/0 = null
 
 [node name="Cube80" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 0, 22)
-surface_material_override/0 = null
 
 [node name="Cube81" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 0, 16)
-surface_material_override/0 = null
 
 [node name="Cube82" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, 16)
-surface_material_override/0 = null
 
 [node name="Cube83" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 10)
-surface_material_override/0 = null
 
 [node name="Cube84" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 10)
-surface_material_override/0 = null
 
 [node name="Cube85" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 4)
-surface_material_override/0 = null
 
 [node name="Cube86" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 4)
-surface_material_override/0 = null
 
 [node name="Cube87" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 22)
-surface_material_override/0 = null
 
 [node name="Cube88" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 22)
-surface_material_override/0 = null
 
 [node name="Cube89" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 16)
-surface_material_override/0 = null
 
 [node name="Cube90" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 10)
-surface_material_override/0 = null
 
 [node name="Cube91" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 4)
-surface_material_override/0 = null
 
 [node name="Cube92" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, -2)
-surface_material_override/0 = null
 
 [node name="Cube93" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, -2)
-surface_material_override/0 = null
 
 [node name="Cube94" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, -2)
-surface_material_override/0 = null
 
 [node name="Cube95" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, -8)
-surface_material_override/0 = null
 
 [node name="Cube96" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, -8)
-surface_material_override/0 = null
 
 [node name="Cube97" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, -8)
-surface_material_override/0 = null
 
 [node name="Cube98" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, -14)
-surface_material_override/0 = null
 
 [node name="Cube99" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, -14)
-surface_material_override/0 = null
 
 [node name="Cube100" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, -14)
-surface_material_override/0 = null
 
 [node name="Cube101" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, -20)
-surface_material_override/0 = null
 
 [node name="Cube102" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, -20)
-surface_material_override/0 = null
 
 [node name="Cube103" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, -20)
-surface_material_override/0 = null
 
 [node name="Cube104" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, -26)
-surface_material_override/0 = null
 
 [node name="Cube105" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, -26)
-surface_material_override/0 = null
 
 [node name="Cube106" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, -26)
-surface_material_override/0 = null
 
 [node name="Cube107" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 22)
-surface_material_override/0 = null
 
 [node name="Cube108" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 16)
-surface_material_override/0 = null
 
 [node name="Cube109" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 16)
-surface_material_override/0 = null
 
 [node name="Cube110" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 10)
-surface_material_override/0 = null
 
 [node name="Cube111" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10)
-surface_material_override/0 = null
 
 [node name="Cube112" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 4)
-surface_material_override/0 = null
 
 [node name="Cube113" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
-surface_material_override/0 = null
 
 [node name="Cube114" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 22)
-surface_material_override/0 = null
 
 [node name="Cube115" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 22)
-surface_material_override/0 = null
 
 [node name="Cube116" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 16)
-surface_material_override/0 = null
 
 [node name="Cube117" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 10)
-surface_material_override/0 = null
 
 [node name="Cube118" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 4)
-surface_material_override/0 = null
 
 [node name="Cube119" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -2)
-surface_material_override/0 = null
 
 [node name="Cube120" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)
-surface_material_override/0 = null
 
 [node name="Cube121" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, -2)
-surface_material_override/0 = null
 
 [node name="Cube122" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -8)
-surface_material_override/0 = null
 
 [node name="Cube123" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -8)
-surface_material_override/0 = null
 
 [node name="Cube124" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, -8)
-surface_material_override/0 = null
 
 [node name="Cube125" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -14)
-surface_material_override/0 = null
 
 [node name="Cube126" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -14)
-surface_material_override/0 = null
 
 [node name="Cube127" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, -14)
-surface_material_override/0 = null
 
 [node name="Cube128" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -20)
-surface_material_override/0 = null
 
 [node name="Cube129" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -20)
-surface_material_override/0 = null
 
 [node name="Cube130" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, -20)
-surface_material_override/0 = null
 
 [node name="Cube131" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -26)
-surface_material_override/0 = null
 
 [node name="Cube132" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -26)
-surface_material_override/0 = null
 
 [node name="Cube133" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, -26)
-surface_material_override/0 = null
 
 [node name="Cube134" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 22)
-surface_material_override/0 = null
 
 [node name="Cube135" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 16)
-surface_material_override/0 = null
 
 [node name="Cube136" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 16)
-surface_material_override/0 = null
 
 [node name="Cube137" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, 10)
-surface_material_override/0 = null
 
 [node name="Cube138" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 0, 10)
-surface_material_override/0 = null
 
 [node name="Cube139" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, 4)
-surface_material_override/0 = null
 
 [node name="Cube140" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 0, 4)
-surface_material_override/0 = null
 
 [node name="Cube141" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, 22)
-surface_material_override/0 = null
 
 [node name="Cube142" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 0, 22)
-surface_material_override/0 = null
 
 [node name="Cube143" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, 16)
-surface_material_override/0 = null
 
 [node name="Cube144" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 10)
-surface_material_override/0 = null
 
 [node name="Cube145" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 4)
-surface_material_override/0 = null
 
 [node name="Cube146" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, -2)
-surface_material_override/0 = null
 
 [node name="Cube147" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 0, -2)
-surface_material_override/0 = null
 
 [node name="Cube148" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -2)
-surface_material_override/0 = null
 
 [node name="Cube149" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, -8)
-surface_material_override/0 = null
 
 [node name="Cube150" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 0, -8)
-surface_material_override/0 = null
 
 [node name="Cube151" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -8)
-surface_material_override/0 = null
 
 [node name="Cube152" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, -14)
-surface_material_override/0 = null
 
 [node name="Cube153" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 0, -14)
-surface_material_override/0 = null
 
 [node name="Cube154" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -14)
-surface_material_override/0 = null
 
 [node name="Cube155" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, -20)
-surface_material_override/0 = null
 
 [node name="Cube156" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 0, -20)
-surface_material_override/0 = null
 
 [node name="Cube157" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -20)
-surface_material_override/0 = null
 
 [node name="Cube158" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, -26)
-surface_material_override/0 = null
 
 [node name="Cube159" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 0, -26)
-surface_material_override/0 = null
 
 [node name="Cube160" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -26)
-surface_material_override/0 = null
 
 [node name="Cube161" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 22)
-surface_material_override/0 = null
 
 [node name="Cube162" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 16)
-surface_material_override/0 = null
 
 [node name="Cube163" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 0, 16)
-surface_material_override/0 = null
 
 [node name="Cube164" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 0, 10)
-surface_material_override/0 = null
 
 [node name="Cube165" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36, 0, 10)
-surface_material_override/0 = null
 
 [node name="Cube166" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 0, 4)
-surface_material_override/0 = null
 
 [node name="Cube167" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36, 0, 4)
-surface_material_override/0 = null
 
 [node name="Cube168" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 0, 22)
-surface_material_override/0 = null
 
 [node name="Cube169" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36, 0, 22)
-surface_material_override/0 = null
 
 [node name="Cube170" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 0, 16)
-surface_material_override/0 = null
 
 [node name="Cube171" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 0, 10)
-surface_material_override/0 = null
 
 [node name="Cube172" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 0, 4)
-surface_material_override/0 = null
 
 [node name="Cube173" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 0, -2)
-surface_material_override/0 = null
 
 [node name="Cube174" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36, 0, -2)
-surface_material_override/0 = null
 
 [node name="Cube175" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 0, -2)
-surface_material_override/0 = null
 
 [node name="Cube176" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 0, -8)
-surface_material_override/0 = null
 
 [node name="Cube177" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36, 0, -8)
-surface_material_override/0 = null
 
 [node name="Cube178" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 0, -8)
-surface_material_override/0 = null
 
 [node name="Cube179" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 0, -14)
-surface_material_override/0 = null
 
 [node name="Cube180" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36, 0, -14)
-surface_material_override/0 = null
 
 [node name="Cube181" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 0, -14)
-surface_material_override/0 = null
 
 [node name="Cube182" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 0, -20)
-surface_material_override/0 = null
 
 [node name="Cube183" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36, 0, -20)
-surface_material_override/0 = null
 
 [node name="Cube184" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 0, -20)
-surface_material_override/0 = null
 
 [node name="Cube185" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 0, -26)
-surface_material_override/0 = null
 
 [node name="Cube186" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36, 0, -26)
-surface_material_override/0 = null
 
 [node name="Cube187" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 0, -26)
-surface_material_override/0 = null
 
 [node name="Cube188" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 0, 22)
-surface_material_override/0 = null
 
 [node name="Cube189" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 0, 16)
-surface_material_override/0 = null
 
 [node name="Cube190" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36, 0, 16)
-surface_material_override/0 = null
 
 [node name="Cube191" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48, 0, 10)
-surface_material_override/0 = null
 
 [node name="Cube192" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54, 0, 10)
-surface_material_override/0 = null
 
 [node name="Cube193" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48, 0, 4)
-surface_material_override/0 = null
 
 [node name="Cube194" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54, 0, 4)
-surface_material_override/0 = null
 
 [node name="Cube195" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48, 0, 22)
-surface_material_override/0 = null
 
 [node name="Cube196" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54, 0, 22)
-surface_material_override/0 = null
 
 [node name="Cube197" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48, 0, 16)
-surface_material_override/0 = null
 
 [node name="Cube198" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42, 0, 10)
-surface_material_override/0 = null
 
 [node name="Cube199" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42, 0, 4)
-surface_material_override/0 = null
 
 [node name="Cube200" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48, 0, -2)
-surface_material_override/0 = null
 
 [node name="Cube201" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54, 0, -2)
-surface_material_override/0 = null
 
 [node name="Cube202" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42, 0, -2)
-surface_material_override/0 = null
 
 [node name="Cube203" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48, 0, -8)
-surface_material_override/0 = null
 
 [node name="Cube204" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54, 0, -8)
-surface_material_override/0 = null
 
 [node name="Cube205" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42, 0, -8)
-surface_material_override/0 = null
 
 [node name="Cube206" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48, 0, -14)
-surface_material_override/0 = null
 
 [node name="Cube207" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54, 0, -14)
-surface_material_override/0 = null
 
 [node name="Cube208" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42, 0, -14)
-surface_material_override/0 = null
 
 [node name="Cube209" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48, 0, -20)
-surface_material_override/0 = null
 
 [node name="Cube210" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54, 0, -20)
-surface_material_override/0 = null
 
 [node name="Cube211" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42, 0, -20)
-surface_material_override/0 = null
 
 [node name="Cube212" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48, 0, -26)
-surface_material_override/0 = null
 
 [node name="Cube213" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54, 0, -26)
-surface_material_override/0 = null
 
 [node name="Cube214" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42, 0, -26)
-surface_material_override/0 = null
 
 [node name="Cube215" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42, 0, 22)
-surface_material_override/0 = null
 
 [node name="Cube216" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42, 0, 16)
-surface_material_override/0 = null
 
 [node name="Cube217" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54, 0, 16)
-surface_material_override/0 = null
 
 [node name="Cube218" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -66, 0, 10)
-surface_material_override/0 = null
 
 [node name="Cube219" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -72, 0, 10)
-surface_material_override/0 = null
 
 [node name="Cube220" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -66, 0, 4)
-surface_material_override/0 = null
 
 [node name="Cube221" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -72, 0, 4)
-surface_material_override/0 = null
 
 [node name="Cube222" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -66, 0, 22)
-surface_material_override/0 = null
 
 [node name="Cube223" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -72, 0, 22)
-surface_material_override/0 = null
 
 [node name="Cube224" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -66, 0, 16)
-surface_material_override/0 = null
 
 [node name="Cube225" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60, 0, 10)
-surface_material_override/0 = null
 
 [node name="Cube226" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60, 0, 4)
-surface_material_override/0 = null
 
 [node name="Cube227" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -66, 0, -2)
-surface_material_override/0 = null
 
 [node name="Cube228" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -72, 0, -2)
-surface_material_override/0 = null
 
 [node name="Cube229" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60, 0, -2)
-surface_material_override/0 = null
 
 [node name="Cube230" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -66, 0, -8)
-surface_material_override/0 = null
 
 [node name="Cube231" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -72, 0, -8)
-surface_material_override/0 = null
 
 [node name="Cube232" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60, 0, -8)
-surface_material_override/0 = null
 
 [node name="Cube233" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -66, 0, -14)
-surface_material_override/0 = null
 
 [node name="Cube234" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -72, 0, -14)
-surface_material_override/0 = null
 
 [node name="Cube235" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60, 0, -14)
-surface_material_override/0 = null
 
 [node name="Cube236" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -66, 0, -20)
-surface_material_override/0 = null
 
 [node name="Cube237" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -72, 0, -20)
-surface_material_override/0 = null
 
 [node name="Cube238" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60, 0, -20)
-surface_material_override/0 = null
 
 [node name="Cube239" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -66, 0, -26)
-surface_material_override/0 = null
 
 [node name="Cube240" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -72, 0, -26)
-surface_material_override/0 = null
 
 [node name="Cube241" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60, 0, -26)
-surface_material_override/0 = null
 
 [node name="Cube242" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60, 0, 22)
-surface_material_override/0 = null
 
 [node name="Cube243" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60, 0, 16)
-surface_material_override/0 = null
 
 [node name="Cube244" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -72, 0, 16)
-surface_material_override/0 = null
 
 [node name="Cube245" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -84, 0, 10)
-surface_material_override/0 = null
 
 [node name="Cube246" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -90, 0, 10)
-surface_material_override/0 = null
 
 [node name="Cube247" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -84, 0, 4)
-surface_material_override/0 = null
 
 [node name="Cube248" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -90, 0, 4)
-surface_material_override/0 = null
 
 [node name="Cube249" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -84, 0, 22)
-surface_material_override/0 = null
 
 [node name="Cube250" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -90, 0, 22)
-surface_material_override/0 = null
 
 [node name="Cube251" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -84, 0, 16)
-surface_material_override/0 = null
 
 [node name="Cube252" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -78, 0, 10)
-surface_material_override/0 = null
 
 [node name="Cube253" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -78, 0, 4)
-surface_material_override/0 = null
 
 [node name="Cube254" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -84, 0, -2)
-surface_material_override/0 = null
 
 [node name="Cube255" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -90, 0, -2)
-surface_material_override/0 = null
 
 [node name="Cube256" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -78, 0, -2)
-surface_material_override/0 = null
 
 [node name="Cube257" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -84, 0, -8)
-surface_material_override/0 = null
 
 [node name="Cube258" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -90, 0, -8)
-surface_material_override/0 = null
 
 [node name="Cube259" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -78, 0, -8)
-surface_material_override/0 = null
 
 [node name="Cube260" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -84, 0, -14)
-surface_material_override/0 = null
 
 [node name="Cube261" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -90, 0, -14)
-surface_material_override/0 = null
 
 [node name="Cube262" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -78, 0, -14)
-surface_material_override/0 = null
 
 [node name="Cube263" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -84, 0, -20)
-surface_material_override/0 = null
 
 [node name="Cube264" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -90, 0, -20)
-surface_material_override/0 = null
 
 [node name="Cube265" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -78, 0, -20)
-surface_material_override/0 = null
 
 [node name="Cube266" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -84, 0, -26)
-surface_material_override/0 = null
 
 [node name="Cube267" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -90, 0, -26)
-surface_material_override/0 = null
 
 [node name="Cube268" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -78, 0, -26)
-surface_material_override/0 = null
 
 [node name="Cube269" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -78, 0, 22)
-surface_material_override/0 = null
 
 [node name="Cube270" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -78, 0, 16)
-surface_material_override/0 = null
 
 [node name="Cube271" parent="Node3D2/Node3D6" instance=ExtResource("15_ngfir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -90, 0, 16)
-surface_material_override/0 = null
 
 [connection signal="pressed" from="MarginContainer/HBoxContainer/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/Settings" to="." method="_on_settings_pressed"]
