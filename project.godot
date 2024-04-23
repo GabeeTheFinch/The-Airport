@@ -36,6 +36,7 @@ Save="*res://Scripts/save.gd"
 
 [display]
 
+window/stretch/mode="viewport"
 window/vsync/vsync_mode=0
 
 [dotnet]
@@ -169,5 +170,5 @@ lights_and_shadows/directional_shadow/size=8192
 lights_and_shadows/directional_shadow/soft_shadow_filter_quality=4
 lights_and_shadows/positional_shadow/soft_shadow_filter_quality=4
 environment/ssao/quality=3
-lightmapping/denoising/denoiser=1
+lightmapping/bake_quality/ultra_quality_probe_ray_count=4096
 lights_and_shadows/positional_shadow/atlas_size=8192

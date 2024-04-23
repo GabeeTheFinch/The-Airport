@@ -1,6 +1,6 @@
 extends Control
 
-@export var LevelSelectMenu: Node
+@export var StartMenu: Node
 @export var SettingsMenu: Node
 @export var CreditsMenu: Node
 @onready var Clicked := $ButtonClick
@@ -10,6 +10,7 @@ extends Control
 func ClearAll():
 	SettingsMenu.visible = false
 	CreditsMenu.visible = false
+	StartMenu.visible = false
 
 func OpenMenu(UINode: Node):
 	Clicked.play()
@@ -20,7 +21,7 @@ func OpenMenu(UINode: Node):
 		UINode.visible = true
 
 func _on_start_pressed():
-	pass
+	OpenMenu(StartMenu)
 
 func _on_settings_pressed():
 	OpenMenu(SettingsMenu)

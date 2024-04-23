@@ -1,0 +1,44 @@
+[gd_scene load_steps=2 format=3 uid="uid://blx87g430xaad"]
+
+[ext_resource type="Script" path="res://UI/scripts/start_menu.gd" id="1_4rfvp"]
+
+[node name="Start Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4rfvp")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 80
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Zone1" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 10
+text = "Zone1_blocky"
+
+[node name="Testing" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "map_player_testing"
+
+[node name="Node3D" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "node_3d"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Zone1" to="." method="_on_zone_1_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Testing" to="." method="_on_testing_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Node3D" to="." method="_on_node_3d_pressed"]

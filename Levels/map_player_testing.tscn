@@ -1,7 +1,7 @@
-[gd_scene load_steps=13 format=3 uid="uid://cew42ue1r4fb2"]
+[gd_scene load_steps=13 format=3 uid="uid://cerh7gqp84t27"]
 
-[ext_resource type="LightmapGIData" uid="uid://yq4lnb4t0b" path="res://Levels/Lightmaps/map_player_testing.lmbake" id="1_02x4x"]
 [ext_resource type="PackedScene" uid="uid://h7c2nipeg7wv" path="res://Player/player.tscn" id="1_fb1a0"]
+[ext_resource type="LightmapGIData" uid="uid://b5rcmfjd1f0tw" path="res://Levels/Lightmaps/map_player_testing.lmbake" id="1_y2xsy"]
 [ext_resource type="Material" uid="uid://dd4xwrwmwhmmj" path="res://Textures/Placeholders/PlaceHolder_material_1.tres" id="2_e2wn6"]
 [ext_resource type="PackedScene" uid="uid://bajsmfdedcmkg" path="res://Models/Lights/Light.tscn" id="3_v1w1k"]
 [ext_resource type="PackedScene" uid="uid://dbn6anhtommt2" path="res://Models/3x_2_door.tscn" id="4_3homr"]
@@ -24,7 +24,6 @@ sky = SubResource("Sky_xo00h")
 ambient_light_source = 3
 reflected_light_source = 2
 tonemap_mode = 2
-ssao_enabled = true
 ssil_radius = 16.0
 ssil_sharpness = 1.0
 ssil_normal_rejection = 0.0
@@ -33,7 +32,6 @@ sdfgi_read_sky_light = false
 fog_enabled = true
 fog_light_color = Color(0.105882, 0.0901961, 0.266667, 1)
 fog_density = 0.1
-volumetric_fog_enabled = true
 volumetric_fog_density = 0.025
 volumetric_fog_albedo = Color(0.494118, 0.494118, 0.494118, 1)
 volumetric_fog_gi_inject = 0.0
@@ -43,11 +41,6 @@ volumetric_fog_temporal_reprojection_enabled = false
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_yapjj")
-
-[node name="LightmapGI" type="LightmapGI" parent="."]
-directional = true
-interior = true
-light_data = ExtResource("1_02x4x")
 
 [node name="Player" parent="." instance=ExtResource("1_fb1a0")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1, 1, 7)
@@ -327,9 +320,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 12)
 [node name="6x6_Wall10" parent="Floor_Ground" instance=ExtResource("7_s5j55")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 12)
 
-[node name="6x6_Wall11" parent="Floor_Ground" instance=ExtResource("7_s5j55")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
-
 [node name="6x6_Wall13" parent="Floor_Ground" instance=ExtResource("7_s5j55")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 6)
 
@@ -339,23 +329,20 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 12)
 [node name="6x6_Wall15" parent="Floor_Ground" instance=ExtResource("7_s5j55")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 0)
 
+[node name="6x6_Wall27" parent="Floor_Ground" instance=ExtResource("7_s5j55")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+
 [node name="6x6_Wall25" parent="Floor_Ground" instance=ExtResource("7_s5j55")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 0, 6)
 
 [node name="6x6_Wall26" parent="Floor_Ground" instance=ExtResource("7_s5j55")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 0, 12)
 
-[node name="6x6_Wall27" parent="Floor_Ground" instance=ExtResource("7_s5j55")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 0, 0)
-
 [node name="6x6_Wall28" parent="Floor_Ground" instance=ExtResource("7_s5j55")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17, 0, 6)
 
 [node name="6x6_Wall29" parent="Floor_Ground" instance=ExtResource("7_s5j55")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17, 0, 12)
-
-[node name="6x6_Wall30" parent="Floor_Ground" instance=ExtResource("7_s5j55")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17, 0, 0)
 
 [node name="6x6_Wall12" parent="Floor_Ground" instance=ExtResource("7_s5j55")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 0)
@@ -399,3 +386,8 @@ max_distance = 20.0
 bus = &"Music"
 
 [node name="Show_FPS" parent="." instance=ExtResource("10_r8yov")]
+
+[node name="LightmapGI" type="LightmapGI" parent="."]
+quality = 3
+interior = true
+light_data = ExtResource("1_y2xsy")
